@@ -705,6 +705,8 @@ const I18N = {
 const I18N_PATCHES = {
   en: {
     languageBody: 'Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.',
+    readinessPillLabel: 'Ready:',
+    readinessCountLabel: 'checks complete',
     builtBody2: "This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I used Udemy and current learning material to learn the concepts, then used this app's original practice sets instead of buying separate mock exams.",
     officialResourceBody: 'Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage. This app turns that scope into recall drills, not a replacement for AWS updates.',
     officialResourceLink: 'Official AWS CLF-C02 exam guide',
@@ -737,8 +739,9 @@ const I18N_PATCHES = {
     trapsQuestionColumn: 'If the question says...',
     trapsAnswerColumn: 'The correct answer is...',
     pairsSearchPlaceholder: 'Search confusing pairs (e.g. CloudWatch, RDS)...',
-    readinessTitle: 'CLF-C02 Readiness Audit',
-    readinessBody: 'Complete these six checks before exam day. Two are measured by your history; four are honest self-checks.',
+    readinessGateBadge: 'Final readiness gate',
+    readinessTitle: 'CLF-C02 Readiness Gate',
+    readinessBody: 'Use this before exam day: two checks are measured from your practice history, and four are honest confirmations. It helps expose gaps; it does not guarantee a pass.',
     domainWeightsTitle: 'CLF-C02 Domain Weights',
     officialSourceBadge: 'Official source check',
     officialSourceBody: 'Domain weights and scope should be checked against the current AWS exam guide before exam day.',
@@ -775,7 +778,8 @@ const I18N_PATCHES = {
     readinessMockProgress: 'Need two mocks at 80%+; current count: {count}.',
     readinessWrongTitle: 'Keep wrong-answer pool under 5',
     readinessWrongAchieved: 'Done: wrong-answer pool is small ({count} items).',
-    readinessWrongProgress: 'Keep the wrong-answer pool under 5; current count: {count}.',
+    readinessWrongProgress: 'Keep the wrong-answer pool under 5 after practice; current count: {count}.',
+    readinessWrongEmpty: 'Start a quiz first; an empty wrong-answer pool only matters after real attempts.',
     readinessMasterTitle: 'Recall the 47 service anchors without looking',
     readinessMasterInfo: 'Self-check: can you explain the Master Memory Page out loud?',
     readinessPairsTitle: 'Explain the top confusing pairs',
@@ -784,8 +788,16 @@ const I18N_PATCHES = {
     readinessDrillsInfo: 'Self-check: match scenario triggers to services quickly and consistently.',
     readinessOfficialTitle: 'Review official AWS practice questions',
     readinessOfficialInfo: 'Self-check: compare your wording instincts against current AWS materials.',
-    readinessAchievedLabel: 'Achieved',
-    readinessProgressLabel: 'In progress'
+    readinessAchievedLabel: 'Ready signal',
+    readinessProgressLabel: 'Needs work',
+    readinessMeasuredLabel: 'Measured',
+    readinessSelfCheckLabel: 'Self-check',
+    readinessActionMock: 'Take timed mock',
+    readinessActionWrongs: 'Review wrong answers',
+    readinessActionMaster: 'Open memory trainer',
+    readinessActionPairs: 'Open confusing pairs',
+    readinessActionDrills: 'Start trigger drills',
+    readinessActionOfficial: 'Open AWS guide'
   },
   es: {
     whyBadge: 'Por que Cloud Recall Lab',
@@ -1943,6 +1955,157 @@ Object.assign(I18N.ja, {
   readinessProgressLabel: 'In progress'
 });
 
+const READINESS_GATE_COPY = {
+  es: {
+    readinessGateBadge: 'Puerta final de preparacion',
+    readinessPillLabel: 'Listo:',
+    readinessTitle: 'Puerta de preparacion CLF-C02',
+    readinessBody: 'Usa esto antes del examen: dos checks salen de tu historial y cuatro son confirmaciones honestas. Ayuda a encontrar gaps; no garantiza aprobar.',
+    readinessCountLabel: 'checks completos',
+    readinessWrongEmpty: 'Haz un quiz primero; un pool vacio solo importa despues de intentos reales.',
+    readinessAchievedLabel: 'Senal lista',
+    readinessProgressLabel: 'Requiere trabajo',
+    readinessMeasuredLabel: 'Medido',
+    readinessSelfCheckLabel: 'Auto-check',
+    readinessActionMock: 'Hacer mock cronometrado',
+    readinessActionWrongs: 'Revisar errores',
+    readinessActionMaster: 'Abrir memory trainer',
+    readinessActionPairs: 'Abrir pares confusos',
+    readinessActionDrills: 'Iniciar trigger drills',
+    readinessActionOfficial: 'Abrir guia AWS'
+  },
+  pt: {
+    readinessGateBadge: 'Portao final de preparo',
+    readinessPillLabel: 'Pronto:',
+    readinessTitle: 'Portao de preparo CLF-C02',
+    readinessBody: 'Use antes do exame: dois checks vem do historico e quatro sao confirmacoes honestas. Ajuda a achar gaps; nao garante aprovacao.',
+    readinessCountLabel: 'checks completos',
+    readinessWrongEmpty: 'Faca um quiz primeiro; pool vazio so importa depois de tentativas reais.',
+    readinessAchievedLabel: 'Sinal pronto',
+    readinessProgressLabel: 'Precisa trabalho',
+    readinessMeasuredLabel: 'Medido',
+    readinessSelfCheckLabel: 'Auto-check',
+    readinessActionMock: 'Fazer simulado',
+    readinessActionWrongs: 'Revisar erros',
+    readinessActionMaster: 'Abrir memory trainer',
+    readinessActionPairs: 'Abrir pares confusos',
+    readinessActionDrills: 'Iniciar trigger drills',
+    readinessActionOfficial: 'Abrir guia AWS'
+  },
+  fr: {
+    readinessGateBadge: 'Gate final de preparation',
+    readinessPillLabel: 'Pret:',
+    readinessTitle: 'Gate de preparation CLF-C02',
+    readinessBody: 'A utiliser avant lexamen: deux checks viennent de lhistorique, quatre sont des confirmations honnetes. Cela expose les gaps; ne garantit pas la reussite.',
+    readinessCountLabel: 'checks termines',
+    readinessWrongEmpty: 'Faites dabord un quiz; une liste vide compte seulement apres de vraies tentatives.',
+    readinessAchievedLabel: 'Signal pret',
+    readinessProgressLabel: 'A travailler',
+    readinessMeasuredLabel: 'Mesure',
+    readinessSelfCheckLabel: 'Auto-check',
+    readinessActionMock: 'Faire un mock',
+    readinessActionWrongs: 'Revoir erreurs',
+    readinessActionMaster: 'Ouvrir memory trainer',
+    readinessActionPairs: 'Ouvrir paires confuses',
+    readinessActionDrills: 'Lancer trigger drills',
+    readinessActionOfficial: 'Ouvrir guide AWS'
+  },
+  de: {
+    readinessGateBadge: 'Finales Readiness-Gate',
+    readinessPillLabel: 'Bereit:',
+    readinessTitle: 'CLF-C02 Readiness-Gate',
+    readinessBody: 'Vor dem Examen nutzen: zwei Checks kommen aus der Historie, vier sind ehrliche Selbstchecks. Es zeigt Luecken; es garantiert kein Bestehen.',
+    readinessCountLabel: 'Checks erledigt',
+    readinessWrongEmpty: 'Starte erst ein Quiz; ein leerer Fehlerpool zaehlt erst nach echten Versuchen.',
+    readinessAchievedLabel: 'Bereit-Signal',
+    readinessProgressLabel: 'Braucht Arbeit',
+    readinessMeasuredLabel: 'Gemessen',
+    readinessSelfCheckLabel: 'Selbstcheck',
+    readinessActionMock: 'Timed Mock starten',
+    readinessActionWrongs: 'Fehler reviewen',
+    readinessActionMaster: 'Memory Trainer',
+    readinessActionPairs: 'Verwechslungs-Paare',
+    readinessActionDrills: 'Trigger-Drills starten',
+    readinessActionOfficial: 'AWS Guide oeffnen'
+  },
+  it: {
+    readinessGateBadge: 'Gate finale di preparazione',
+    readinessPillLabel: 'Pronto:',
+    readinessTitle: 'Gate preparazione CLF-C02',
+    readinessBody: 'Usalo prima dellesame: due check vengono dalla cronologia, quattro sono conferme oneste. Espone gap; non garantisce il pass.',
+    readinessCountLabel: 'check completati',
+    readinessWrongEmpty: 'Fai prima un quiz; un pool vuoto conta solo dopo tentativi reali.',
+    readinessAchievedLabel: 'Segnale pronto',
+    readinessProgressLabel: 'Da lavorare',
+    readinessMeasuredLabel: 'Misurato',
+    readinessSelfCheckLabel: 'Auto-check',
+    readinessActionMock: 'Fai mock timed',
+    readinessActionWrongs: 'Rivedi errori',
+    readinessActionMaster: 'Apri memory trainer',
+    readinessActionPairs: 'Apri coppie confuse',
+    readinessActionDrills: 'Avvia trigger drills',
+    readinessActionOfficial: 'Apri guida AWS'
+  },
+  nl: {
+    readinessGateBadge: 'Laatste readiness gate',
+    readinessPillLabel: 'Klaar:',
+    readinessTitle: 'CLF-C02 readiness gate',
+    readinessBody: 'Gebruik dit voor examendag: twee checks komen uit je historie, vier zijn eerlijke zelfchecks. Het toont gaten; het garandeert geen pass.',
+    readinessCountLabel: 'checks klaar',
+    readinessWrongEmpty: 'Start eerst een quiz; een lege foutenpool telt pas na echte pogingen.',
+    readinessAchievedLabel: 'Klaar signaal',
+    readinessProgressLabel: 'Nog werk',
+    readinessMeasuredLabel: 'Gemeten',
+    readinessSelfCheckLabel: 'Zelfcheck',
+    readinessActionMock: 'Doe timed mock',
+    readinessActionWrongs: 'Review fouten',
+    readinessActionMaster: 'Open memory trainer',
+    readinessActionPairs: 'Open verwarrende paren',
+    readinessActionDrills: 'Start trigger drills',
+    readinessActionOfficial: 'Open AWS guide'
+  },
+  hi: {
+    readinessGateBadge: 'Final readiness gate',
+    readinessPillLabel: 'Ready:',
+    readinessTitle: 'CLF-C02 Readiness Gate',
+    readinessBody: 'Exam se pehle use karein: do checks history se measured hain, chaar honest self-checks hain. Gaps dikhata hai; pass guarantee nahi.',
+    readinessCountLabel: 'checks complete',
+    readinessWrongEmpty: 'Pehle quiz start karein; empty wrong pool real attempts ke baad hi meaningful hai.',
+    readinessAchievedLabel: 'Ready signal',
+    readinessProgressLabel: 'Needs work',
+    readinessMeasuredLabel: 'Measured',
+    readinessSelfCheckLabel: 'Self-check',
+    readinessActionMock: 'Timed mock lein',
+    readinessActionWrongs: 'Wrong answers review',
+    readinessActionMaster: 'Memory trainer kholein',
+    readinessActionPairs: 'Confusing pairs kholein',
+    readinessActionDrills: 'Trigger drills start',
+    readinessActionOfficial: 'AWS guide kholein'
+  },
+  ja: {
+    readinessGateBadge: 'Final readiness gate',
+    readinessPillLabel: 'Ready:',
+    readinessTitle: 'CLF-C02 Readiness Gate',
+    readinessBody: 'Exam day 前に使用します。2つは history で測定、4つは honest self-check です。gap を見つけるためのものです。pass guarantee ではありません。',
+    readinessCountLabel: 'checks complete',
+    readinessWrongEmpty: 'まず quiz を開始してください。empty wrong pool は real attempts 後に意味があります。',
+    readinessAchievedLabel: 'Ready signal',
+    readinessProgressLabel: 'Needs work',
+    readinessMeasuredLabel: 'Measured',
+    readinessSelfCheckLabel: 'Self-check',
+    readinessActionMock: 'Timed mock を受ける',
+    readinessActionWrongs: 'Wrong answers を review',
+    readinessActionMaster: 'Memory trainer を開く',
+    readinessActionPairs: 'Confusing pairs を開く',
+    readinessActionDrills: 'Trigger drills を開始',
+    readinessActionOfficial: 'AWS guide を開く'
+  }
+};
+
+Object.entries(READINESS_GATE_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
 const EXAM_LABELS = {
   random: 'Comprehensive Mock',
   mock1: 'Practice Mock Exam 1',
@@ -2247,6 +2410,7 @@ function applyLanguage(lang = 'en') {
 }
 
 function refreshLocalizedDynamicContent() {
+  renderReadinessDashboard();
   if (state.currentView === 'study-view') {
     renderGuideConcepts();
     renderGuideResponsibility();
@@ -2363,6 +2527,7 @@ function updateDashboardStats() {
     ? Math.round(state.stats.examScores.reduce((a, b) => a + b, 0) / state.stats.examScores.length)
     : 0;
   document.getElementById('stat-avg-exam').innerText = `${avgExam}%`;
+  renderReadinessDashboard();
   
   // Wrong answers count
   const wrongCount = state.wrongAnswers.length;
@@ -3302,11 +3467,8 @@ function checkMatchingAnswers() {
 }
 
 // Study Guide & Cheat Sheet Logic
-function startGuide() {
+function startGuide(initialTab = 'concepts') {
   state.currentMode = 'guide';
-  
-  // Reset tabs UI
-  switchGuideTab('concepts');
   
   // Render sub-sections
   renderGuideConcepts();
@@ -3318,23 +3480,29 @@ function startGuide() {
   renderGuideStrategy();
   renderGuidePassPlan();
 
+  switchGuideTab(initialTab);
   showView('study-view');
 }
 
 function switchGuideTab(tabId) {
+  let safeTabId = tabId;
+  if (!document.getElementById(`tab-guide-${safeTabId}`) || !document.getElementById(`pane-guide-${safeTabId}`)) {
+    safeTabId = 'concepts';
+  }
+
   // Update tabs UI
   document.querySelectorAll('.tab-guide-btn').forEach(btn => {
     btn.classList.remove('active');
   });
-  document.getElementById(`tab-guide-${tabId}`).classList.add('active');
+  document.getElementById(`tab-guide-${safeTabId}`).classList.add('active');
   
   // Update panes
   document.querySelectorAll('.guide-pane').forEach(pane => {
     pane.style.display = 'none';
   });
-  document.getElementById(`pane-guide-${tabId}`).style.display = 'block';
+  document.getElementById(`pane-guide-${safeTabId}`).style.display = 'block';
 
-  if (tabId === 'planner') {
+  if (safeTabId === 'planner') {
     initPlanner();
   }
 }
@@ -4449,7 +4617,7 @@ function renderWrongFlashcards() {
   });
 }
 
-function renderReadinessAudit() {
+function renderReadinessAuditLegacy() {
   const container = document.getElementById('readiness-checklist-container');
   if (!container) return;
 
@@ -4549,6 +4717,189 @@ function renderReadinessAudit() {
       }
     }
   });
+}
+
+function hasReadinessPracticeActivity() {
+  return (Number(state.stats.totalAnswersCount) || 0) > 0 ||
+    (state.progress.examHistory || []).length > 0 ||
+    Object.keys(state.progress.questionStats || {}).length > 0;
+}
+
+function getReadinessItems() {
+  const scoresAbove80 = state.stats.examScores.filter(score => Number(score) >= 80).length;
+  const mockChecked = scoresAbove80 >= 2;
+  const wrongCount = state.wrongAnswers.length;
+  const hasPractice = hasReadinessPracticeActivity();
+  const wrongChecked = hasPractice && wrongCount < 5;
+
+  return [
+    {
+      id: 'system-mocks',
+      type: 'system',
+      checked: mockChecked,
+      title: t('readinessMockTitle'),
+      info: mockChecked
+        ? t('readinessMockAchieved', { count: scoresAbove80 })
+        : t('readinessMockProgress', { count: scoresAbove80 }),
+      action: 'mock',
+      actionLabel: t('readinessActionMock')
+    },
+    {
+      id: 'system-wrongs',
+      type: 'system',
+      checked: wrongChecked,
+      title: t('readinessWrongTitle'),
+      info: !hasPractice
+        ? t('readinessWrongEmpty')
+        : wrongChecked
+          ? t('readinessWrongAchieved', { count: wrongCount })
+          : t('readinessWrongProgress', { count: wrongCount }),
+      action: 'wrongs',
+      actionLabel: t('readinessActionWrongs')
+    },
+    {
+      id: 'masterMemory',
+      type: 'self',
+      checked: !!state.readinessSelfChecked.masterMemory,
+      title: t('readinessMasterTitle'),
+      info: t('readinessMasterInfo'),
+      action: 'master',
+      actionLabel: t('readinessActionMaster')
+    },
+    {
+      id: 'confusingPairs',
+      type: 'self',
+      checked: !!state.readinessSelfChecked.confusingPairs,
+      title: t('readinessPairsTitle'),
+      info: t('readinessPairsInfo'),
+      action: 'pairs',
+      actionLabel: t('readinessActionPairs')
+    },
+    {
+      id: 'triggerDrills',
+      type: 'self',
+      checked: !!state.readinessSelfChecked.triggerDrills,
+      title: t('readinessDrillsTitle'),
+      info: t('readinessDrillsInfo'),
+      action: 'drills',
+      actionLabel: t('readinessActionDrills')
+    },
+    {
+      id: 'officialQs',
+      type: 'self',
+      checked: !!state.readinessSelfChecked.officialQs,
+      title: t('readinessOfficialTitle'),
+      info: t('readinessOfficialInfo'),
+      action: 'official',
+      actionLabel: t('readinessActionOfficial')
+    }
+  ];
+}
+
+function updateReadinessMeters(items) {
+  const completeCount = items.filter(item => item.checked).length;
+  const totalCount = items.length;
+  const percent = totalCount ? Math.round((completeCount / totalCount) * 100) : 0;
+
+  ['stat-readiness', 'readiness-overall-count'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = `${completeCount}/${totalCount}`;
+  });
+
+  const readinessPill = document.getElementById('stat-readiness-pill');
+  if (readinessPill) {
+    readinessPill.setAttribute('aria-label', `Open readiness gate: ${completeCount} of ${totalCount} checks complete`);
+  }
+
+  const progressBar = document.getElementById('readiness-progress-bar');
+  if (progressBar) progressBar.style.width = `${percent}%`;
+}
+
+function renderReadinessDashboard() {
+  const items = getReadinessItems();
+  updateReadinessMeters(items);
+}
+
+function renderReadinessAudit() {
+  const container = document.getElementById('readiness-checklist-container');
+  if (!container) return;
+
+  const items = getReadinessItems();
+  updateReadinessMeters(items);
+
+  container.innerHTML = items.map(item => {
+    const marker = item.type === 'self'
+      ? `<input type="checkbox" id="chk-${item.id}" ${item.checked ? 'checked' : ''} aria-label="${escapeHtml(item.title)}">`
+      : item.checked ? ICONS.check : '!';
+    const label = item.type === 'system' ? t('readinessMeasuredLabel') : t('readinessSelfCheckLabel');
+    const statusLabel = item.checked ? t('readinessAchievedLabel') : t('readinessProgressLabel');
+
+    return `
+      <article class="readiness-check ${item.checked ? 'is-complete' : ''}">
+        <div class="readiness-check-marker">${marker}</div>
+        <div>
+          <span class="readiness-check-label">${escapeHtml(label)}</span>
+          <div class="readiness-check-title">${escapeHtml(item.title)}</div>
+          <div class="readiness-check-info"><strong>${escapeHtml(statusLabel)}:</strong> ${escapeHtml(item.info)}</div>
+          <button class="btn btn-secondary readiness-check-action" type="button" data-readiness-action="${escapeHtml(item.action)}">
+            ${escapeHtml(item.actionLabel)}
+          </button>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  items.forEach(item => {
+    if (item.type === 'self') {
+      const chk = document.getElementById(`chk-${item.id}`);
+      if (chk) {
+        chk.addEventListener('change', event => {
+          state.readinessSelfChecked[item.id] = event.target.checked;
+          saveData();
+          renderReadinessAudit();
+          renderReadinessDashboard();
+        });
+      }
+    }
+  });
+
+  container.querySelectorAll('[data-readiness-action]').forEach(button => {
+    button.addEventListener('click', () => handleReadinessAction(button.getAttribute('data-readiness-action')));
+  });
+}
+
+function handleReadinessAction(action) {
+  if (action === 'mock') {
+    document.getElementById('exam-select-dialog').classList.add('active');
+    return;
+  }
+  if (action === 'wrongs') {
+    startPractice('review');
+    return;
+  }
+  if (action === 'master') {
+    startTrainer();
+    return;
+  }
+  if (action === 'pairs') {
+    startGuide('pairs');
+    return;
+  }
+  if (action === 'drills') {
+    startDrills();
+    return;
+  }
+  if (action === 'official') {
+    window.open('https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html', '_blank', 'noopener,noreferrer');
+  }
+}
+
+function openReadinessGate() {
+  if (state.currentMode === 'exam') {
+    exitExamEarly();
+    return;
+  }
+  startGuide('strategy');
 }
 
 // Daily Study Block Planner & Timer Logic
@@ -6048,6 +6399,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('card-start-exam').addEventListener('click', () => {
     document.getElementById('exam-select-dialog').classList.add('active');
   });
+
+  document.getElementById('stat-readiness-pill').addEventListener('click', openReadinessGate);
 
   document.getElementById('dialog-close-exam-select').addEventListener('click', () => {
     document.getElementById('exam-select-dialog').classList.remove('active');

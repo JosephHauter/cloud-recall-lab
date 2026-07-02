@@ -111,6 +111,8 @@ function auditStaticFiles() {
   assert(!/70 randomized questions|70 randomly compiled questions|70 Questions|70 Qs/i.test(index), 'Comprehensive mock copy should not say 70 questions');
   assert(index.includes('Cloud Recall Lab') && readme.includes('Cloud Recall Lab'), 'Cloud Recall Lab branding is missing');
   assert(index.includes('why-card') && index.includes('Meets Competencies'), 'Why/proof homepage section is missing');
+  assert(index.includes('id="stat-readiness-pill"') && index.includes('id="stat-readiness"'), 'Header readiness pill is missing');
+  assert(!index.includes('readiness-summary-card'), 'Readiness should stay out of the homepage card stack');
   assert(index.includes('https://www.credly.com/badges/c52c14ed-17c7-4b4f-9c18-a0b8fc22ff6c/public_url'), 'Credly verification link is missing');
   assert(index.includes('id="language-select"'), 'Header language selector is missing');
   assert(index.includes('id="settings-language-select"'), 'Settings language selector is missing');
@@ -118,7 +120,7 @@ function auditStaticFiles() {
   assert(index.includes('data-i18n'), 'Translated UI markers are missing');
   assert(index.includes('data-i18n-placeholder'), 'Translated placeholder markers are missing');
   assert(index.includes('id="tab-guide-serverless"'), 'Serverless map tab is missing');
-  assert(index.includes('guideTabServerless') && index.includes('readinessTitle'), 'Study guide translation keys are missing');
+  assert(index.includes('guideTabServerless') && index.includes('readinessTitle') && index.includes('readiness-gate-card'), 'Study guide readiness gate is missing');
   assert(index.includes('id="selected-plan-summary"') && index.includes('aria-pressed="true"'), 'Guided study duration selection feedback is missing');
   assert(app.includes('SERVERLESS_SERVICE_NAMES'), 'Serverless service list is missing');
   assert(app.includes("item.checked && item.type !== 'self'"), 'Readiness self-checks should remain toggleable checkboxes');
@@ -130,7 +132,7 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v8'), 'Service worker cache should be bumped to v8');
+  assert(sw.includes('cloud-recall-lab-v9'), 'Service worker cache should be bumped to v9');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');

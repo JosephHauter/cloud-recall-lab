@@ -44,6 +44,9 @@
         <div class="stat-pill">
           Avg Mock: <span id="stat-avg-exam">0%</span>
         </div>
+        <button class="stat-pill stat-pill-button" type="button" id="stat-readiness-pill" aria-label="Open readiness gate">
+          <span class="stat-pill-label" data-i18n="readinessPillLabel">Ready:</span> <span id="stat-readiness">0/6</span>
+        </button>
       </div>
       <nav class="header-actions" aria-label="Project links and settings">
         <button class="header-action" type="button" id="btn-open-history" data-i18n="navHistory">History</button>
@@ -784,15 +787,21 @@
       <!-- Guide Pane 5: Last-Minute Strategy -->
       <div class="guide-pane" id="pane-guide-strategy" style="display: none;">
         
-        <!-- Readiness Audit Card -->
-        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; border-color: rgba(16, 185, 129, 0.25); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%);">
-          <h3 style="margin-bottom: 0.5rem; color: var(--success); display: flex; align-items: center; gap: 0.5rem;">
-            <span data-i18n="readinessTitle">CLF-C02 Readiness Audit</span>
-          </h3>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            <span data-i18n="readinessBody">The app tracks your quiz history and active recall practice. Complete these 6 checkpoints to build exam-day confidence before the real exam.</span>
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 1rem;" id="readiness-checklist-container">
+        <!-- Readiness Gate Card -->
+        <div class="readiness-gate-card glass-card">
+          <div class="readiness-gate-header">
+            <div>
+              <span class="card-badge" data-i18n="readinessGateBadge">Final readiness gate</span>
+              <h3 data-i18n="readinessTitle">CLF-C02 Readiness Gate</h3>
+              <p data-i18n="readinessBody">Use this before exam day: two checks are measured from your practice history, and four are honest confirmations. It helps expose gaps; it does not guarantee a pass.</p>
+            </div>
+            <div class="readiness-gate-meter" aria-live="polite">
+              <strong id="readiness-overall-count">0/6</strong>
+              <span id="readiness-overall-label" data-i18n="readinessCountLabel">checks complete</span>
+              <div class="readiness-progress-track"><span id="readiness-progress-bar"></span></div>
+            </div>
+          </div>
+          <div class="readiness-checklist" id="readiness-checklist-container">
             <!-- Rendered dynamically by JS -->
           </div>
         </div>
