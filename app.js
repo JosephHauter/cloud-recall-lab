@@ -739,7 +739,7 @@ const I18N_PATCHES = {
     guideSearchPlaceholder: 'Search services, trigger words, or descriptions (e.g. S3, SQL, database)...',
     serverlessBadgeTitle: 'Exam shortcut',
     serverlessTitle: 'Serverless services map',
-    serverlessBody: 'For CLF-C02, "serverless" usually means AWS handles capacity, scaling, availability, and much of the infrastructure management. You still configure access, data, costs, and service behavior.',
+    serverlessBody: 'For CLF-C02, the official Serverless category focuses on Lambda and Fargate. Also recognize serverless-style services and variants where AWS handles capacity and scaling, such as DynamoDB, Athena, Glue, S3, Data Firehose, Aurora Serverless v2, Redshift Serverless, and OpenSearch Serverless. You still configure access, data, costs, and service behavior.',
     trapsTitle: 'Highest-Yield Exam Traps',
     trapsBody: 'Recognize these patterns in the exam questions to quickly identify the likely service.',
     trapsQuestionColumn: 'If the question says...',
@@ -2173,8 +2173,12 @@ const SERVERLESS_SERVICE_NAMES = new Set([
   'Lambda',
   'Fargate',
   'DynamoDB',
+  'Aurora Serverless v2',
   'Athena',
   'Glue',
+  'Redshift Serverless',
+  'OpenSearch Serverless',
+  'Data Firehose',
   'API Gateway',
   'AppSync',
   'SQS',
@@ -2205,8 +2209,8 @@ const SERVERLESS_STUDY_GROUPS = [
   },
   {
     title: 'Data and analytics',
-    takeaway: 'Store, query, transform, and visualize data with managed scaling.',
-    services: ['S3', 'DynamoDB', 'Athena', 'Glue', 'QuickSight']
+    takeaway: 'Store, query, transform, deliver, and visualize data with managed scaling.',
+    services: ['S3', 'DynamoDB', 'Aurora Serverless v2', 'Athena', 'Glue', 'Data Firehose', 'Redshift Serverless', 'OpenSearch Serverless', 'QuickSight']
   },
   {
     title: 'Integration',
@@ -3757,9 +3761,8 @@ function isServerlessService(serviceName) {
 }
 
 function renderServerlessBadge(serviceName) {
-  return isServerlessService(serviceName)
-    ? `<span class="serverless-badge">${escapeHtml(t('serverlessLabel'))}</span>`
-    : '';
+  if (!isServerlessService(serviceName) || /serverless/i.test(serviceName)) return '';
+  return `<span class="serverless-badge">${escapeHtml(t('serverlessLabel'))}</span>`;
 }
 
 function renderGuideServerless() {

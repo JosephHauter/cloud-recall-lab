@@ -125,6 +125,8 @@ function auditStaticFiles() {
   assert(index.includes('source-map-card') && index.includes('official-source-links'), 'Official source map section is missing');
   assert(index.includes('id="selected-plan-summary"') && index.includes('aria-pressed="true"'), 'Guided study duration selection feedback is missing');
   assert(app.includes('SERVERLESS_SERVICE_NAMES'), 'Serverless service list is missing');
+  assert(study.includes('Aurora Serverless v2') && app.includes('Aurora Serverless v2'), 'Serverless map should include Aurora Serverless v2 without marking plain Aurora as serverless');
+  assert(app.includes('Redshift Serverless') && app.includes('OpenSearch Serverless') && app.includes('Data Firehose'), 'Serverless map should include key serverless analytics variants');
   assert(app.includes("item.checked && item.type !== 'self'"), 'Readiness self-checks should remain toggleable checkboxes');
   assert(app.includes('renderGuideServerless'), 'Serverless map renderer is missing');
   assert(app.includes('resetExamSessionState'), 'Exam exit should clear stale exam state');
@@ -136,7 +138,7 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v11'), 'Service worker cache should be bumped to v11');
+  assert(sw.includes('cloud-recall-lab-v14'), 'Service worker cache should be bumped to v14');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');

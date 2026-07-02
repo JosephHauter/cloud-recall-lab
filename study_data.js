@@ -76,17 +76,21 @@ const SERVICE_DIRECTORY = {
   "Databases & Analytics": [
     { name: "RDS", desc: "Managed relational SQL database; OLTP", triggers: "SQL app / relational / MySQL/PostgreSQL/etc." },
     { name: "Aurora", desc: "High-performance AWS relational SQL engine", triggers: "faster MySQL/PostgreSQL compatible" },
+    { name: "Aurora Serverless v2", desc: "Aurora relational database configuration that auto-scales capacity", triggers: "relational SQL + unpredictable workload / auto-scale capacity" },
     { name: "DynamoDB", desc: "Serverless NoSQL database", triggers: "NoSQL / key-value / massive scale" },
     { name: "DocumentDB", desc: "MongoDB-compatible document DB", triggers: "MongoDB / JSON documents" },
     { name: "ElastiCache", desc: "In-memory cache", triggers: "Redis / Memcached / reduce DB load" },
     { name: "Neptune", desc: "Graph database", triggers: "relationships / social / fraud / recommendations" },
     { name: "Athena", desc: "Serverless SQL on S3", triggers: "query S3 with SQL / pay per query" },
     { name: "Redshift", desc: "Data warehouse; OLAP", triggers: "warehouse / reporting / analytics" },
+    { name: "Redshift Serverless", desc: "Serverless data warehouse option for analytics", triggers: "analytics warehouse without managing clusters" },
     { name: "Glue", desc: "Serverless ETL + Data Catalog", triggers: "transform / prepare / catalog data" },
     { name: "QuickSight", desc: "Dashboards/BI", triggers: "visualize / dashboard" },
     { name: "EMR", desc: "Hadoop/Spark big data", triggers: "Hadoop / Spark / clusters" },
     { name: "Kinesis", desc: "Real-time streaming", triggers: "streaming / clickstream / real-time" },
-    { name: "OpenSearch", desc: "Search and log analytics", triggers: "search / logs / Elasticsearch" }
+    { name: "Data Firehose", desc: "Fully managed streaming delivery service", triggers: "deliver streaming data to S3/Redshift/OpenSearch" },
+    { name: "OpenSearch", desc: "Search and log analytics", triggers: "search / logs / Elasticsearch" },
+    { name: "OpenSearch Serverless", desc: "On-demand serverless search and analytics option", triggers: "search/log analytics without managing clusters" }
   ],
   "Networking & Content Delivery": [
     { name: "VPC", desc: "Private network in AWS", triggers: "private network / subnets" },
@@ -439,6 +443,11 @@ const OFFICIAL_SOURCE_LINKS = [
     title: "AWS in-scope service list",
     href: "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html",
     note: "Use this to sanity-check the Service Index, serverless map, and trigger-word drills against current AWS service coverage."
+  },
+  {
+    title: "Aurora Serverless documentation",
+    href: "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html",
+    note: "Use this for the nuance that Aurora Serverless v2 is the serverless, auto-scaling Aurora configuration. Plain Aurora remains the relational database service family."
   },
   {
     title: "AWS out-of-scope service list",
