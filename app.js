@@ -7100,7 +7100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startPractice('review');
   });
   
-  // Logo / Back-to-Home controls
+  // Brand / Back-to-Home controls
   document.querySelectorAll('.btn-home').forEach(btn => {
     btn.addEventListener('click', () => {
       if (window.speechSynthesis) {
