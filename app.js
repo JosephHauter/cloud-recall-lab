@@ -705,7 +705,7 @@ const I18N = {
 const I18N_PATCHES = {
   en: {
     languageBody: 'Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.',
-    builtBody2: "This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I did not pay for separate mock exams; I used this app's original practice sets alongside current learning material.",
+    builtBody2: "This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I used Udemy and current learning material to learn the concepts, then used this app's original practice sets instead of buying separate mock exams.",
     officialResourceBody: 'Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage. This app turns that scope into recall drills, not a replacement for AWS updates.',
     officialResourceLink: 'Official AWS CLF-C02 exam guide',
     supportButton: 'Support',
@@ -1596,7 +1596,7 @@ const I18N_PATCHES = {
     builtBadge: 'Built after passing',
     builtTitle: 'I used this study loop to pass AWS Cloud Practitioner on July 1, 2026.',
     builtBody1: 'I made this because useful prep often sits behind paywalls, and some AI study flows reveal answers too early.',
-    builtBody2: "The loop is simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible. I did not pay for separate mock exams; I used this app's original sets with current learning material.",
+    builtBody2: "The loop is simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible. I used Udemy and current learning material to learn the concepts, then used this app's original sets instead of buying separate mock exams.",
     wiseBadge: 'Use it wisely',
     wiseTitle: 'Free practice, not a promise or a replacement for current materials.',
     wiseBody1: 'AWS can update services, wording, and scope. Use this for practice, then cross-check the current AWS exam guide, docs, and a strong course.',

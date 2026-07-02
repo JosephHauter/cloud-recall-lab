@@ -10,9 +10,9 @@ I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026. 
 
 I built it because too many useful study workflows were locked behind paywalls, including basics like flashcards, and generic AI/chat study flows can reveal the answer too early. This app keeps the answer hidden until you commit, then gives feedback so you can actually practice retrieval.
 
-I did not pay for separate mock exams while preparing. I used this app's original practice sets as the free practice layer alongside current learning material.
+Udemy was a major part of my prep for learning the material. I did not pay for separate mock exams while preparing; I used this app's original practice sets as the free practice layer alongside current learning material.
 
-Udemy was also a major part of my prep. This app is best used as a free companion to current learning materials: use a course or official docs to learn, then use this hub to test whether you can retrieve the answer under pressure. The course that helped me was [Ultimate AWS Certified Cloud Practitioner CLF-C02 2026 by Stephane Maarek](https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/).
+This app is best used as a companion to current learning resources: use a course or official docs to learn, then use this hub to test whether you can retrieve the answer under pressure. The course that helped me was [Ultimate AWS Certified Cloud Practitioner CLF-C02 2026 by Stephane Maarek](https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/).
 
 That result is personal proof that the loop helped me, not a promise that the app alone guarantees a pass.
 
