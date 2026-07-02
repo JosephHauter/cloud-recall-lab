@@ -1222,6 +1222,44 @@ main {
   color: var(--text-primary);
 }
 
+.miniquiz-row {
+  grid-template-columns: 25px minmax(0, 1fr) minmax(220px, 0.42fr);
+  align-items: start;
+}
+
+.miniquiz-number {
+  color: var(--text-muted);
+  font-weight: 800;
+  padding-top: 0.62rem;
+}
+
+.miniquiz-question {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+  padding-top: 0.42rem;
+}
+
+.miniquiz-answer-cell {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.miniquiz-input,
+.miniquiz-picker {
+  min-height: 42px;
+}
+
+.miniquiz-picker {
+  color: var(--text-secondary);
+}
+
+.miniquiz-picker:focus,
+.miniquiz-input:focus {
+  color: var(--text-primary);
+}
+
 /* Guide Table Styles */
 .guide-pane table {
   margin-top: 0.5rem;
@@ -3062,6 +3100,15 @@ main {
   .results-actions .btn {
     flex: 1 1 160px;
   }
+
+  .miniquiz-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .miniquiz-answer-cell {
+    grid-column: 1 / -1;
+  }
 }
 
 @media(max-width: 540px) {
@@ -3112,6 +3159,14 @@ main {
   .matching-pair-row {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .miniquiz-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .miniquiz-answer-cell {
+    grid-column: 1 / -1;
   }
 
   .toast {

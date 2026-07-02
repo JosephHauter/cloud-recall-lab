@@ -4633,6 +4633,29 @@ function setupDrillsAutocomplete() {
 // Mini Quiz State and Logic
 let miniquizQuestions = [];
 
+function getMiniQuizServiceOptions() {
+  return Array.from(new Set([
+    ...Object.values(SERVICE_DIRECTORY).flat().map(s => s.name),
+    ...RAPID_DRILLS.map(d => d.answer),
+    ...MINI_MIXED_QUIZ.map(q => q.answer)
+  ])).sort();
+}
+
+function ensureAwsServicesDatalist(services) {
+  let datalist = document.getElementById('aws-services-datalist');
+  if (!datalist) {
+    datalist = document.createElement('datalist');
+    datalist.id = 'aws-services-datalist';
+    document.body.appendChild(datalist);
+  }
+
+  datalist.innerHTML = services.map(service => `<option value="${escapeHtml(service)}"></option>`).join('');
+}
+
+function buildServicePickerOptions(services) {
+  return services.map(service => `<option value="${escapeHtml(service)}">${escapeHtml(service)}</option>`).join('');
+}
+
 function startMiniQuiz() {
   state.currentMode = 'miniquiz';
   miniquizQuestions = shuffleArray([...MINI_MIXED_QUIZ]);
@@ -4643,40 +4666,48 @@ function startMiniQuiz() {
   // Reset submit button visibility
   document.getElementById('btn-miniquiz-submit').style.display = 'inline-flex';
   
-  // Create all service options for datalist if it doesn't exist
-  let datalist = document.getElementById('aws-services-datalist');
-  if (!datalist) {
-    datalist = document.createElement('datalist');
-    datalist.id = 'aws-services-datalist';
-    const allServices = Array.from(new Set([
-      ...Object.values(SERVICE_DIRECTORY).flat().map(s => s.name),
-      ...RAPID_DRILLS.map(d => d.answer),
-      ...MINI_MIXED_QUIZ.map(q => q.answer)
-    ])).sort();
-    
-    allServices.forEach(service => {
-      const option = document.createElement('option');
-      option.value = service;
-      datalist.appendChild(option);
-    });
-    document.body.appendChild(datalist);
-  }
+  const allServices = getMiniQuizServiceOptions();
+  const pickerOptions = buildServicePickerOptions(allServices);
+  ensureAwsServicesDatalist(allServices);
   
   miniquizQuestions.forEach((q, idx) => {
     const item = document.createElement('div');
-    item.className = 'matching-pair-row';
+    item.className = 'matching-pair-row miniquiz-row';
     markExamWording(item);
     item.id = `miniquiz-row-${idx}`;
-    item.style.gridTemplateColumns = '25px 1fr 200px';
     
     item.innerHTML = `
-      <div style="font-weight: 700; color: var(--text-muted);">${idx + 1}.</div>
-      <div style="font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">${escapeHtml(q.question)}</div>
-      <div>
-        <input type="text" list="aws-services-datalist" class="matching-select miniquiz-input" data-index="${idx}" placeholder="AWS Service..." style="background: rgba(11, 15, 25, 0.6); border: 1px solid var(--card-border-hover); padding: 0.5rem 0.75rem; border-radius: 6px; color: white; width: 100%;" autocomplete="off">
+      <div class="miniquiz-number">${idx + 1}.</div>
+      <div class="miniquiz-question">${escapeHtml(q.question)}</div>
+      <div class="miniquiz-answer-cell">
+        <label class="sr-only" for="miniquiz-input-${idx}">Type answer for question ${idx + 1}</label>
+        <input id="miniquiz-input-${idx}" type="text" list="aws-services-datalist" class="matching-select miniquiz-input" data-index="${idx}" placeholder="Type AWS service..." autocomplete="off" autocapitalize="words" spellcheck="false">
+        <label class="sr-only" for="miniquiz-picker-${idx}">Pick answer for question ${idx + 1}</label>
+        <select id="miniquiz-picker-${idx}" class="matching-select miniquiz-picker" data-index="${idx}" aria-label="Pick an AWS service for question ${idx + 1}">
+          <option value="">Pick from services...</option>
+          ${pickerOptions}
+        </select>
       </div>
     `;
     container.appendChild(item);
+  });
+
+  container.querySelectorAll('.miniquiz-picker').forEach(select => {
+    select.addEventListener('change', event => {
+      const idx = event.target.getAttribute('data-index');
+      const input = document.querySelector(`.miniquiz-input[data-index="${idx}"]`);
+      if (input && event.target.value) input.value = event.target.value;
+    });
+  });
+
+  container.querySelectorAll('.miniquiz-input').forEach(input => {
+    input.addEventListener('input', event => {
+      const idx = event.target.getAttribute('data-index');
+      const picker = document.querySelector(`.miniquiz-picker[data-index="${idx}"]`);
+      if (!picker) return;
+      const typed = event.target.value.trim();
+      picker.value = allServices.includes(typed) ? typed : '';
+    });
   });
   
   showView('mini-quiz-view');
@@ -4698,11 +4729,13 @@ function submitMiniQuiz() {
   
   miniquizQuestions.forEach((q, idx) => {
     const input = document.querySelector(`.miniquiz-input[data-index="${idx}"]`);
+    const picker = document.querySelector(`.miniquiz-picker[data-index="${idx}"]`);
     const val = input.value.trim();
     const row = document.getElementById(`miniquiz-row-${idx}`);
     
     row.classList.remove('matching-correct', 'matching-incorrect');
     input.disabled = true;
+    if (picker) picker.disabled = true;
     
     // Compare answers case-insensitively, removing AWS/Amazon prefixes
     const cleanUser = val.toLowerCase().replace('amazon', '').replace('aws', '').replace('service', '').replace(/[^a-z0-9]/g, '').trim();
@@ -4715,7 +4748,8 @@ function submitMiniQuiz() {
     } else {
       row.classList.add('matching-incorrect');
       // Show correct answer tip
-      const selectContainer = row.querySelector('div:last-child');
+      const selectContainer = row.querySelector('.miniquiz-answer-cell');
+      selectContainer.querySelector('.matching-tip')?.remove();
       const tip = document.createElement('div');
       tip.className = 'matching-tip';
       tip.style.fontSize = '0.75rem';

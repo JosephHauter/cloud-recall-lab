@@ -102,6 +102,7 @@ function auditQuestionPools(pools) {
 function auditStaticFiles() {
   const index = read('index.html');
   const app = read('app.js');
+  const css = read('style.css');
   const study = read('study_data.js');
   const sw = read('service-worker.js');
   const readme = read('README.md');
@@ -143,8 +144,10 @@ function auditStaticFiles() {
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
   assert(app.includes('LANGUAGE_SCOPE_COPY') && app.includes('markExamWording'), 'Language support should explicitly avoid translating exam-critical question wording');
   assert(app.includes("setAttribute('translate', 'no')"), 'Question renderers should mark exam wording as not machine-translated');
+  assert(app.includes('miniquiz-picker') && app.includes('Pick from services'), 'Mini quiz should include a mobile-friendly native service picker fallback');
+  assert(css.includes('.miniquiz-row') && css.includes('grid-column: 1 / -1'), 'Mini quiz rows should stack cleanly on mobile');
   assert(readme.includes('does not translate the practice question bank'), 'README language support scope is missing');
-  assert(sw.includes('cloud-recall-lab-v20'), 'Service worker cache should be bumped to v20');
+  assert(sw.includes('cloud-recall-lab-v21'), 'Service worker cache should be bumped to v21');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
