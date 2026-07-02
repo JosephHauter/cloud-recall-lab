@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cloud-recall-lab-v7';
+const CACHE_NAME = 'cloud-recall-lab-v8';
 const RUNTIME_CACHE_ORIGINS = new Set([
   'https://cdnjs.buymeacoffee.com',
   'https://fonts.googleapis.com',

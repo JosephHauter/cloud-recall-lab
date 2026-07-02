@@ -241,6 +241,48 @@ main {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
+.primary-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.primary-action-grid .card-exam {
+  grid-column: auto;
+  margin-top: 0 !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.15rem;
+  min-height: 100%;
+}
+
+.primary-action-grid .card-content-left {
+  max-width: none;
+}
+
+.primary-action-grid .card-title {
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+
+.primary-action-grid .card-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.primary-action-grid .card-stats {
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.primary-action-grid .btn {
+  width: 100%;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.92rem !important;
+}
+
 .card-content-left {
   max-width: 700px;
 }
@@ -1828,10 +1870,6 @@ main {
   }
 }
 
-.support-btn {
-  text-decoration: none;
-}
-
 .history-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2072,25 +2110,26 @@ main {
   max-width: 100%;
 }
 
-.bmc-footer-button {
-  min-height: 40px;
+.bmc-contact-button {
+  justify-content: flex-end;
 }
 
-.bmc-header-button,
-.bmc-settings-button {
-  min-height: 38px;
-}
-
-.bmc-header-button .bmc-btn {
+.bmc-contact-button .bmc-btn,
+.bmc-contact-button a {
   min-width: 0 !important;
   height: 44px !important;
+  min-height: 44px !important;
   padding: 0 14px !important;
-  border-radius: 10px !important;
-  font-size: 17px !important;
+  border-radius: 8px !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
 }
 
-.bmc-header-button .bmc-btn svg {
-  height: 23px !important;
+.bmc-contact-button .bmc-btn svg,
+.bmc-contact-button svg {
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .settings-card {
@@ -2277,6 +2316,10 @@ main {
   .history-grid .history-panel:first-child {
     grid-column: 1 / -1;
   }
+
+  .primary-action-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media(max-width: 768px) {
@@ -2298,11 +2341,6 @@ main {
   .header-action {
     flex: 1 1 auto;
     text-align: center;
-  }
-
-  .bmc-header-button {
-    justify-content: center;
-    width: 100%;
   }
 
   .serverless-group-heading {

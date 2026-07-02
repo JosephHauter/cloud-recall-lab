@@ -50,7 +50,7 @@
         <button class="header-action" type="button" id="btn-open-about" data-i18n="navAbout">About</button>
         <button class="header-action" type="button" id="btn-open-settings" data-i18n="navSettings">Settings</button>
         <label class="language-control" for="language-select">
-          <span class="sr-only" data-i18n="languageLabel">Language</span>
+        <span class="sr-only" data-i18n="languageLabel">Language</span>
           <select id="language-select" aria-label="Language">
             <option value="en">English</option>
             <option value="es">Espanol</option>
@@ -59,13 +59,10 @@
             <option value="de">Deutsch</option>
             <option value="it">Italiano</option>
             <option value="nl">Nederlands</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ja">日本語</option>
           </select>
         </label>
-        <a class="header-action" href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="header-action" href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="bmc-script-button bmc-header-button" aria-label="Buy Me a Coffee">
-          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-        </span>
       </nav>
     </div>
   </header>
@@ -134,7 +131,7 @@
         <div>
           <span class="card-badge" data-i18n="languageBadge">Language support beta</span>
           <h2 id="language-card-title" data-i18n="languageTitle">Study guidance in more languages.</h2>
-          <p data-i18n="languageBody">Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, and Dutch. Practice questions stay in English so AWS service names and exam wording remain consistent.</p>
+          <p data-i18n="languageBody">Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.</p>
         </div>
         <div class="language-list" aria-label="Supported interface languages">
           <span>English</span>
@@ -144,6 +141,8 @@
           <span>Deutsch</span>
           <span>Italiano</span>
           <span>Nederlands</span>
+          <span>हिन्दी</span>
+          <span>日本語</span>
         </div>
       </section>
 
@@ -162,6 +161,7 @@
         <button class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.05rem;" data-i18n="startMockButton">Start Mock Exam</button>
       </div>
 
+      <div class="primary-action-grid">
       <!-- Daily Memory Routine Card -->
       <div class="glass-card card-exam" id="card-start-trainer" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(217, 70, 239, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%); border-color: rgba(217, 70, 239, 0.25);">
         <div class="card-content-left">
@@ -205,6 +205,7 @@
           </div>
         </div>
         <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary), #0284c7); box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4); padding: 1rem 2rem; font-size: 1.05rem; color: white;" data-i18n="openStudyGuide">Open Study Guide</button>
+      </div>
       </div>
 
       <!-- Active Drills & Mini Quiz Grid -->
@@ -388,7 +389,7 @@
           <span class="card-badge" data-i18n="builtBadge">Built after passing</span>
           <h3 data-i18n="builtTitle">I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026.</h3>
           <p data-i18n="builtBody1">I made this because so much useful exam prep sits behind paywalls, even basics like flashcards, and some generic AI/chat study workflows reveal the answer too early. That ruins the point of active recall: you need to commit first, then see feedback.</p>
-          <p data-i18n="builtBody2">This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier.</p>
+          <p data-i18n="builtBody2">This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I did not pay for separate mock exams; I used this app's original practice sets alongside current learning material.</p>
         </section>
 
         <section class="glass-card about-story">
@@ -403,6 +404,8 @@
           <h3 data-i18n="resourceTitle">The course that helped me learn the material.</h3>
           <p data-i18n="resourceBody">This app is the free practice layer I wished existed. For learning the concepts, the Udemy course below was one of the resources that helped me pass.</p>
           <a href="https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/" target="_blank" rel="noopener noreferrer" data-i18n="resourceCourse">Udemy course that helped me: Ultimate AWS Certified Cloud Practitioner CLF-C02 2026</a>
+          <p data-i18n="officialResourceBody">Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage. This app turns that scope into recall drills, not a replacement for AWS updates.</p>
+          <a href="https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html" target="_blank" rel="noopener noreferrer" data-i18n="officialResourceLink">Official AWS CLF-C02 exam guide</a>
           <p data-i18n="communityResourceBody">For broader community-maintained certification links, the r/AWSCertifications wiki is also useful for pathways, discounts, free learning, and study FAQs. Treat it as community guidance, not official AWS material.</p>
           <a href="https://awscertifications.github.io/AWSCertificationsWiki/" target="_blank" rel="noopener noreferrer" data-i18n="communityResourceLink">r/AWSCertifications community wiki</a>
         </section>
@@ -425,8 +428,8 @@
           <a class="btn btn-primary" href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a class="btn btn-secondary" href="https://www.credly.com/badges/c52c14ed-17c7-4b4f-9c18-a0b8fc22ff6c/public_url" target="_blank" rel="noopener noreferrer">Credly</a>
-          <div class="bmc-script-button" aria-label="Buy Me a Coffee">
-            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+          <div class="bmc-script-button bmc-contact-button" aria-label="Buy Me a Coffee">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Arial" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
           </div>
         </div>
       </section>
@@ -547,7 +550,6 @@
           <button class="btn btn-secondary" id="results-history-btn">View History</button>
           <button class="btn btn-secondary" id="results-share-btn">Share Score</button>
           <button class="btn btn-secondary" id="results-download-card-btn">Download Score Card</button>
-          <a class="btn btn-secondary support-btn" href="https://buymeacoffee.com/josephhauter" target="_blank" rel="noopener noreferrer">Support</a>
         </div>
       </div>
 
@@ -650,34 +652,34 @@
     <section id="study-view" class="view-container animate-fade">
       <div class="quiz-header">
         <div class="quiz-info">
-          <h2 class="quiz-title-text">Study Guide & Cheat Sheets</h2>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Browse, search, and memorize core AWS concepts, trigger words, and exam traps.</span>
+          <h2 class="quiz-title-text" data-i18n="guidePageTitle">Study Guide & Cheat Sheets</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);" data-i18n="guidePageSubtitle">Browse, search, and memorize core AWS concepts, trigger words, and exam traps.</span>
         </div>
-        <button class="btn btn-secondary btn-home">Exit Guide</button>
+        <button class="btn btn-secondary btn-home" data-i18n="exitGuide">Exit Guide</button>
       </div>
 
       <!-- Study Guide Tabs -->
       <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--card-border); margin-bottom: 2rem; padding-bottom: 0.5rem; overflow-x: auto; white-space: nowrap;">
-        <button class="btn btn-secondary tab-guide-btn active" id="tab-guide-concepts" style="border: none; border-radius: 6px; background: none;">💡 Cloud Concepts</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-responsibility" style="border: none; border-radius: 6px; background: none;">🤝 Shared Responsibility</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-directory" style="border: none; border-radius: 6px; background: none;">📚 Service Index & Triggers</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-serverless" style="border: none; border-radius: 6px; background: none;">Serverless Map</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-traps" style="border: none; border-radius: 6px; background: none;">⚠️ Highest-Yield Traps</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-pairs" style="border: none; border-radius: 6px; background: none;">🔄 Confusing Pairs</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-strategy" style="border: none; border-radius: 6px; background: none;">🎯 Last-Minute Strategy</button>
-        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-passplan" style="border: none; border-radius: 6px; background: none;">🏆 7-Day Pass Plan</button>
+        <button class="btn btn-secondary tab-guide-btn active" id="tab-guide-concepts" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabConcepts">Cloud Concepts</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-responsibility" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabResponsibility">Shared Responsibility</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-directory" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabDirectory">Service Index & Triggers</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-serverless" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabServerless">Serverless Map</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-traps" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabTraps">Highest-Yield Traps</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-pairs" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabPairs">Confusing Pairs</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-strategy" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabStrategy">Last-Minute Strategy</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-passplan" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabPassPlan">7-Day Pass Plan</button>
       </div>
 
       <!-- Guide Pane 1: Cloud Concepts -->
       <div class="guide-pane active-pane" id="pane-guide-concepts">
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Core Cloud Concepts</h3>
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;" data-i18n="guideConceptsTitle">Core Cloud Concepts</h3>
           <div style="overflow-x: auto;">
             <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
               <thead>
                 <tr style="border-bottom: 2px solid var(--card-border-hover); color: var(--secondary);">
-                  <th style="padding: 0.75rem;">Concept</th>
-                  <th style="padding: 0.75rem;">Memory Hook / Meaning</th>
+                  <th style="padding: 0.75rem;" data-i18n="guideConceptColumn">Concept</th>
+                  <th style="padding: 0.75rem;" data-i18n="guideMeaningColumn">Memory Hook / Meaning</th>
                 </tr>
               </thead>
               <tbody id="table-concepts-body">
@@ -691,13 +693,13 @@
       <!-- Guide Pane 2: Shared Responsibility -->
       <div class="guide-pane" id="pane-guide-responsibility" style="display: none;">
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Shared Responsibility Matrix</h3>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Remember: AWS is responsible for security <strong>OF</strong> the cloud, and the customer is responsible for security <strong>IN</strong> the cloud.</p>
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;" data-i18n="guideResponsibilityTitle">Shared Responsibility Matrix</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;" data-i18n="guideResponsibilityBody">Remember: AWS is responsible for security OF the cloud, and the customer is responsible for security IN the cloud.</p>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
             <!-- AWS Side -->
             <div style="background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.2); border-radius: 12px; padding: 1.5rem;">
               <h4 style="color: var(--secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                🛡️ AWS Responsibility (OF the Cloud)
+                <span data-i18n="guideAwsResponsibility">AWS Responsibility (OF the Cloud)</span>
               </h4>
               <ul style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);" id="list-aws-resp">
                 <!-- Rendered by JS -->
@@ -706,7 +708,7 @@
             <!-- Customer Side -->
             <div style="background: rgba(217, 70, 239, 0.05); border: 1px solid rgba(217, 70, 239, 0.2); border-radius: 12px; padding: 1.5rem;">
               <h4 style="color: var(--accent-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                🔑 Customer Responsibility (IN the Cloud)
+                <span data-i18n="guideCustomerResponsibility">Customer Responsibility (IN the Cloud)</span>
               </h4>
               <ul style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);" id="list-customer-resp">
                 <!-- Rendered by JS -->
@@ -714,7 +716,7 @@
             </div>
           </div>
 
-          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Common Responsibility Questions</h3>
+          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;" data-i18n="guideResponsibilityQuestions">Common Responsibility Questions</h3>
           <div id="responsibility-qa-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
             <!-- Rendered by JS -->
           </div>
@@ -724,7 +726,7 @@
       <!-- Guide Pane 3: Service Index & Triggers -->
       <div class="guide-pane" id="pane-guide-directory" style="display: none;">
         <div style="margin-bottom: 2rem;">
-          <input type="text" id="guide-search-input" placeholder="Search services, trigger words, or descriptions (e.g. S3, SQL, database)..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
+          <input type="text" id="guide-search-input" placeholder="Search services, trigger words, or descriptions (e.g. S3, SQL, database)..." data-i18n-placeholder="guideSearchPlaceholder" style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
         </div>
 
         <div id="service-directory-container" style="display: flex; flex-direction: column; gap: 2.5rem;">
@@ -735,9 +737,9 @@
       <!-- Guide Pane 4: Serverless Map -->
       <div class="guide-pane" id="pane-guide-serverless" style="display: none;">
         <div class="glass-card serverless-overview-card">
-          <span class="card-badge">Exam shortcut</span>
-          <h3>Serverless services map</h3>
-          <p>For CLF-C02, "serverless" usually means AWS handles capacity, scaling, availability, and much of the infrastructure management. You still configure access, data, costs, and service behavior.</p>
+          <span class="card-badge" data-i18n="serverlessBadgeTitle">Exam shortcut</span>
+          <h3 data-i18n="serverlessTitle">Serverless services map</h3>
+          <p data-i18n="serverlessBody">For CLF-C02, "serverless" usually means AWS handles capacity, scaling, availability, and much of the infrastructure management. You still configure access, data, costs, and service behavior.</p>
           <div id="serverless-summary-grid" class="serverless-summary-grid">
             <!-- Rendered dynamically by JS -->
           </div>
@@ -750,15 +752,15 @@
       <!-- Guide Pane 4: Highest-Yield Traps -->
       <div class="guide-pane" id="pane-guide-traps" style="display: none;">
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);">Highest-Yield Exam Traps</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Recognize these patterns in the exam questions to immediately identify the correct answer.</p>
+          <h3 style="margin-bottom: 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);" data-i18n="trapsTitle">Highest-Yield Exam Traps</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;" data-i18n="trapsBody">Recognize these patterns in the exam questions to immediately identify the correct answer.</p>
           
           <div style="overflow-x: auto;">
             <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
               <thead>
                 <tr style="border-bottom: 2px solid var(--card-border-hover); color: var(--warning);">
-                  <th style="padding: 0.75rem; width: 50%;">If the question says...</th>
-                  <th style="padding: 0.75rem; width: 50%;">The correct answer is...</th>
+                  <th style="padding: 0.75rem; width: 50%;" data-i18n="trapsQuestionColumn">If the question says...</th>
+                  <th style="padding: 0.75rem; width: 50%;" data-i18n="trapsAnswerColumn">The correct answer is...</th>
                 </tr>
               </thead>
               <tbody id="table-traps-body">
@@ -772,7 +774,7 @@
       <!-- Guide Pane 6: Confusing Pairs -->
       <div class="guide-pane" id="pane-guide-pairs" style="display: none;">
         <div style="margin-bottom: 2rem;">
-          <input type="text" id="pairs-search-input" placeholder="Search confusing pairs (e.g. CloudWatch, RDS)..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
+          <input type="text" id="pairs-search-input" placeholder="Search confusing pairs (e.g. CloudWatch, RDS)..." data-i18n-placeholder="pairsSearchPlaceholder" style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
         </div>
         <div id="pairs-directory-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
           <!-- Rendered dynamically by JS -->
@@ -785,10 +787,10 @@
         <!-- Readiness Audit Card -->
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; border-color: rgba(16, 185, 129, 0.25); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%);">
           <h3 style="margin-bottom: 0.5rem; color: var(--success); display: flex; align-items: center; gap: 0.5rem;">
-            🎯 CLF-C02 Readiness Audit
+            <span data-i18n="readinessTitle">CLF-C02 Readiness Audit</span>
           </h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            The app tracks your quiz history and active recall practice. Complete these 6 milestones to build stronger exam-day confidence before the real exam.
+            <span data-i18n="readinessBody">The app tracks your quiz history and active recall practice. Complete these 6 checkpoints to build exam-day confidence before the real exam.</span>
           </p>
           <div style="display: flex; flex-direction: column; gap: 1rem;" id="readiness-checklist-container">
             <!-- Rendered dynamically by JS -->
@@ -800,26 +802,31 @@
           <!-- Domain Weights Card -->
           <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">CLF-C02 Domain Weights</h3>
+              <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);" data-i18n="domainWeightsTitle">CLF-C02 Domain Weights</h3>
               <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;" id="domain-weights-container">
                 <!-- Rendered by JS -->
+              </div>
+              <div class="official-source-card">
+                <span data-i18n="officialSourceBadge">Official source check</span>
+                <p data-i18n="officialSourceBody">Domain weights and scope should be checked against the current AWS exam guide before exam day.</p>
+                <a href="https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html" target="_blank" rel="noopener noreferrer" data-i18n="officialSourceLink">Open AWS exam guide</a>
               </div>
             </div>
           </div>
 
           <!-- Must-Know vs Skip Card -->
           <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column;">
-            <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);">Must-Know vs. Skip Guide</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Focus your final hours where it counts. Don't waste energy memorizing config details.</p>
+            <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);" data-i18n="mustSkipTitle">Must-Know vs. Skip Guide</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;" data-i18n="mustSkipBody">Focus your final hours where it counts. Don't waste energy memorizing config details.</p>
             <div style="display: flex; flex-direction: column; gap: 1rem; flex-grow: 1;">
               <div style="background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 12px; padding: 1.25rem;">
-                <h4 style="color: var(--success); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;">🔥 MUST KNOW HARD</h4>
+                <h4 style="color: var(--success); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;" data-i18n="mustKnowHeading">MUST KNOW HARD</h4>
                 <ul style="padding-left: 1.1rem; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); margin: 0;" id="must-know-list">
                   <!-- Rendered by JS -->
                 </ul>
               </div>
               <div style="background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 12px; padding: 1.25rem;">
-                <h4 style="color: var(--error); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;">⚠️ SKIP / KNOW LIGHTLY</h4>
+                <h4 style="color: var(--error); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;" data-i18n="skipHeading">SKIP / KNOW LIGHTLY</h4>
                 <ul style="padding-left: 1.1rem; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); margin: 0;" id="skip-list">
                   <!-- Rendered by JS -->
                 </ul>
@@ -830,7 +837,7 @@
 
         <!-- Exam-Day Checklist Card -->
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--accent-purple);">Final Exam-Day Method</h3>
+          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--accent-purple);" data-i18n="examDayMethodTitle">Final Exam-Day Method</h3>
           <ul style="padding-left: 1.25rem; font-size: 0.95rem; line-height: 2; color: var(--text-secondary); margin: 0;" id="list-exam-strategy">
             <!-- Rendered by JS -->
           </ul>
@@ -838,8 +845,8 @@
 
         <!-- Last-Page Memory Cheat Sheet Section (No outer card nesting!) -->
         <div style="margin-bottom: 2rem;">
-          <h3 style="margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">🧠 Last-Page Memory Cheat Sheet</h3>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">This super-condensed service summary covers everything you need to review right before entering the exam room.</p>
+          <h3 style="margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);" data-i18n="lastPageTitle">Last-Page Memory Cheat Sheet</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;" data-i18n="lastPageBody">This super-condensed service summary covers everything you need to review right before entering the exam room.</p>
           <div id="last-page-memory-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
             <!-- Rendered by JS -->
           </div>
@@ -849,14 +856,14 @@
       <!-- Guide Pane 7: 7-Day Pass Plan & Proven Strategies -->
       <div class="guide-pane" id="pane-guide-passplan" style="display: none;">
         <div class="glass-card" style="padding: 1.5rem 2rem; margin-bottom: 1.5rem; border-color: rgba(245, 158, 11, 0.25); background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(22, 30, 49, 0.65) 100%);">
-          <h3 style="margin-bottom: 0.5rem; color: var(--warning);">🏆 7-Day Pass Plan</h3>
-          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">A focused daily plan weighted toward the highest-scoring domains. ~2–3 hours/day. Each day lists exactly what to do and why it moves your score.</p>
+          <h3 style="margin-bottom: 0.5rem; color: var(--warning);" data-i18n="passPlanTitle">7-Day Pass Plan</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;" data-i18n="passPlanBody">A focused daily plan weighted toward the highest-scoring domains. About 2-3 hours/day. Each day lists exactly what to do and why it moves your score.</p>
         </div>
         <div id="pass-plan-days" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;"></div>
 
         <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">How Real People Passed — Proven Strategies</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Synthesized from public study reports and AWS-published guidance. Paraphrased — no leaked or proprietary exam content.</p>
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);" data-i18n="passStrategiesTitle">How Real People Passed - Proven Strategies</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;" data-i18n="passStrategiesBody">Synthesized from public study reports and AWS-published guidance. Paraphrased - no leaked or proprietary exam content.</p>
           <div id="pass-plan-strategies" style="display: flex; flex-direction: column; gap: 1rem;"></div>
         </div>
 
@@ -987,11 +994,6 @@
     </div>
     <nav aria-label="Footer links">
       <button class="footer-link-button" type="button" id="footer-open-about" data-i18n="aboutTitle">About & Contact</button>
-      <a href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <span class="bmc-script-button bmc-footer-button" aria-label="Buy Me a Coffee">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-      </span>
     </nav>
     <p data-i18n="footerDisclaimer">This is an independent study tool and is not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). AWS, Amazon, and the AWS logo are trademarks of Amazon.com, Inc. All questions are original practice scenarios created for educational purposes.</p>
   </footer>
@@ -1156,6 +1158,8 @@
           <option value="de">Deutsch</option>
           <option value="it">Italiano</option>
           <option value="nl">Nederlands</option>
+          <option value="hi">हिन्दी</option>
+          <option value="ja">日本語</option>
         </select>
         <span data-i18n="languageHelper">Interface guidance changes language. AWS service names and practice questions stay in English for exam consistency.</span>
       </div>
@@ -1172,11 +1176,6 @@
 
       <div class="settings-links">
         <button class="footer-link-button" type="button" id="settings-open-about" data-i18n="aboutTitle">About & Contact</button>
-        <a href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="bmc-script-button bmc-settings-button" aria-label="Buy Me a Coffee">
-          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
-        </span>
       </div>
 
       <div class="dialog-buttons">

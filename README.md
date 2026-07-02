@@ -10,6 +10,8 @@ I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026. 
 
 I built it because too many useful study workflows were locked behind paywalls, including basics like flashcards, and generic AI/chat study flows can reveal the answer too early. This app keeps the answer hidden until you commit, then gives feedback so you can actually practice retrieval.
 
+I did not pay for separate mock exams while preparing. I used this app's original practice sets as the free practice layer alongside current learning material.
+
 Udemy was also a major part of my prep. This app is best used as a free companion to current learning materials: use a course or official docs to learn, then use this hub to test whether you can retrieve the answer under pressure. The course that helped me was [Ultimate AWS Certified Cloud Practitioner CLF-C02 2026 by Stephane Maarek](https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/).
 
 That result is personal proof that the loop helped me, not a promise that the app alone guarantees a pass.
@@ -32,7 +34,7 @@ When published with GitHub Pages, this project can run at:
 - Rapid trigger drills and a 20-question mixed mini quiz
 - Local score-card PNG download for sharing results
 - Mobile-friendly, keyboard-aware, reduced-motion aware, and installable as a PWA
-- Multilingual interface beta for English, Spanish, Portuguese, French, German, Italian, and Dutch
+- Multilingual interface beta for English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese
 - No accounts, no ads, no backend, no tracking, and no paid dependencies
 
 Note: the interface guidance can switch languages, but the AWS service names and practice questions intentionally stay in English so exam terminology remains consistent.
@@ -62,6 +64,8 @@ The app is built around active recall rather than passive rereading:
 - **Exam-like rehearsal:** timed mock exams help practice under realistic pressure.
 
 This does not guarantee a pass, but the core loop follows well-supported learning techniques. Useful references:
+
+- AWS: [Official CLF-C02 exam guide](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html)
 
 - Roediger & Karpicke, 2006: [Test-enhanced learning and long-term retention](https://pubmed.ncbi.nlm.nih.gov/16507066/)
 - Cepeda et al., 2006: [Distributed practice review and quantitative synthesis](https://pubmed.ncbi.nlm.nih.gov/16719566/)

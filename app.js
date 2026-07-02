@@ -164,13 +164,15 @@ const STORAGE_KEYS = {
 };
 
 const SUPPORTED_LANGUAGES = {
-  en: { label: 'English', htmlLang: 'en' },
-  es: { label: 'Espanol', htmlLang: 'es' },
-  pt: { label: 'Portugues', htmlLang: 'pt-BR' },
-  fr: { label: 'Francais', htmlLang: 'fr' },
-  de: { label: 'Deutsch', htmlLang: 'de' },
-  it: { label: 'Italiano', htmlLang: 'it' },
-  nl: { label: 'Nederlands', htmlLang: 'nl' }
+  en: { label: 'English', nativeLabel: 'English', htmlLang: 'en' },
+  es: { label: 'Espanol', nativeLabel: 'Espanol', htmlLang: 'es' },
+  pt: { label: 'Portugues', nativeLabel: 'Portugues', htmlLang: 'pt-BR' },
+  fr: { label: 'Francais', nativeLabel: 'Francais', htmlLang: 'fr' },
+  de: { label: 'Deutsch', nativeLabel: 'Deutsch', htmlLang: 'de' },
+  it: { label: 'Italiano', nativeLabel: 'Italiano', htmlLang: 'it' },
+  nl: { label: 'Nederlands', nativeLabel: 'Nederlands', htmlLang: 'nl' },
+  hi: { label: 'Hindi', nativeLabel: 'हिन्दी', htmlLang: 'hi' },
+  ja: { label: 'Japanese', nativeLabel: '日本語', htmlLang: 'ja' }
 };
 
 const I18N = {
@@ -700,6 +702,1247 @@ const I18N = {
   }
 };
 
+const I18N_PATCHES = {
+  en: {
+    languageBody: 'Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.',
+    builtBody2: "This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I did not pay for separate mock exams; I used this app's original practice sets alongside current learning material.",
+    officialResourceBody: 'Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage. This app turns that scope into recall drills, not a replacement for AWS updates.',
+    officialResourceLink: 'Official AWS CLF-C02 exam guide',
+    supportButton: 'Support',
+    guidePageTitle: 'Study Guide & Cheat Sheets',
+    guidePageSubtitle: 'Browse, search, and memorize core AWS concepts, trigger words, and exam traps.',
+    exitGuide: 'Exit Guide',
+    guideTabConcepts: 'Cloud Concepts',
+    guideTabResponsibility: 'Shared Responsibility',
+    guideTabDirectory: 'Service Index & Triggers',
+    guideTabServerless: 'Serverless Map',
+    guideTabTraps: 'Highest-Yield Traps',
+    guideTabPairs: 'Confusing Pairs',
+    guideTabStrategy: 'Last-Minute Strategy',
+    guideTabPassPlan: '7-Day Pass Plan',
+    guideConceptsTitle: 'Core Cloud Concepts',
+    guideConceptColumn: 'Concept',
+    guideMeaningColumn: 'Memory Hook / Meaning',
+    guideResponsibilityTitle: 'Shared Responsibility Matrix',
+    guideResponsibilityBody: 'Remember: AWS is responsible for security OF the cloud, and the customer is responsible for security IN the cloud.',
+    guideAwsResponsibility: 'AWS Responsibility (OF the Cloud)',
+    guideCustomerResponsibility: 'Customer Responsibility (IN the Cloud)',
+    guideResponsibilityQuestions: 'Common Responsibility Questions',
+    guideSearchPlaceholder: 'Search services, trigger words, or descriptions (e.g. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Exam shortcut',
+    serverlessTitle: 'Serverless services map',
+    serverlessBody: 'For CLF-C02, "serverless" usually means AWS handles capacity, scaling, availability, and much of the infrastructure management. You still configure access, data, costs, and service behavior.',
+    trapsTitle: 'Highest-Yield Exam Traps',
+    trapsBody: 'Recognize these patterns in the exam questions to quickly identify the likely service.',
+    trapsQuestionColumn: 'If the question says...',
+    trapsAnswerColumn: 'The correct answer is...',
+    pairsSearchPlaceholder: 'Search confusing pairs (e.g. CloudWatch, RDS)...',
+    readinessTitle: 'CLF-C02 Readiness Audit',
+    readinessBody: 'Complete these six checks before exam day. Two are measured by your history; four are honest self-checks.',
+    domainWeightsTitle: 'CLF-C02 Domain Weights',
+    officialSourceBadge: 'Official source check',
+    officialSourceBody: 'Domain weights and scope should be checked against the current AWS exam guide before exam day.',
+    officialSourceLink: 'Open AWS exam guide',
+    mustSkipTitle: 'Must-Know vs. Skip Guide',
+    mustSkipBody: "Focus your final hours where it counts. Don't waste energy memorizing config details.",
+    mustKnowHeading: 'MUST KNOW HARD',
+    skipHeading: 'SKIP / KNOW LIGHTLY',
+    examDayMethodTitle: 'Final Exam-Day Method',
+    lastPageTitle: 'Last-Page Memory Cheat Sheet',
+    lastPageBody: 'This super-condensed service summary covers everything you need to review right before entering the exam room.',
+    passPlanTitle: '7-Day Pass Plan',
+    passPlanBody: 'A focused daily plan weighted toward the highest-scoring domains. About 2-3 hours/day. Each day lists exactly what to do and why it moves your score.',
+    passStrategiesTitle: 'How Real People Passed - Proven Strategies',
+    passStrategiesBody: 'Synthesized from public study reports and AWS-published guidance. Paraphrased - no leaked or proprietary exam content.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'exam-relevant services flagged',
+    serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
+    serverlessSummaryCaution: 'but IAM, data, cost, and config still matter',
+    serverlessServiceCount: '{count} services',
+    keyTriggerLabel: 'Key trigger',
+    managedServiceFallback: 'Managed AWS service',
+    noServiceResults: 'No services found matching "{query}".',
+    trapQuestionTemplate: 'If the question says "{term}"...',
+    trapAnswerTemplate: 'The correct answer is "{answer}"',
+    passPlanDayLabel: 'Day {day}: {focus}',
+    passPlanWhyLabel: 'Why',
+    selectedPlanSummary: 'Selected: {label}',
+    plan90: '90 minutes',
+    plan120: '2 hours',
+    plan180: '3 hours',
+    readinessMockTitle: 'Hit 80%+ on two timed mocks',
+    readinessMockAchieved: 'Done: {count} mocks at 80%+.',
+    readinessMockProgress: 'Need two mocks at 80%+; current count: {count}.',
+    readinessWrongTitle: 'Keep wrong-answer pool under 5',
+    readinessWrongAchieved: 'Done: wrong-answer pool is small ({count} items).',
+    readinessWrongProgress: 'Keep the wrong-answer pool under 5; current count: {count}.',
+    readinessMasterTitle: 'Recall the 47 service anchors without looking',
+    readinessMasterInfo: 'Self-check: can you explain the Master Memory Page out loud?',
+    readinessPairsTitle: 'Explain the top confusing pairs',
+    readinessPairsInfo: 'Self-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, and the rest.',
+    readinessDrillsTitle: 'Score 80%+ on Rapid Trigger Drills',
+    readinessDrillsInfo: 'Self-check: match scenario triggers to services quickly and consistently.',
+    readinessOfficialTitle: 'Review official AWS practice questions',
+    readinessOfficialInfo: 'Self-check: compare your wording instincts against current AWS materials.',
+    readinessAchievedLabel: 'Achieved',
+    readinessProgressLabel: 'In progress'
+  },
+  es: {
+    whyBadge: 'Por que Cloud Recall Lab',
+    whyTitle: 'La capa de practica gratis que queria mientras estudiaba.',
+    whyBody: 'Muchas herramientas esconden practica util tras paywalls o muestran respuestas demasiado pronto. Este lab te obliga a elegir, recibir feedback y revisar errores sin crear cuenta.',
+    whyProofKicker: 'Prueba personal, no promesa',
+    whyProofTitle: 'Use esta app mientras estudiaba y aprobe CLF-C02 el 1 de julio de 2026.',
+    whyProofBody: 'Mi reporte mostro Meets Competencies en los cuatro dominios. No garantiza resultados, pero muestra que el ciclo puede funcionar con materiales actuales.',
+    whyCredentialLink: 'Verificar mi credencial AWS en Credly',
+    whyPillPassed: 'Aprobado el 1 de julio de 2026',
+    whyPillDomains: 'Meets Competencies en todos los dominios',
+    whyPillCourse: 'Mejor con curso actual o docs AWS',
+    whyPillNoDumps: 'Practica original, sin braindumps',
+    languageBody: 'Cambia la interfaz entre ingles, espanol, portugues, frances, aleman, italiano, neerlandes, hindi y japones. Las preguntas quedan en ingles para mantener los terminos AWS consistentes.',
+    builtBody2: 'La herramienta mantiene el ciclo simple: practicar bajo presion, ocultar respuestas hasta elegir, revisar errores y mantener visibles los temas debiles. No pague por mocks separados; use los sets originales de esta app junto con material actualizado.',
+    communityResourceBody: 'Para enlaces mantenidos por la comunidad, la wiki de r/AWSCertifications ayuda con rutas, descuentos, recursos gratis y FAQs. Usala como guia comunitaria, no material oficial AWS.',
+    communityResourceLink: 'Wiki comunitaria r/AWSCertifications',
+    officialResourceBody: 'Usa la guia oficial de AWS como fuente de verdad para alcance, pesos de dominio y servicios. Esta app convierte ese alcance en practica de recuerdo.',
+    officialResourceLink: 'Guia oficial AWS CLF-C02',
+    supportButton: 'Apoyar',
+    guidePageTitle: 'Guia de estudio y chuletas',
+    guidePageSubtitle: 'Busca y memoriza conceptos AWS, palabras trigger y trampas de examen.',
+    exitGuide: 'Salir de guia',
+    guideTabConcepts: 'Conceptos cloud',
+    guideTabResponsibility: 'Responsabilidad compartida',
+    guideTabDirectory: 'Indice de servicios',
+    guideTabServerless: 'Mapa serverless',
+    guideTabTraps: 'Trampas clave',
+    guideTabPairs: 'Pares confusos',
+    guideTabStrategy: 'Estrategia final',
+    guideTabPassPlan: 'Plan de 7 dias',
+    guideConceptsTitle: 'Conceptos cloud centrales',
+    guideConceptColumn: 'Concepto',
+    guideMeaningColumn: 'Gancho / significado',
+    guideResponsibilityTitle: 'Matriz de responsabilidad compartida',
+    guideResponsibilityBody: 'Recuerda: AWS protege la nube; el cliente protege lo que configura dentro de la nube.',
+    guideAwsResponsibility: 'Responsabilidad de AWS',
+    guideCustomerResponsibility: 'Responsabilidad del cliente',
+    guideResponsibilityQuestions: 'Preguntas comunes de responsabilidad',
+    guideSearchPlaceholder: 'Busca servicios, triggers o descripciones (ej. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Atajo de examen',
+    serverlessTitle: 'Mapa de servicios serverless',
+    serverlessBody: 'En CLF-C02, serverless suele significar que AWS maneja capacidad, escalado, disponibilidad y mucha infraestructura. Tu sigues configurando acceso, datos, costos y comportamiento.',
+    trapsTitle: 'Trampas de examen clave',
+    trapsBody: 'Reconoce estos patrones para identificar rapido el servicio probable.',
+    trapsQuestionColumn: 'Si la pregunta dice...',
+    trapsAnswerColumn: 'La respuesta correcta es...',
+    pairsSearchPlaceholder: 'Busca pares confusos (ej. CloudWatch, RDS)...',
+    readinessTitle: 'Auditoria de preparacion CLF-C02',
+    readinessBody: 'Completa seis checks antes del examen. Dos se miden con tu historial; cuatro son autoevaluaciones honestas.',
+    domainWeightsTitle: 'Pesos de dominio CLF-C02',
+    officialSourceBadge: 'Fuente oficial',
+    officialSourceBody: 'Antes del examen, confirma pesos y alcance en la guia actual de AWS.',
+    officialSourceLink: 'Abrir guia AWS',
+    mustSkipTitle: 'Que saber vs. que dejar ligero',
+    mustSkipBody: 'Enfoca tus ultimas horas donde cuenta. No memorices detalles de configuracion.',
+    mustKnowHeading: 'SABER MUY BIEN',
+    skipHeading: 'SALTAR / SABER LIGERO',
+    examDayMethodTitle: 'Metodo final de examen',
+    lastPageTitle: 'Chuleta final de memoria',
+    lastPageBody: 'Resumen condensado para revisar justo antes del examen.',
+    passPlanTitle: 'Plan de 7 dias',
+    passPlanBody: 'Plan diario enfocado en los dominios con mas peso. Unas 2-3 horas/dia.',
+    passStrategiesTitle: 'Estrategias reales de aprobados',
+    passStrategiesBody: 'Sintetizado de reportes publicos y guia AWS. Parafraseado, sin contenido filtrado.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'servicios relevantes marcados',
+    serverlessSummaryBuckets: 'grupos mentales: compute, APIs, datos, integracion, AI',
+    serverlessSummaryCaution: 'sin servidores, pero IAM, datos, costo y config importan',
+    serverlessServiceCount: '{count} servicios',
+    keyTriggerLabel: 'Trigger clave',
+    managedServiceFallback: 'Servicio AWS administrado',
+    noServiceResults: 'No se encontraron servicios para "{query}".',
+    trapQuestionTemplate: 'Si la pregunta dice "{term}"...',
+    trapAnswerTemplate: 'La respuesta correcta es "{answer}"',
+    passPlanDayLabel: 'Dia {day}: {focus}',
+    passPlanWhyLabel: 'Por que',
+    selectedPlanSummary: 'Seleccionado: {label}',
+    plan90: '90 minutos',
+    plan120: '2 horas',
+    plan180: '3 horas',
+    readinessMockTitle: '80%+ en dos mocks cronometrados',
+    readinessMockAchieved: 'Listo: {count} mocks con 80%+.',
+    readinessMockProgress: 'Necesitas dos mocks con 80%+; actual: {count}.',
+    readinessWrongTitle: 'Mantener menos de 5 errores pendientes',
+    readinessWrongAchieved: 'Listo: pool de errores pequeno ({count}).',
+    readinessWrongProgress: 'Mantén el pool bajo 5; actual: {count}.',
+    readinessMasterTitle: 'Recordar los 47 anchors sin mirar',
+    readinessMasterInfo: 'Auto-check: puedes explicar la Master Memory Page en voz alta?',
+    readinessPairsTitle: 'Explicar los pares confusos principales',
+    readinessPairsInfo: 'Auto-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc.',
+    readinessDrillsTitle: '80%+ en Rapid Trigger Drills',
+    readinessDrillsInfo: 'Auto-check: empareja triggers con servicios rapido y consistente.',
+    readinessOfficialTitle: 'Revisar preguntas oficiales AWS',
+    readinessOfficialInfo: 'Auto-check: compara tu intuicion con materiales AWS actuales.',
+    readinessAchievedLabel: 'Logrado',
+    readinessProgressLabel: 'En progreso'
+  },
+  pt: {
+    whyBadge: 'Por que Cloud Recall Lab',
+    whyTitle: 'A camada de pratica gratis que eu queria enquanto estudava.',
+    whyBody: 'Muitas ferramentas escondem pratica util atras de paywall ou mostram respostas cedo demais. Este lab faz voce escolher, receber feedback e revisar erros sem conta.',
+    whyProofKicker: 'Prova pessoal, nao promessa',
+    whyProofTitle: 'Usei esta app na preparacao e passei CLF-C02 em 1 de julho de 2026.',
+    whyProofBody: 'Meu relatorio mostrou Meets Competencies nos quatro dominios. Nao garante resultado, mas mostra que o ciclo pode funcionar com materiais atuais.',
+    whyCredentialLink: 'Verificar minha credencial AWS no Credly',
+    whyPillPassed: 'Passei em 1 de julho de 2026',
+    whyPillDomains: 'Meets Competencies em todos os dominios',
+    whyPillCourse: 'Melhor com curso atual ou docs AWS',
+    whyPillNoDumps: 'Pratica original, sem braindumps',
+    languageBody: 'Troque a interface entre ingles, espanhol, portugues, frances, alemao, italiano, holandes, hindi e japones. As perguntas ficam em ingles para preservar termos AWS.',
+    builtBody2: 'A ferramenta mantem o ciclo simples: praticar sob pressao, esconder respostas ate escolher, revisar erros e manter topicos fracos visiveis. Nao paguei por simulados separados; usei os sets originais da app com material atualizado.',
+    communityResourceBody: 'Para links mantidos pela comunidade, a wiki r/AWSCertifications ajuda com caminhos, descontos, recursos gratis e FAQs. Use como guia comunitario, nao material oficial AWS.',
+    communityResourceLink: 'Wiki r/AWSCertifications',
+    officialResourceBody: 'Use a guia oficial da AWS como fonte de verdade para escopo, pesos dos dominios e servicos. Esta app transforma esse escopo em pratica de recall.',
+    officialResourceLink: 'Guia oficial AWS CLF-C02',
+    supportButton: 'Apoiar',
+    guidePageTitle: 'Guia de estudo e colas',
+    guidePageSubtitle: 'Pesquise e memorize conceitos AWS, palavras-gatilho e armadilhas do exame.',
+    exitGuide: 'Sair do guia',
+    guideTabConcepts: 'Conceitos cloud',
+    guideTabResponsibility: 'Responsabilidade compartilhada',
+    guideTabDirectory: 'Indice de servicos',
+    guideTabServerless: 'Mapa serverless',
+    guideTabTraps: 'Armadilhas chave',
+    guideTabPairs: 'Pares confusos',
+    guideTabStrategy: 'Estrategia final',
+    guideTabPassPlan: 'Plano de 7 dias',
+    guideConceptsTitle: 'Conceitos cloud principais',
+    guideConceptColumn: 'Conceito',
+    guideMeaningColumn: 'Gancho / significado',
+    guideResponsibilityTitle: 'Matriz de responsabilidade compartilhada',
+    guideResponsibilityBody: 'Lembre: AWS protege a nuvem; o cliente protege o que configura dentro dela.',
+    guideAwsResponsibility: 'Responsabilidade da AWS',
+    guideCustomerResponsibility: 'Responsabilidade do cliente',
+    guideResponsibilityQuestions: 'Perguntas comuns de responsabilidade',
+    guideSearchPlaceholder: 'Busque servicos, gatilhos ou descricoes (ex. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Atalho do exame',
+    serverlessTitle: 'Mapa de servicos serverless',
+    serverlessBody: 'No CLF-C02, serverless geralmente significa que a AWS cuida de capacidade, escala, disponibilidade e parte da infraestrutura. Voce ainda configura acesso, dados, custos e comportamento.',
+    trapsTitle: 'Armadilhas principais do exame',
+    trapsBody: 'Reconheca estes padroes para identificar rapidamente o servico provavel.',
+    trapsQuestionColumn: 'Se a pergunta diz...',
+    trapsAnswerColumn: 'A resposta correta e...',
+    pairsSearchPlaceholder: 'Busque pares confusos (ex. CloudWatch, RDS)...',
+    readinessTitle: 'Auditoria de preparo CLF-C02',
+    readinessBody: 'Complete seis checks antes do exame. Dois vem do historico; quatro sao autoavaliacoes honestas.',
+    domainWeightsTitle: 'Pesos dos dominios CLF-C02',
+    officialSourceBadge: 'Fonte oficial',
+    officialSourceBody: 'Antes do exame, confirme pesos e escopo na guia atual da AWS.',
+    officialSourceLink: 'Abrir guia AWS',
+    mustSkipTitle: 'Saber bem vs. saber leve',
+    mustSkipBody: 'Foque as ultimas horas onde importa. Nao memorize detalhes de configuracao.',
+    mustKnowHeading: 'SABER MUITO BEM',
+    skipHeading: 'PULAR / SABER LEVE',
+    examDayMethodTitle: 'Metodo final de exame',
+    lastPageTitle: 'Cola final de memoria',
+    lastPageBody: 'Resumo condensado para revisar logo antes da prova.',
+    passPlanTitle: 'Plano de 7 dias',
+    passPlanBody: 'Plano diario focado nos dominios de maior peso. Cerca de 2-3 horas/dia.',
+    passStrategiesTitle: 'Estrategias reais de aprovados',
+    passStrategiesBody: 'Sintese de relatos publicos e guia AWS. Parafraseado, sem conteudo vazado.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'servicos relevantes marcados',
+    serverlessSummaryBuckets: 'grupos mentais: compute, APIs, dados, integracao, AI',
+    serverlessSummaryCaution: 'sem servidores, mas IAM, dados, custo e config importam',
+    serverlessServiceCount: '{count} servicos',
+    keyTriggerLabel: 'Gatilho chave',
+    managedServiceFallback: 'Servico AWS gerenciado',
+    noServiceResults: 'Nenhum servico encontrado para "{query}".',
+    trapQuestionTemplate: 'Se a pergunta diz "{term}"...',
+    trapAnswerTemplate: 'A resposta correta e "{answer}"',
+    passPlanDayLabel: 'Dia {day}: {focus}',
+    passPlanWhyLabel: 'Por que',
+    selectedPlanSummary: 'Selecionado: {label}',
+    plan90: '90 minutos',
+    plan120: '2 horas',
+    plan180: '3 horas',
+    readinessMockTitle: '80%+ em dois simulados cronometrados',
+    readinessMockAchieved: 'Feito: {count} simulados com 80%+.',
+    readinessMockProgress: 'Precisa de dois simulados com 80%+; atual: {count}.',
+    readinessWrongTitle: 'Manter menos de 5 erros pendentes',
+    readinessWrongAchieved: 'Feito: pool de erros pequeno ({count}).',
+    readinessWrongProgress: 'Mantenha o pool abaixo de 5; atual: {count}.',
+    readinessMasterTitle: 'Recordar os 47 anchors sem olhar',
+    readinessMasterInfo: 'Auto-check: consegue explicar a Master Memory Page em voz alta?',
+    readinessPairsTitle: 'Explicar os principais pares confusos',
+    readinessPairsInfo: 'Auto-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc.',
+    readinessDrillsTitle: '80%+ nos Rapid Trigger Drills',
+    readinessDrillsInfo: 'Auto-check: ligue gatilhos aos servicos rapido e consistente.',
+    readinessOfficialTitle: 'Revisar perguntas oficiais AWS',
+    readinessOfficialInfo: 'Auto-check: compare sua intuicao com materiais AWS atuais.',
+    readinessAchievedLabel: 'Concluido',
+    readinessProgressLabel: 'Em progresso'
+  },
+  fr: {
+    whyBadge: 'Pourquoi Cloud Recall Lab',
+    whyTitle: 'La couche de pratique gratuite que je voulais pendant mes revisions.',
+    whyBody: "Beaucoup d'outils cachent la pratique utile derriere un paywall ou revelent les reponses trop tot. Ce lab force le choix, puis le feedback et la revision.",
+    whyProofKicker: 'Preuve personnelle, pas promesse',
+    whyProofTitle: "J'ai utilise cette app pour preparer et reussir CLF-C02 le 1 juillet 2026.",
+    whyProofBody: 'Mon rapport indiquait Meets Competencies dans les quatre domaines. Cela ne garantit rien, mais montre que la boucle peut aider avec des ressources actuelles.',
+    whyCredentialLink: 'Verifier ma certification AWS sur Credly',
+    whyPillPassed: 'Reussi le 1 juillet 2026',
+    whyPillDomains: 'Meets Competencies dans tous les domaines',
+    whyPillCourse: 'Mieux avec un cours actuel ou docs AWS',
+    whyPillNoDumps: 'Pratique originale, pas de braindumps',
+    languageBody: "Changez l'interface entre anglais, espagnol, portugais, francais, allemand, italien, neerlandais, hindi et japonais. Les questions restent en anglais pour garder les termes AWS.",
+    builtBody2: "L'outil garde la boucle simple: pratique sous pression, reponses cachees jusqu'au choix, revision des erreurs et sujets faibles visibles. Je n'ai pas paye de mocks separes; j'ai utilise les sets originaux de l'app avec du contenu actuel.",
+    communityResourceBody: 'Pour les liens communautaires, la wiki r/AWSCertifications aide avec parcours, remises, ressources gratuites et FAQ. A utiliser comme guide communautaire, pas officiel AWS.',
+    communityResourceLink: 'Wiki r/AWSCertifications',
+    officialResourceBody: "Utilisez le guide officiel AWS comme source de verite pour le perimetre, les poids de domaines et les services. Cette app transforme ce perimetre en pratique de rappel.",
+    officialResourceLink: 'Guide officiel AWS CLF-C02',
+    supportButton: 'Soutenir',
+    guidePageTitle: 'Guide et fiches de revision',
+    guidePageSubtitle: 'Cherchez et memorisez concepts AWS, mots-declencheurs et pieges.',
+    exitGuide: 'Quitter le guide',
+    guideTabConcepts: 'Concepts cloud',
+    guideTabResponsibility: 'Responsabilite partagee',
+    guideTabDirectory: 'Index services',
+    guideTabServerless: 'Carte serverless',
+    guideTabTraps: 'Pieges majeurs',
+    guideTabPairs: 'Paires confuses',
+    guideTabStrategy: 'Strategie finale',
+    guideTabPassPlan: 'Plan 7 jours',
+    guideConceptsTitle: 'Concepts cloud essentiels',
+    guideConceptColumn: 'Concept',
+    guideMeaningColumn: 'Memo / signification',
+    guideResponsibilityTitle: 'Matrice de responsabilite partagee',
+    guideResponsibilityBody: 'Rappel: AWS securise le cloud; le client securise ce qu il configure dans le cloud.',
+    guideAwsResponsibility: 'Responsabilite AWS',
+    guideCustomerResponsibility: 'Responsabilite client',
+    guideResponsibilityQuestions: 'Questions courantes',
+    guideSearchPlaceholder: 'Rechercher services, declencheurs ou descriptions (ex. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Raccourci examen',
+    serverlessTitle: 'Carte des services serverless',
+    serverlessBody: "Pour CLF-C02, serverless signifie souvent qu AWS gere capacite, mise a l'echelle, disponibilite et une grande partie de l'infrastructure. Vous configurez encore acces, donnees, couts et comportement.",
+    trapsTitle: 'Pieges majeurs de l examen',
+    trapsBody: 'Reconnaissez ces motifs pour identifier vite le service probable.',
+    trapsQuestionColumn: 'Si la question dit...',
+    trapsAnswerColumn: 'La bonne reponse est...',
+    pairsSearchPlaceholder: 'Rechercher paires confuses (ex. CloudWatch, RDS)...',
+    readinessTitle: 'Audit de preparation CLF-C02',
+    readinessBody: 'Completez six checks avant l examen. Deux viennent de l historique; quatre sont des auto-checks honnetes.',
+    domainWeightsTitle: 'Poids des domaines CLF-C02',
+    officialSourceBadge: 'Source officielle',
+    officialSourceBody: 'Avant l examen, verifiez poids et perimetre dans le guide AWS actuel.',
+    officialSourceLink: 'Ouvrir guide AWS',
+    mustSkipTitle: 'A savoir vs. leger',
+    mustSkipBody: 'Concentrez vos dernieres heures. Ne memorisez pas les details de configuration.',
+    mustKnowHeading: 'A SAVOIR FORT',
+    skipHeading: 'SAUTER / SAVOIR LEGER',
+    examDayMethodTitle: 'Methode finale',
+    lastPageTitle: 'Fiche memoire finale',
+    lastPageBody: 'Resume ultra-condense a relire juste avant l examen.',
+    passPlanTitle: 'Plan 7 jours',
+    passPlanBody: 'Plan quotidien oriente vers les domaines les plus ponderes. Environ 2-3 h/jour.',
+    passStrategiesTitle: 'Strategies de personnes qui ont reussi',
+    passStrategiesBody: 'Synthese de rapports publics et de guidance AWS. Paraphrase, sans contenu divulgue.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'services pertinents marques',
+    serverlessSummaryBuckets: 'groupes mentaux: compute, APIs, donnees, integration, AI',
+    serverlessSummaryCaution: 'sans serveurs, mais IAM, donnees, couts et config comptent',
+    serverlessServiceCount: '{count} services',
+    keyTriggerLabel: 'Declencheur cle',
+    managedServiceFallback: 'Service AWS gere',
+    noServiceResults: 'Aucun service trouve pour "{query}".',
+    trapQuestionTemplate: 'Si la question dit "{term}"...',
+    trapAnswerTemplate: 'La bonne reponse est "{answer}"',
+    passPlanDayLabel: 'Jour {day}: {focus}',
+    passPlanWhyLabel: 'Pourquoi',
+    selectedPlanSummary: 'Selection: {label}',
+    plan90: '90 minutes',
+    plan120: '2 heures',
+    plan180: '3 heures',
+    readinessMockTitle: '80%+ sur deux mocks chronometres',
+    readinessMockAchieved: 'Fait: {count} mocks a 80%+.',
+    readinessMockProgress: 'Il faut deux mocks a 80%+; actuel: {count}.',
+    readinessWrongTitle: 'Garder moins de 5 erreurs',
+    readinessWrongAchieved: 'Fait: petite reserve d erreurs ({count}).',
+    readinessWrongProgress: 'Gardez la reserve sous 5; actuel: {count}.',
+    readinessMasterTitle: 'Rappeler les 47 ancres sans regarder',
+    readinessMasterInfo: 'Auto-check: pouvez-vous expliquer la Master Memory Page a voix haute?',
+    readinessPairsTitle: 'Expliquer les paires confuses',
+    readinessPairsInfo: 'Auto-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc.',
+    readinessDrillsTitle: '80%+ aux Rapid Trigger Drills',
+    readinessDrillsInfo: 'Auto-check: relier vite les declencheurs aux services.',
+    readinessOfficialTitle: 'Revoir les questions officielles AWS',
+    readinessOfficialInfo: 'Auto-check: comparez votre instinct aux supports AWS actuels.',
+    readinessAchievedLabel: 'Acquis',
+    readinessProgressLabel: 'En cours'
+  },
+  de: {
+    whyBadge: 'Warum Cloud Recall Lab',
+    whyTitle: 'Die kostenlose Praxis-Schicht, die ich beim Lernen wollte.',
+    whyBody: 'Viele Tools verstecken gute Praxis hinter Paywalls oder zeigen Antworten zu frueh. Dieses Lab zwingt zur Entscheidung, dann Feedback und Fehlerreview.',
+    whyProofKicker: 'Persoenlicher Nachweis, kein Versprechen',
+    whyProofTitle: 'Ich nutzte diese App in der Vorbereitung und bestand CLF-C02 am 1. Juli 2026.',
+    whyProofBody: 'Mein Report zeigte Meets Competencies in allen vier Domains. Das garantiert nichts, zeigt aber, dass der Loop mit aktuellen Materialien funktionieren kann.',
+    whyCredentialLink: 'AWS-Credential auf Credly verifizieren',
+    whyPillPassed: 'Bestanden am 1. Juli 2026',
+    whyPillDomains: 'Meets Competencies in allen Domains',
+    whyPillCourse: 'Am besten mit aktuellem Kurs oder AWS Docs',
+    whyPillNoDumps: 'Originale Praxis, keine Braindumps',
+    languageBody: 'Wechsle die Interface-Texte zwischen Englisch, Spanisch, Portugiesisch, Franzoesisch, Deutsch, Italienisch, Niederlaendisch, Hindi und Japanisch. Fragen bleiben fuer AWS-Begriffe auf Englisch.',
+    builtBody2: 'Das Tool haelt den Loop einfach: unter Druck ueben, Antworten bis zur Auswahl verstecken, Fehler pruefen und schwache Themen sichtbar halten. Ich habe keine separaten Mock Exams bezahlt; ich nutzte die originalen Sets dieser App plus aktuelles Lernmaterial.',
+    communityResourceBody: 'Fuer Community-Links ist die r/AWSCertifications-Wiki hilfreich fuer Pfade, Rabatte, freie Ressourcen und FAQs. Das ist Community-Hilfe, kein offizielles AWS-Material.',
+    communityResourceLink: 'r/AWSCertifications Community-Wiki',
+    officialResourceBody: 'Nutze den offiziellen AWS Exam Guide als Quelle fuer Scope, Domain-Gewichte und Services. Diese App macht daraus Recall-Praxis.',
+    officialResourceLink: 'Offizieller AWS CLF-C02 Guide',
+    supportButton: 'Unterstuetzen',
+    guidePageTitle: 'Lernhilfe und Spickzettel',
+    guidePageSubtitle: 'Suche und merke AWS-Konzepte, Trigger-Woerter und Pruefungsfallen.',
+    exitGuide: 'Guide verlassen',
+    guideTabConcepts: 'Cloud-Konzepte',
+    guideTabResponsibility: 'Shared Responsibility',
+    guideTabDirectory: 'Service-Index',
+    guideTabServerless: 'Serverless-Karte',
+    guideTabTraps: 'Top-Fallen',
+    guideTabPairs: 'Verwechslungs-Paare',
+    guideTabStrategy: 'Finale Strategie',
+    guideTabPassPlan: '7-Tage-Plan',
+    guideConceptsTitle: 'Wichtige Cloud-Konzepte',
+    guideConceptColumn: 'Konzept',
+    guideMeaningColumn: 'Merksatz / Bedeutung',
+    guideResponsibilityTitle: 'Shared-Responsibility-Matrix',
+    guideResponsibilityBody: 'Merke: AWS schuetzt die Cloud; Kunden schuetzen, was sie in der Cloud konfigurieren.',
+    guideAwsResponsibility: 'AWS-Verantwortung',
+    guideCustomerResponsibility: 'Kundenverantwortung',
+    guideResponsibilityQuestions: 'Typische Fragen',
+    guideSearchPlaceholder: 'Services, Trigger oder Beschreibungen suchen (z.B. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Pruefungsabkuerzung',
+    serverlessTitle: 'Serverless-Service-Karte',
+    serverlessBody: 'Fuer CLF-C02 heisst serverless meist: AWS verwaltet Kapazitaet, Skalierung, Verfuegbarkeit und viel Infrastruktur. Zugriff, Daten, Kosten und Verhalten konfigurierst du weiter.',
+    trapsTitle: 'Wichtige Pruefungsfallen',
+    trapsBody: 'Erkenne diese Muster, um den wahrscheinlichen Service schnell zu finden.',
+    trapsQuestionColumn: 'Wenn die Frage sagt...',
+    trapsAnswerColumn: 'Die richtige Antwort ist...',
+    pairsSearchPlaceholder: 'Verwechslungs-Paare suchen (z.B. CloudWatch, RDS)...',
+    readinessTitle: 'CLF-C02 Readiness Audit',
+    readinessBody: 'Erledige sechs Checks vor dem Examen. Zwei misst die Historie; vier sind ehrliche Selbstchecks.',
+    domainWeightsTitle: 'CLF-C02 Domain-Gewichte',
+    officialSourceBadge: 'Offizielle Quelle',
+    officialSourceBody: 'Pruefe Gewichte und Scope vor dem Examen im aktuellen AWS Guide.',
+    officialSourceLink: 'AWS Guide oeffnen',
+    mustSkipTitle: 'Muss wissen vs. leicht wissen',
+    mustSkipBody: 'Nutze die letzten Stunden fuer das Wichtige. Keine Config-Details auswendig lernen.',
+    mustKnowHeading: 'SEHR GUT WISSEN',
+    skipHeading: 'UEBERSPRINGEN / LEICHT WISSEN',
+    examDayMethodTitle: 'Finale Examensmethode',
+    lastPageTitle: 'Letzte Memory-Cheat-Sheet',
+    lastPageBody: 'Stark verdichtete Zusammenfassung fuer direkt vor dem Examen.',
+    passPlanTitle: '7-Tage-Plan',
+    passPlanBody: 'Taeglicher Plan nach den hoechstgewichteten Domains. Etwa 2-3 Stunden/Tag.',
+    passStrategiesTitle: 'Strategien von Leuten, die bestanden haben',
+    passStrategiesBody: 'Aus oeffentlichen Berichten und AWS-Guidance zusammengefasst. Paraphrasiert, ohne geleakte Inhalte.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'relevante Services markiert',
+    serverlessSummaryBuckets: 'Denkgruppen: Compute, APIs, Daten, Integration, AI',
+    serverlessSummaryCaution: 'keine Server, aber IAM, Daten, Kosten und Config zaehlen',
+    serverlessServiceCount: '{count} Services',
+    keyTriggerLabel: 'Schluessel-Trigger',
+    managedServiceFallback: 'Managed AWS Service',
+    noServiceResults: 'Keine Services fuer "{query}" gefunden.',
+    trapQuestionTemplate: 'Wenn die Frage "{term}" sagt...',
+    trapAnswerTemplate: 'Die richtige Antwort ist "{answer}"',
+    passPlanDayLabel: 'Tag {day}: {focus}',
+    passPlanWhyLabel: 'Warum',
+    selectedPlanSummary: 'Ausgewaehlt: {label}',
+    plan90: '90 Minuten',
+    plan120: '2 Stunden',
+    plan180: '3 Stunden',
+    readinessMockTitle: '80%+ in zwei Zeit-Mocks',
+    readinessMockAchieved: 'Erledigt: {count} Mocks mit 80%+.',
+    readinessMockProgress: 'Du brauchst zwei Mocks mit 80%+; aktuell: {count}.',
+    readinessWrongTitle: 'Fehlerpool unter 5 halten',
+    readinessWrongAchieved: 'Erledigt: Fehlerpool ist klein ({count}).',
+    readinessWrongProgress: 'Halte den Pool unter 5; aktuell: {count}.',
+    readinessMasterTitle: '47 Service-Anker ohne Blick abrufen',
+    readinessMasterInfo: 'Selbstcheck: kannst du die Master Memory Page laut erklaeren?',
+    readinessPairsTitle: 'Top-Verwechslungs-Paare erklaeren',
+    readinessPairsInfo: 'Selbstcheck: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, usw.',
+    readinessDrillsTitle: '80%+ bei Rapid Trigger Drills',
+    readinessDrillsInfo: 'Selbstcheck: Trigger schnell und konsistent Services zuordnen.',
+    readinessOfficialTitle: 'Offizielle AWS Praxisfragen reviewen',
+    readinessOfficialInfo: 'Selbstcheck: gleiche dein Wortlaut-Gefuehl mit aktuellen AWS-Materialien ab.',
+    readinessAchievedLabel: 'Erreicht',
+    readinessProgressLabel: 'In Arbeit'
+  },
+  it: {
+    whyBadge: 'Perche Cloud Recall Lab',
+    whyTitle: 'Il livello di pratica gratis che avrei voluto mentre studiavo.',
+    whyBody: 'Molti strumenti nascondono pratica utile dietro paywall o mostrano risposte troppo presto. Questo lab ti fa scegliere, poi ricevere feedback e rivedere errori.',
+    whyProofKicker: 'Prova personale, non promessa',
+    whyProofTitle: 'Ho usato questa app durante la preparazione e ho passato CLF-C02 il 1 luglio 2026.',
+    whyProofBody: 'Il mio report mostrava Meets Competencies in tutti e quattro i domini. Non garantisce risultati, ma mostra che il ciclo puo funzionare con materiali aggiornati.',
+    whyCredentialLink: 'Verifica la mia credenziale AWS su Credly',
+    whyPillPassed: 'Passato il 1 luglio 2026',
+    whyPillDomains: 'Meets Competencies in tutti i domini',
+    whyPillCourse: 'Meglio con corso aggiornato o docs AWS',
+    whyPillNoDumps: 'Pratica originale, niente braindump',
+    languageBody: 'Cambia interfaccia tra inglese, spagnolo, portoghese, francese, tedesco, italiano, olandese, hindi e giapponese. Le domande restano in inglese per preservare i termini AWS.',
+    builtBody2: "Lo strumento mantiene il ciclo semplice: pratica sotto pressione, risposte nascoste finche scegli, revisione degli errori e punti deboli visibili. Non ho pagato mock separati; ho usato i set originali dell'app con materiale aggiornato.",
+    communityResourceBody: 'Per link della community, la wiki r/AWSCertifications aiuta con percorsi, sconti, risorse gratis e FAQ. Usala come guida community, non materiale ufficiale AWS.',
+    communityResourceLink: 'Wiki r/AWSCertifications',
+    officialResourceBody: "Usa la guida ufficiale AWS come fonte per scope, pesi dei domini e servizi. Questa app trasforma quello scope in pratica di richiamo.",
+    officialResourceLink: 'Guida ufficiale AWS CLF-C02',
+    supportButton: 'Supporta',
+    guidePageTitle: 'Guida di studio e cheat sheet',
+    guidePageSubtitle: 'Cerca e memorizza concetti AWS, parole trigger e trappole di esame.',
+    exitGuide: 'Esci dalla guida',
+    guideTabConcepts: 'Concetti cloud',
+    guideTabResponsibility: 'Responsabilita condivisa',
+    guideTabDirectory: 'Indice servizi',
+    guideTabServerless: 'Mappa serverless',
+    guideTabTraps: 'Trappole chiave',
+    guideTabPairs: 'Coppie confuse',
+    guideTabStrategy: 'Strategia finale',
+    guideTabPassPlan: 'Piano 7 giorni',
+    guideConceptsTitle: 'Concetti cloud principali',
+    guideConceptColumn: 'Concetto',
+    guideMeaningColumn: 'Gancio / significato',
+    guideResponsibilityTitle: 'Matrice responsabilita condivisa',
+    guideResponsibilityBody: 'Ricorda: AWS protegge il cloud; il cliente protegge cio che configura nel cloud.',
+    guideAwsResponsibility: 'Responsabilita AWS',
+    guideCustomerResponsibility: 'Responsabilita cliente',
+    guideResponsibilityQuestions: 'Domande comuni',
+    guideSearchPlaceholder: 'Cerca servizi, trigger o descrizioni (es. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Scorciatoia esame',
+    serverlessTitle: 'Mappa servizi serverless',
+    serverlessBody: 'Per CLF-C02, serverless di solito significa che AWS gestisce capacita, scalabilita, disponibilita e molta infrastruttura. Tu configuri accesso, dati, costi e comportamento.',
+    trapsTitle: 'Trappole chiave di esame',
+    trapsBody: 'Riconosci questi pattern per identificare rapidamente il servizio probabile.',
+    trapsQuestionColumn: 'Se la domanda dice...',
+    trapsAnswerColumn: 'La risposta corretta e...',
+    pairsSearchPlaceholder: 'Cerca coppie confuse (es. CloudWatch, RDS)...',
+    readinessTitle: 'Audit preparazione CLF-C02',
+    readinessBody: 'Completa sei check prima dell esame. Due sono misurati dalla cronologia; quattro sono auto-check onesti.',
+    domainWeightsTitle: 'Pesi domini CLF-C02',
+    officialSourceBadge: 'Fonte ufficiale',
+    officialSourceBody: 'Prima dell esame, controlla pesi e scope nella guida AWS aggiornata.',
+    officialSourceLink: 'Apri guida AWS',
+    mustSkipTitle: 'Da sapere vs. leggero',
+    mustSkipBody: 'Concentra le ultime ore dove conta. Non memorizzare dettagli di configurazione.',
+    mustKnowHeading: 'SAPERE MOLTO BENE',
+    skipHeading: 'SALTARE / SAPERE POCO',
+    examDayMethodTitle: 'Metodo finale esame',
+    lastPageTitle: 'Cheat sheet finale',
+    lastPageBody: 'Riassunto condensato da rivedere subito prima dell esame.',
+    passPlanTitle: 'Piano di 7 giorni',
+    passPlanBody: 'Piano giornaliero pesato sui domini piu importanti. Circa 2-3 ore/giorno.',
+    passStrategiesTitle: 'Strategie reali di chi ha passato',
+    passStrategiesBody: 'Sintesi da report pubblici e guida AWS. Parafrasato, senza contenuti leakati.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'servizi rilevanti marcati',
+    serverlessSummaryBuckets: 'gruppi mentali: compute, API, dati, integrazione, AI',
+    serverlessSummaryCaution: 'senza server, ma IAM, dati, costo e config contano',
+    serverlessServiceCount: '{count} servizi',
+    keyTriggerLabel: 'Trigger chiave',
+    managedServiceFallback: 'Servizio AWS gestito',
+    noServiceResults: 'Nessun servizio trovato per "{query}".',
+    trapQuestionTemplate: 'Se la domanda dice "{term}"...',
+    trapAnswerTemplate: 'La risposta corretta e "{answer}"',
+    passPlanDayLabel: 'Giorno {day}: {focus}',
+    passPlanWhyLabel: 'Perche',
+    selectedPlanSummary: 'Selezionato: {label}',
+    plan90: '90 minuti',
+    plan120: '2 ore',
+    plan180: '3 ore',
+    readinessMockTitle: '80%+ in due mock cronometrati',
+    readinessMockAchieved: 'Fatto: {count} mock con 80%+.',
+    readinessMockProgress: 'Servono due mock con 80%+; attuale: {count}.',
+    readinessWrongTitle: 'Tenere meno di 5 errori aperti',
+    readinessWrongAchieved: 'Fatto: pool errori piccolo ({count}).',
+    readinessWrongProgress: 'Tieni il pool sotto 5; attuale: {count}.',
+    readinessMasterTitle: 'Ricordare i 47 anchor senza guardare',
+    readinessMasterInfo: 'Auto-check: riesci a spiegare la Master Memory Page ad alta voce?',
+    readinessPairsTitle: 'Spiegare le coppie confuse principali',
+    readinessPairsInfo: 'Auto-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, ecc.',
+    readinessDrillsTitle: '80%+ nei Rapid Trigger Drills',
+    readinessDrillsInfo: 'Auto-check: associa trigger e servizi velocemente e con costanza.',
+    readinessOfficialTitle: 'Rivedere domande ufficiali AWS',
+    readinessOfficialInfo: 'Auto-check: confronta il tuo istinto con materiali AWS aggiornati.',
+    readinessAchievedLabel: 'Raggiunto',
+    readinessProgressLabel: 'In corso'
+  },
+  nl: {
+    whyBadge: 'Waarom Cloud Recall Lab',
+    whyTitle: 'De gratis oefenlaag die ik wilde tijdens het studeren.',
+    whyBody: 'Veel tools verbergen nuttige oefening achter paywalls of tonen antwoorden te vroeg. Dit lab laat je eerst kiezen, daarna feedback krijgen en fouten reviewen.',
+    whyProofKicker: 'Persoonlijk bewijs, geen belofte',
+    whyProofTitle: 'Ik gebruikte deze app bij mijn voorbereiding en haalde CLF-C02 op 1 juli 2026.',
+    whyProofBody: 'Mijn score report liet Meets Competencies zien in alle vier domeinen. Geen garantie, wel bewijs dat de loop kan werken met actuele materialen.',
+    whyCredentialLink: 'Verifieer mijn AWS credential op Credly',
+    whyPillPassed: 'Geslaagd op 1 juli 2026',
+    whyPillDomains: 'Meets Competencies in alle domeinen',
+    whyPillCourse: 'Best met actuele cursus of AWS docs',
+    whyPillNoDumps: 'Originele oefening, geen braindumps',
+    languageBody: 'Schakel de interface tussen Engels, Spaans, Portugees, Frans, Duits, Italiaans, Nederlands, Hindi en Japans. Vragen blijven Engels voor AWS-termen.',
+    builtBody2: 'De tool houdt de loop simpel: oefenen onder druk, antwoorden verbergen tot je kiest, fouten reviewen en zwakke onderwerpen zichtbaar houden. Ik betaalde niet voor losse proefexamens; ik gebruikte de originele sets van deze app met actueel leermateriaal.',
+    communityResourceBody: 'Voor community-links is de r/AWSCertifications wiki nuttig voor routes, kortingen, gratis resources en FAQs. Zie het als community-gids, niet officieel AWS-materiaal.',
+    communityResourceLink: 'r/AWSCertifications community wiki',
+    officialResourceBody: 'Gebruik de officiele AWS exam guide als bron voor scope, domeinwegingen en services. Deze app maakt daar recall-practice van.',
+    officialResourceLink: 'Officiele AWS CLF-C02 guide',
+    supportButton: 'Steun',
+    guidePageTitle: 'Studiegids en cheatsheets',
+    guidePageSubtitle: 'Zoek en onthoud AWS-concepten, triggerwoorden en examenvallen.',
+    exitGuide: 'Gids verlaten',
+    guideTabConcepts: 'Cloudconcepten',
+    guideTabResponsibility: 'Gedeelde verantwoordelijkheid',
+    guideTabDirectory: 'Service-index',
+    guideTabServerless: 'Serverless kaart',
+    guideTabTraps: 'Belangrijke vallen',
+    guideTabPairs: 'Verwarrende paren',
+    guideTabStrategy: 'Laatste strategie',
+    guideTabPassPlan: '7-dagenplan',
+    guideConceptsTitle: 'Kernconcepten cloud',
+    guideConceptColumn: 'Concept',
+    guideMeaningColumn: 'Geheugensteun / betekenis',
+    guideResponsibilityTitle: 'Matrix gedeelde verantwoordelijkheid',
+    guideResponsibilityBody: 'Onthoud: AWS beveiligt de cloud; de klant beveiligt wat die in de cloud configureert.',
+    guideAwsResponsibility: 'AWS verantwoordelijkheid',
+    guideCustomerResponsibility: 'Klantverantwoordelijkheid',
+    guideResponsibilityQuestions: 'Veelvoorkomende vragen',
+    guideSearchPlaceholder: 'Zoek services, triggers of beschrijvingen (bijv. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Examensnelkoppeling',
+    serverlessTitle: 'Serverless services kaart',
+    serverlessBody: 'Voor CLF-C02 betekent serverless meestal dat AWS capaciteit, schaal, beschikbaarheid en veel infrastructuur beheert. Jij configureert nog steeds toegang, data, kosten en gedrag.',
+    trapsTitle: 'Belangrijke examenvallen',
+    trapsBody: 'Herken deze patronen om snel de waarschijnlijke service te vinden.',
+    trapsQuestionColumn: 'Als de vraag zegt...',
+    trapsAnswerColumn: 'Het juiste antwoord is...',
+    pairsSearchPlaceholder: 'Zoek verwarrende paren (bijv. CloudWatch, RDS)...',
+    readinessTitle: 'CLF-C02 readiness audit',
+    readinessBody: 'Rond zes checks af voor examendag. Twee komen uit je historie; vier zijn eerlijke zelfchecks.',
+    domainWeightsTitle: 'CLF-C02 domeinwegingen',
+    officialSourceBadge: 'Officiele bron',
+    officialSourceBody: 'Controleer gewichten en scope voor examendag in de actuele AWS guide.',
+    officialSourceLink: 'Open AWS guide',
+    mustSkipTitle: 'Moet weten vs. licht weten',
+    mustSkipBody: 'Focus je laatste uren waar het telt. Geen configdetails uit je hoofd leren.',
+    mustKnowHeading: 'HEEL GOED WETEN',
+    skipHeading: 'OVERSLAAN / LICHT WETEN',
+    examDayMethodTitle: 'Laatste examenmethode',
+    lastPageTitle: 'Laatste geheugen-cheatsheet',
+    lastPageBody: 'Zeer compacte service-samenvatting voor vlak voor het examen.',
+    passPlanTitle: '7-dagenplan',
+    passPlanBody: 'Dagplan gericht op de zwaarste domeinen. Ongeveer 2-3 uur/dag.',
+    passStrategiesTitle: 'Strategien van mensen die slaagden',
+    passStrategiesBody: 'Samengevat uit openbare reports en AWS guidance. Geparafraseerd, geen gelekte inhoud.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'relevante services gemarkeerd',
+    serverlessSummaryBuckets: 'mentale groepen: compute, APIs, data, integratie, AI',
+    serverlessSummaryCaution: 'geen servers, maar IAM, data, kosten en config tellen',
+    serverlessServiceCount: '{count} services',
+    keyTriggerLabel: 'Belangrijk triggerwoord',
+    managedServiceFallback: 'Beheerde AWS service',
+    noServiceResults: 'Geen services gevonden voor "{query}".',
+    trapQuestionTemplate: 'Als de vraag "{term}" zegt...',
+    trapAnswerTemplate: 'Het juiste antwoord is "{answer}"',
+    passPlanDayLabel: 'Dag {day}: {focus}',
+    passPlanWhyLabel: 'Waarom',
+    selectedPlanSummary: 'Geselecteerd: {label}',
+    plan90: '90 minuten',
+    plan120: '2 uur',
+    plan180: '3 uur',
+    readinessMockTitle: '80%+ op twee getimede mocks',
+    readinessMockAchieved: 'Klaar: {count} mocks met 80%+.',
+    readinessMockProgress: 'Je hebt twee mocks met 80%+ nodig; nu: {count}.',
+    readinessWrongTitle: 'Minder dan 5 foute antwoorden open',
+    readinessWrongAchieved: 'Klaar: foutenpool is klein ({count}).',
+    readinessWrongProgress: 'Houd de pool onder 5; nu: {count}.',
+    readinessMasterTitle: '47 service-ankers herinneren zonder kijken',
+    readinessMasterInfo: 'Zelfcheck: kun je de Master Memory Page hardop uitleggen?',
+    readinessPairsTitle: 'Top verwarrende paren uitleggen',
+    readinessPairsInfo: 'Zelfcheck: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, enz.',
+    readinessDrillsTitle: '80%+ op Rapid Trigger Drills',
+    readinessDrillsInfo: 'Zelfcheck: koppel triggers snel en consistent aan services.',
+    readinessOfficialTitle: 'Officiele AWS oefenvragen reviewen',
+    readinessOfficialInfo: 'Zelfcheck: vergelijk je woordgevoel met actuele AWS-materialen.',
+    readinessAchievedLabel: 'Behaald',
+    readinessProgressLabel: 'Bezig'
+  },
+  hi: {
+    navHistory: 'History',
+    navAbout: 'About',
+    navSettings: 'Settings',
+    languageLabel: 'Language',
+    languageHelper: 'Interface guidance Hindi me badalti hai. AWS service names aur practice questions English me rehte hain taaki exam wording consistent rahe.',
+    heroTitle: 'Cloud Recall Lab',
+    heroSubtitle: 'Free CLF-C02 prep with practice, timed mocks, local progress, and no login.',
+    stripFree: 'Free forever',
+    stripNoAccount: 'No account',
+    stripMobile: 'Mobile friendly',
+    stripOffline: 'Offline-ready',
+    stripLanguages: 'Multilingual UI beta',
+    stripPassed: 'Used to pass CLF-C02',
+    evidenceBadge: 'Research-backed study loop',
+    evidenceTitle: 'Active recall ke liye built, passive rereading ke liye nahi.',
+    evidenceBody: 'Practice testing, spaced review, feedback, aur exam-like rehearsal recall ko pressure me strong banate hain. App ka loop simple hai: answer, review, repeat.',
+    whyBadge: 'Why Cloud Recall Lab',
+    whyTitle: 'Free practice layer jo mujhe studying ke time chahiye thi.',
+    whyBody: 'Bahut prep tools paywall ke peeche hote hain ya answers jaldi dikha dete hain. Yeh lab pehle answer commit karwata hai, phir feedback deta hai.',
+    whyProofKicker: 'Personal proof, promise nahi',
+    whyProofTitle: 'Maine is app ko prep me use kiya aur CLF-C02 July 1, 2026 ko pass kiya.',
+    whyProofBody: 'Mere score report me four domains me Meets Competencies tha. Yeh guarantee nahi, par real proof hai ki current material ke saath loop kaam kar sakta hai.',
+    whyCredentialLink: 'Mera AWS credential Credly par verify karein',
+    whyPillPassed: 'Passed July 1, 2026',
+    whyPillDomains: 'All domains me Meets Competencies',
+    whyPillCourse: 'Current course ya AWS docs ke saath best',
+    whyPillNoDumps: 'Original practice, no braindumps',
+    languageBadge: 'Language support beta',
+    languageTitle: 'Zyada languages me study guidance.',
+    languageBody: 'Interface English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, aur Japanese me switch hota hai. AWS terms aur questions English me rehte hain.',
+    mockCardTitle: 'Full Timed Mock Exam',
+    mockCardDesc: '65 randomized questions, 90 minutes, CLF-C02-style timing.',
+    mockCardQuestions: '65 Questions',
+    startMockButton: 'Start Mock Exam',
+    guidedCardTitle: 'Science-Backed Guided Study Block',
+    guidedCardDesc: 'Practice testing aur active recall rereading se better retention dete hain. Timers, cheat sheets, quizzes, aur wrong-answer review ke saath study block launch karein.',
+    startDailyBlock: 'Start Daily Block',
+    dailyRoutineBadge: 'Daily Routine',
+    trainerTitle: 'Master Memory Sentence Trainer',
+    trainerDesc: 'Core sentence ko 10 minutes review karein: TTS, 3D flashcards, ya active recall game.',
+    startTraining: 'Start Training',
+    studyGuideBadge: 'Exam Reference',
+    studyGuideTitle: 'Study Guide & Cheat Sheets',
+    studyGuideDesc: 'Core concepts, trigger words, serverless services, confusing pairs, aur high-yield traps search karein.',
+    openStudyGuide: 'Open Study Guide',
+    activeRecallBadge: 'Active Recall',
+    drillsTitle: 'Rapid Trigger Drills',
+    drillsDesc: '95 quick scenarios ke liye AWS service type karein. Mistake par trigger word lock in karein.',
+    startDrills: 'Start Drills',
+    examSimulationBadge: 'Exam Simulation',
+    miniQuizTitle: '20-Question Mixed Quiz',
+    miniQuizDesc: 'Exam conditions me 20 questions answer karein. Score end me dikhega.',
+    startQuiz: 'Start Quiz',
+    sectionPracticeTitle: 'Section-Focused Practice (Days 1 - 5)',
+    aboutTitle: 'About & Contact',
+    aboutSubtitle: 'Yeh kyon bana, responsibly kaise use karein, aur contact links.',
+    dashboardButton: 'Dashboard',
+    builtBadge: 'Built after passing',
+    builtTitle: 'Maine is study loop se AWS Cloud Practitioner July 1, 2026 ko pass kiya.',
+    builtBody1: 'Maine yeh banaya kyunki useful prep, flashcards tak, paywalls ke peeche hoti hai, aur kuch AI study flows answer bahut jaldi dikha dete hain.',
+    builtBody2: "Loop simple hai: pressure me practice, answer choose karne tak answer hidden, har miss review, weak topics visible. Maine separate mock exams pay nahi kiye; is app ke original sets aur current learning material use kiya.",
+    wiseBadge: 'Use it wisely',
+    wiseTitle: 'Free practice, promise nahi aur current materials ka replacement nahi.',
+    wiseBody1: 'AWS services, wording, aur certification scope update kar sakta hai. App ko practice ke liye use karein, phir current AWS exam guide/docs/course cross-check karein.',
+    wiseBody2: 'Udemy meri prep me helpful tha. Course se learn karein, phir app se test karein ki answer pressure me yaad aa raha hai ya nahi.',
+    resourceBadge: 'Resource I used',
+    resourceTitle: 'Course jisne material learn karne me help ki.',
+    resourceBody: 'Yeh app free practice layer hai jo mujhe chahiye thi. Concepts learn karne ke liye niche Udemy course helpful tha.',
+    resourceCourse: 'Udemy course that helped me: Ultimate AWS Certified Cloud Practitioner CLF-C02 2026',
+    officialResourceBody: 'Current scope, domain weights, aur service coverage ke liye official AWS exam guide source of truth hai.',
+    officialResourceLink: 'Official AWS CLF-C02 exam guide',
+    communityResourceBody: 'Community links ke liye r/AWSCertifications wiki useful hai. Isse community guidance samjhein, official AWS material nahi.',
+    communityResourceLink: 'r/AWSCertifications community wiki',
+    compatBadge: 'Compatibility',
+    compatTitle: 'Modern browsers, mobile study, aur privacy-first launch ke liye built.',
+    compatBody1: 'App current Chrome, Edge, Firefox, aur Safari ke liye designed hai. Offline install HTTPS par best hai.',
+    compatBody2: 'Progress isi browser ke localStorage me rehta hai. TTS/share/install prompts browser aur device par depend karte hain.',
+    contactBadge: 'Contact',
+    contactTitle: 'Connect, contribute, ya support karein.',
+    contactBody: 'Questions, bug reports, corrections, aur original practice questions welcome hain. Project free aur open source hai.',
+    footerBuilt: 'Joseph Hauter ne free, no-login study tool ke roop me banaya.',
+    footerDisclaimer: 'Independent study tool; Amazon Web Services (AWS) se affiliated, endorsed, ya sponsored nahi. Questions original educational scenarios hain.',
+    randomExamDesc: 'CLF-C02-style timing ke saath 65 random database questions practice karein.',
+    settingsTitle: 'Settings & Data',
+    settingsBody: 'Progress locally is browser me stored hai. Device move karne ke liye backup export karein.',
+    languageToast: 'Language updated. Questions exam consistency ke liye English me rehte hain.',
+    supportButton: 'Support',
+    guidePageTitle: 'Study Guide & Cheat Sheets',
+    guidePageSubtitle: 'Core AWS concepts, trigger words, aur exam traps browse/search/memorize karein.',
+    exitGuide: 'Exit Guide',
+    guideTabConcepts: 'Cloud Concepts',
+    guideTabResponsibility: 'Shared Responsibility',
+    guideTabDirectory: 'Service Index',
+    guideTabServerless: 'Serverless Map',
+    guideTabTraps: 'High-Yield Traps',
+    guideTabPairs: 'Confusing Pairs',
+    guideTabStrategy: 'Last-Minute Strategy',
+    guideTabPassPlan: '7-Day Plan',
+    guideConceptsTitle: 'Core Cloud Concepts',
+    guideConceptColumn: 'Concept',
+    guideMeaningColumn: 'Memory Hook / Meaning',
+    guideResponsibilityTitle: 'Shared Responsibility Matrix',
+    guideResponsibilityBody: 'Yaad rakhein: AWS cloud OF security handle karta hai; customer cloud IN security handle karta hai.',
+    guideAwsResponsibility: 'AWS Responsibility',
+    guideCustomerResponsibility: 'Customer Responsibility',
+    guideResponsibilityQuestions: 'Common Responsibility Questions',
+    guideSearchPlaceholder: 'Services, trigger words, ya descriptions search karein (e.g. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Exam shortcut',
+    serverlessTitle: 'Serverless services map',
+    serverlessBody: 'CLF-C02 me serverless usually means AWS capacity, scaling, availability, aur infrastructure management handle karta hai. Access, data, cost, aur behavior aap configure karte hain.',
+    trapsTitle: 'Highest-Yield Exam Traps',
+    trapsBody: 'In patterns ko pehchanein taaki likely service fast identify ho.',
+    trapsQuestionColumn: 'Question agar kehta hai...',
+    trapsAnswerColumn: 'Correct answer hai...',
+    pairsSearchPlaceholder: 'Confusing pairs search karein (e.g. CloudWatch, RDS)...',
+    readinessTitle: 'CLF-C02 Readiness Audit',
+    readinessBody: 'Exam day se pehle six checks complete karein. Do history se measured hain; chaar honest self-checks hain.',
+    domainWeightsTitle: 'CLF-C02 Domain Weights',
+    officialSourceBadge: 'Official source check',
+    officialSourceBody: 'Exam se pehle current AWS guide me weights aur scope check karein.',
+    officialSourceLink: 'Open AWS exam guide',
+    mustSkipTitle: 'Must-Know vs. Skip Guide',
+    mustSkipBody: 'Final hours important cheezon par lagayein. Config details memorize na karein.',
+    mustKnowHeading: 'MUST KNOW HARD',
+    skipHeading: 'SKIP / KNOW LIGHTLY',
+    examDayMethodTitle: 'Final Exam-Day Method',
+    lastPageTitle: 'Last-Page Memory Cheat Sheet',
+    lastPageBody: 'Exam room me enter karne se pehle review karne ke liye condensed summary.',
+    passPlanTitle: '7-Day Pass Plan',
+    passPlanBody: 'Highest-scoring domains par focused daily plan. About 2-3 hours/day.',
+    passStrategiesTitle: 'How Real People Passed',
+    passStrategiesBody: 'Public study reports aur AWS guidance se paraphrased. No leaked/proprietary content.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'exam-relevant services flagged',
+    serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
+    serverlessSummaryCaution: 'no servers, but IAM, data, cost, and config matter',
+    serverlessServiceCount: '{count} services',
+    keyTriggerLabel: 'Key trigger',
+    managedServiceFallback: 'Managed AWS service',
+    noServiceResults: 'No services found matching "{query}".',
+    trapQuestionTemplate: 'Question agar "{term}" kehta hai...',
+    trapAnswerTemplate: 'Correct answer "{answer}" hai',
+    passPlanDayLabel: 'Day {day}: {focus}',
+    passPlanWhyLabel: 'Why',
+    selectedPlanSummary: 'Selected: {label}',
+    plan90: '90 minutes',
+    plan120: '2 hours',
+    plan180: '3 hours',
+    readinessMockTitle: 'Two timed mocks me 80%+ hit karein',
+    readinessMockAchieved: 'Done: {count} mocks at 80%+.',
+    readinessMockProgress: '80%+ ke do mocks chahiye; current: {count}.',
+    readinessWrongTitle: 'Wrong-answer pool 5 se kam rakhein',
+    readinessWrongAchieved: 'Done: wrong-answer pool small hai ({count}).',
+    readinessWrongProgress: 'Pool 5 se kam rakhein; current: {count}.',
+    readinessMasterTitle: '47 service anchors bina dekhe recall karein',
+    readinessMasterInfo: 'Self-check: Master Memory Page ko loud explain kar sakte hain?',
+    readinessPairsTitle: 'Top confusing pairs explain karein',
+    readinessPairsInfo: 'Self-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc.',
+    readinessDrillsTitle: 'Rapid Trigger Drills me 80%+',
+    readinessDrillsInfo: 'Self-check: scenario triggers ko services se fast match karein.',
+    readinessOfficialTitle: 'Official AWS practice questions review karein',
+    readinessOfficialInfo: 'Self-check: current AWS material se wording instincts compare karein.',
+    readinessAchievedLabel: 'Achieved',
+    readinessProgressLabel: 'In progress'
+  },
+  ja: {
+    navHistory: 'History',
+    navAbout: 'About',
+    navSettings: 'Settings',
+    languageLabel: 'Language',
+    languageHelper: 'Interface guidance changes to Japanese. AWS service names and practice questions stay in English for exam consistency.',
+    heroTitle: 'Cloud Recall Lab',
+    heroSubtitle: 'Free CLF-C02 prep with practice, timed mocks, local progress, and no login.',
+    stripFree: 'Free forever',
+    stripNoAccount: 'No account',
+    stripMobile: 'Mobile friendly',
+    stripOffline: 'Offline-ready',
+    stripLanguages: 'Multilingual UI beta',
+    stripPassed: 'Used to pass CLF-C02',
+    evidenceBadge: 'Research-backed study loop',
+    evidenceTitle: 'Active recall focused, not passive rereading.',
+    evidenceBody: 'Practice testing, spaced review, feedback, and exam-like rehearsal make facts easier to retrieve under pressure.',
+    whyBadge: 'Why Cloud Recall Lab',
+    whyTitle: 'The free practice layer I wanted while studying.',
+    whyBody: 'Many prep tools hide useful practice behind paywalls or reveal answers too early. This lab makes you commit first, then review feedback.',
+    whyProofKicker: 'Personal proof, not a promise',
+    whyProofTitle: 'I used this app while preparing and passed CLF-C02 on July 1, 2026.',
+    whyProofBody: 'My score report showed Meets Competencies across all four domains. It is not a guarantee, but it is real proof that the loop can help with current material.',
+    whyCredentialLink: 'Verify my AWS credential on Credly',
+    whyPillPassed: 'Passed July 1, 2026',
+    whyPillDomains: 'Meets Competencies in all domains',
+    whyPillCourse: 'Best with a current course or AWS docs',
+    whyPillNoDumps: 'Original practice, no braindumps',
+    languageBadge: 'Language support beta',
+    languageTitle: 'Study guidance in more languages.',
+    languageBody: 'Switch the interface between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. AWS terms and questions stay English.',
+    mockCardTitle: 'Full Timed Mock Exam',
+    mockCardDesc: 'Practice with 65 randomized questions in 90 minutes.',
+    mockCardQuestions: '65 Questions',
+    startMockButton: 'Start Mock Exam',
+    guidedCardTitle: 'Science-Backed Guided Study Block',
+    guidedCardDesc: 'Launch a structured study block with timers, cheat sheets, quizzes, and wrong-answer review.',
+    startDailyBlock: 'Start Daily Block',
+    dailyRoutineBadge: 'Daily Routine',
+    trainerTitle: 'Master Memory Sentence Trainer',
+    trainerDesc: 'Review the core sentence with TTS, 3D flashcards, or active recall.',
+    startTraining: 'Start Training',
+    studyGuideBadge: 'Exam Reference',
+    studyGuideTitle: 'Study Guide & Cheat Sheets',
+    studyGuideDesc: 'Search core concepts, trigger words, serverless services, confusing pairs, and exam traps.',
+    openStudyGuide: 'Open Study Guide',
+    activeRecallBadge: 'Active Recall',
+    drillsTitle: 'Rapid Trigger Drills',
+    drillsDesc: 'Type the AWS service for quick scenarios and lock in trigger words after misses.',
+    startDrills: 'Start Drills',
+    examSimulationBadge: 'Exam Simulation',
+    miniQuizTitle: '20-Question Mixed Quiz',
+    miniQuizDesc: 'Answer 20 questions under exam conditions. Score appears at the end.',
+    startQuiz: 'Start Quiz',
+    sectionPracticeTitle: 'Section-Focused Practice (Days 1 - 5)',
+    aboutTitle: 'About & Contact',
+    aboutSubtitle: 'Why this exists, how to use it responsibly, and where to connect.',
+    dashboardButton: 'Dashboard',
+    builtBadge: 'Built after passing',
+    builtTitle: 'I used this study loop to pass AWS Cloud Practitioner on July 1, 2026.',
+    builtBody1: 'I made this because useful prep often sits behind paywalls, and some AI study flows reveal answers too early.',
+    builtBody2: "The loop is simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible. I did not pay for separate mock exams; I used this app's original sets with current learning material.",
+    wiseBadge: 'Use it wisely',
+    wiseTitle: 'Free practice, not a promise or a replacement for current materials.',
+    wiseBody1: 'AWS can update services, wording, and scope. Use this for practice, then cross-check the current AWS exam guide, docs, and a strong course.',
+    wiseBody2: 'Udemy helped my prep. Learn with a course, then use this app to test retrieval under pressure.',
+    resourceBadge: 'Resource I used',
+    resourceTitle: 'The course that helped me learn the material.',
+    resourceBody: 'This app is the free practice layer I wanted. The Udemy course below helped me learn the concepts.',
+    resourceCourse: 'Udemy course that helped me: Ultimate AWS Certified Cloud Practitioner CLF-C02 2026',
+    officialResourceBody: 'Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage.',
+    officialResourceLink: 'Official AWS CLF-C02 exam guide',
+    communityResourceBody: 'The r/AWSCertifications wiki is useful for community-maintained links. Treat it as community guidance, not official AWS material.',
+    communityResourceLink: 'r/AWSCertifications community wiki',
+    compatBadge: 'Compatibility',
+    compatTitle: 'Built for modern browsers, mobile study, and privacy-first launch.',
+    compatBody1: 'Designed for current Chrome, Edge, Firefox, and Safari. Offline install works best on HTTPS.',
+    compatBody2: 'Progress stays in localStorage. TTS, sharing, and install prompts vary by browser/device.',
+    contactBadge: 'Contact',
+    contactTitle: 'Connect, contribute, or support the project.',
+    contactBody: 'Questions, bug reports, corrections, and original practice questions are welcome. The project is free and open source.',
+    footerBuilt: 'Built by Joseph Hauter as a free, no-login study tool.',
+    footerDisclaimer: 'Independent study tool; not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). Questions are original educational scenarios.',
+    randomExamDesc: 'Practice under CLF-C02-style timing with 65 random database questions.',
+    settingsTitle: 'Settings & Data',
+    settingsBody: 'Progress is stored locally in this browser. Export a backup to move devices.',
+    languageToast: 'Language updated. Questions remain English for exam consistency.',
+    supportButton: 'Support',
+    guidePageTitle: 'Study Guide & Cheat Sheets',
+    guidePageSubtitle: 'Browse, search, and memorize core AWS concepts, trigger words, and exam traps.',
+    exitGuide: 'Exit Guide',
+    guideTabConcepts: 'Cloud Concepts',
+    guideTabResponsibility: 'Shared Responsibility',
+    guideTabDirectory: 'Service Index',
+    guideTabServerless: 'Serverless Map',
+    guideTabTraps: 'High-Yield Traps',
+    guideTabPairs: 'Confusing Pairs',
+    guideTabStrategy: 'Last-Minute Strategy',
+    guideTabPassPlan: '7-Day Plan',
+    guideConceptsTitle: 'Core Cloud Concepts',
+    guideConceptColumn: 'Concept',
+    guideMeaningColumn: 'Memory Hook / Meaning',
+    guideResponsibilityTitle: 'Shared Responsibility Matrix',
+    guideResponsibilityBody: 'Remember: AWS handles security OF the cloud; the customer handles security IN the cloud.',
+    guideAwsResponsibility: 'AWS Responsibility',
+    guideCustomerResponsibility: 'Customer Responsibility',
+    guideResponsibilityQuestions: 'Common Responsibility Questions',
+    guideSearchPlaceholder: 'Search services, trigger words, or descriptions (e.g. S3, SQL, database)...',
+    serverlessBadgeTitle: 'Exam shortcut',
+    serverlessTitle: 'Serverless services map',
+    serverlessBody: 'For CLF-C02, serverless usually means AWS handles capacity, scaling, availability, and much of the infrastructure. You still configure access, data, costs, and behavior.',
+    trapsTitle: 'Highest-Yield Exam Traps',
+    trapsBody: 'Recognize these patterns to quickly identify the likely service.',
+    trapsQuestionColumn: 'If the question says...',
+    trapsAnswerColumn: 'The correct answer is...',
+    pairsSearchPlaceholder: 'Search confusing pairs (e.g. CloudWatch, RDS)...',
+    readinessTitle: 'CLF-C02 Readiness Audit',
+    readinessBody: 'Complete these six checks before exam day. Two are measured by your history; four are honest self-checks.',
+    domainWeightsTitle: 'CLF-C02 Domain Weights',
+    officialSourceBadge: 'Official source check',
+    officialSourceBody: 'Check weights and scope against the current AWS exam guide before exam day.',
+    officialSourceLink: 'Open AWS exam guide',
+    mustSkipTitle: 'Must-Know vs. Skip Guide',
+    mustSkipBody: "Focus final hours where it counts. Don't memorize config details.",
+    mustKnowHeading: 'MUST KNOW HARD',
+    skipHeading: 'SKIP / KNOW LIGHTLY',
+    examDayMethodTitle: 'Final Exam-Day Method',
+    lastPageTitle: 'Last-Page Memory Cheat Sheet',
+    lastPageBody: 'A condensed summary to review right before the exam.',
+    passPlanTitle: '7-Day Pass Plan',
+    passPlanBody: 'A daily plan weighted toward the highest-scoring domains. About 2-3 hours/day.',
+    passStrategiesTitle: 'How Real People Passed',
+    passStrategiesBody: 'Paraphrased from public study reports and AWS guidance. No leaked content.',
+    serverlessLabel: 'Serverless',
+    serverlessSummaryServices: 'exam-relevant services flagged',
+    serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
+    serverlessSummaryCaution: 'no servers, but IAM, data, cost, and config matter',
+    serverlessServiceCount: '{count} services',
+    keyTriggerLabel: 'Key trigger',
+    managedServiceFallback: 'Managed AWS service',
+    noServiceResults: 'No services found matching "{query}".',
+    trapQuestionTemplate: 'If the question says "{term}"...',
+    trapAnswerTemplate: 'The correct answer is "{answer}"',
+    passPlanDayLabel: 'Day {day}: {focus}',
+    passPlanWhyLabel: 'Why',
+    selectedPlanSummary: 'Selected: {label}',
+    plan90: '90 minutes',
+    plan120: '2 hours',
+    plan180: '3 hours',
+    readinessMockTitle: 'Hit 80%+ on two timed mocks',
+    readinessMockAchieved: 'Done: {count} mocks at 80%+.',
+    readinessMockProgress: 'Need two mocks at 80%+; current count: {count}.',
+    readinessWrongTitle: 'Keep wrong-answer pool under 5',
+    readinessWrongAchieved: 'Done: wrong-answer pool is small ({count} items).',
+    readinessWrongProgress: 'Keep the wrong-answer pool under 5; current count: {count}.',
+    readinessMasterTitle: 'Recall the 47 service anchors without looking',
+    readinessMasterInfo: 'Self-check: can you explain the Master Memory Page out loud?',
+    readinessPairsTitle: 'Explain the top confusing pairs',
+    readinessPairsInfo: 'Self-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, and the rest.',
+    readinessDrillsTitle: 'Score 80%+ on Rapid Trigger Drills',
+    readinessDrillsInfo: 'Self-check: match scenario triggers to services quickly and consistently.',
+    readinessOfficialTitle: 'Review official AWS practice questions',
+    readinessOfficialInfo: 'Self-check: compare your wording instincts against current AWS materials.',
+    readinessAchievedLabel: 'Achieved',
+    readinessProgressLabel: 'In progress'
+  }
+};
+
+Object.entries(I18N_PATCHES).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
+Object.assign(I18N.hi, {
+  navHistory: 'इतिहास',
+  navAbout: 'परिचय',
+  navSettings: 'सेटिंग्स',
+  languageLabel: 'भाषा',
+  heroSubtitle: 'मुफ्त CLF-C02 तैयारी: अभ्यास, timed mocks, local progress, और कोई login नहीं.',
+  stripFree: 'हमेशा मुफ्त',
+  stripNoAccount: 'कोई account नहीं',
+  stripMobile: 'मोबाइल friendly',
+  stripOffline: 'Offline-ready',
+  stripLanguages: 'बहुभाषी UI beta',
+  stripPassed: 'CLF-C02 pass करने में इस्तेमाल',
+  evidenceBadge: 'Research-backed study loop',
+  evidenceTitle: 'Active recall पर बना, passive rereading पर नहीं.',
+  languageBadge: 'Language support beta',
+  languageTitle: 'और भाषाओं में study guidance.',
+  whyBadge: 'क्यों Cloud Recall Lab',
+  whyTitle: 'वही मुफ्त practice layer जो मुझे पढ़ते समय चाहिए थी.',
+  whyProofKicker: 'Personal proof, promise नहीं',
+  mockCardTitle: 'Full Timed Mock Exam',
+  startMockButton: 'Mock Exam शुरू करें',
+  guidedCardTitle: 'Science-Backed Guided Study Block',
+  startDailyBlock: 'Daily Block शुरू करें',
+  dailyRoutineBadge: 'Daily Routine',
+  trainerTitle: 'Master Memory Sentence Trainer',
+  startTraining: 'Training शुरू करें',
+  studyGuideBadge: 'Exam Reference',
+  studyGuideTitle: 'Study Guide & Cheat Sheets',
+  openStudyGuide: 'Study Guide खोलें',
+  activeRecallBadge: 'Active Recall',
+  drillsTitle: 'Rapid Trigger Drills',
+  startDrills: 'Drills शुरू करें',
+  examSimulationBadge: 'Exam Simulation',
+  miniQuizTitle: '20-Question Mixed Quiz',
+  startQuiz: 'Quiz शुरू करें',
+  sectionPracticeTitle: 'Section-Focused Practice (Days 1 - 5)',
+  aboutTitle: 'About & Contact',
+  aboutSubtitle: 'यह क्यों बना, जिम्मेदारी से कैसे use करें, और contact links.',
+  dashboardButton: 'Dashboard',
+  builtBadge: 'Pass करने के बाद बनाया',
+  wiseBadge: 'समझदारी से use करें',
+  resourceBadge: 'Resource जो मैंने use किया',
+  officialResourceLink: 'Official AWS CLF-C02 exam guide',
+  compatBadge: 'Compatibility',
+  contactBadge: 'Contact',
+  contactTitle: 'Connect, contribute, या support करें.',
+  settingsTitle: 'Settings & Data',
+  settingsBody: 'Progress इस browser में locally stored है. दूसरे device पर ले जाने के लिए backup export करें.',
+  guidePageTitle: 'Study Guide और Cheat Sheets',
+  guidePageSubtitle: 'Core AWS concepts, trigger words, और exam traps browse/search/memorize करें.',
+  exitGuide: 'Guide बंद करें',
+  guideTabConcepts: 'Cloud Concepts',
+  guideTabResponsibility: 'Shared Responsibility',
+  guideTabDirectory: 'Service Index',
+  guideTabServerless: 'Serverless Map',
+  guideTabTraps: 'High-Yield Traps',
+  guideTabPairs: 'Confusing Pairs',
+  guideTabStrategy: 'Last-Minute Strategy',
+  guideTabPassPlan: '7-Day Plan',
+  guideConceptsTitle: 'Core Cloud Concepts',
+  guideConceptColumn: 'Concept',
+  guideMeaningColumn: 'Memory Hook / Meaning',
+  guideResponsibilityTitle: 'Shared Responsibility Matrix',
+  guideAwsResponsibility: 'AWS Responsibility',
+  guideCustomerResponsibility: 'Customer Responsibility',
+  guideResponsibilityQuestions: 'Common Responsibility Questions',
+  guideSearchPlaceholder: 'Services, trigger words, या descriptions search करें (e.g. S3, SQL, database)...',
+  serverlessBadgeTitle: 'Exam shortcut',
+  serverlessTitle: 'Serverless services map',
+  trapsTitle: 'Highest-Yield Exam Traps',
+  trapsQuestionColumn: 'Question अगर कहता है...',
+  trapsAnswerColumn: 'Correct answer है...',
+  pairsSearchPlaceholder: 'Confusing pairs search करें (e.g. CloudWatch, RDS)...',
+  readinessTitle: 'CLF-C02 Readiness Audit',
+  readinessBody: 'Exam day से पहले ये six checks complete करें. दो history से measured हैं; चार honest self-checks हैं.',
+  domainWeightsTitle: 'CLF-C02 Domain Weights',
+  officialSourceBadge: 'Official source check',
+  officialSourceLink: 'AWS exam guide खोलें',
+  mustSkipTitle: 'Must-Know vs. Skip Guide',
+  mustKnowHeading: 'MUST KNOW HARD',
+  skipHeading: 'SKIP / KNOW LIGHTLY',
+  examDayMethodTitle: 'Final Exam-Day Method',
+  lastPageTitle: 'Last-Page Memory Cheat Sheet',
+  passPlanTitle: '7-Day Pass Plan',
+  passStrategiesTitle: 'How Real People Passed',
+  keyTriggerLabel: 'Key trigger',
+  selectedPlanSummary: 'Selected: {label}',
+  readinessAchievedLabel: 'Achieved',
+  readinessProgressLabel: 'In progress'
+});
+
+Object.assign(I18N.ja, {
+  navHistory: '履歴',
+  navAbout: '概要',
+  navSettings: '設定',
+  languageLabel: '言語',
+  languageHelper: '画面の案内は日本語に切り替わります。AWS service names と practice questions は試験用語の一貫性のため英語のままです。',
+  heroSubtitle: '無料の CLF-C02 対策: practice、timed mocks、local progress、login 不要。',
+  stripFree: 'ずっと無料',
+  stripNoAccount: 'アカウント不要',
+  stripMobile: 'モバイル対応',
+  stripOffline: 'オフライン対応',
+  stripLanguages: '多言語 UI beta',
+  stripPassed: 'CLF-C02 合格に使用',
+  evidenceBadge: '研究に基づく学習ループ',
+  evidenceTitle: '読み直しではなく active recall のために設計。',
+  languageBadge: '言語サポート beta',
+  languageTitle: 'より多くの言語で学習ガイド。',
+  languageBody: 'UI は英語、スペイン語、ポルトガル語、フランス語、ドイツ語、イタリア語、オランダ語、ヒンディー語、日本語に切り替えできます。AWS terms と questions は英語のままです。',
+  whyBadge: 'Cloud Recall Lab の理由',
+  whyTitle: '学習中に欲しかった無料の practice layer。',
+  whyBody: '多くの prep tools は有用な練習を paywall の後ろに置いたり、答えを早く見せすぎます。この lab は先に回答を決めてから feedback を見ます。',
+  whyProofKicker: '個人の証拠、保証ではありません',
+  whyProofTitle: 'この app を使って準備し、2026年7月1日に CLF-C02 に合格しました。',
+  whyProofBody: 'スコアレポートでは4ドメインすべてで Meets Competencies でした。合格保証ではありませんが、現在の教材と組み合わせればこのループが役立つ証拠です。',
+  whyCredentialLink: 'Credly で AWS credential を確認',
+  whyPillPassed: '2026年7月1日 合格',
+  whyPillDomains: '全ドメイン Meets Competencies',
+  whyPillCourse: '最新 course または AWS docs と併用推奨',
+  whyPillNoDumps: 'Original practice、braindumps なし',
+  mockCardTitle: 'Full Timed Mock Exam',
+  mockCardDesc: '65問を90分で解く CLF-C02 形式の timed practice。',
+  startMockButton: 'Mock Exam を開始',
+  guidedCardTitle: 'Science-Backed Guided Study Block',
+  guidedCardDesc: 'Practice testing と active recall を使い、timers、cheat sheets、quizzes、wrong-answer review で学習します。',
+  startDailyBlock: 'Daily Block を開始',
+  dailyRoutineBadge: 'Daily Routine',
+  trainerTitle: 'Master Memory Sentence Trainer',
+  trainerDesc: 'TTS、3D flashcards、active recall game で core sentence を復習します。',
+  startTraining: 'Training を開始',
+  studyGuideBadge: 'Exam Reference',
+  studyGuideTitle: 'Study Guide & Cheat Sheets',
+  studyGuideDesc: 'Core concepts、trigger words、serverless services、confusing pairs、exam traps を検索できます。',
+  openStudyGuide: 'Study Guide を開く',
+  activeRecallBadge: 'Active Recall',
+  drillsTitle: 'Rapid Trigger Drills',
+  drillsDesc: '短い scenario に対して AWS service を入力し、miss した trigger word を復習します。',
+  startDrills: 'Drills を開始',
+  examSimulationBadge: 'Exam Simulation',
+  miniQuizTitle: '20問 Mixed Quiz',
+  miniQuizDesc: 'Exam conditions で20問回答します。score は最後に表示されます。',
+  startQuiz: 'Quiz を開始',
+  sectionPracticeTitle: 'Section-Focused Practice (Days 1 - 5)',
+  aboutTitle: '概要 & Contact',
+  aboutSubtitle: '作った理由、正しい使い方、contact links。',
+  dashboardButton: 'Dashboard',
+  builtBadge: '合格後に構築',
+  builtTitle: 'この study loop を使って 2026年7月1日に AWS Cloud Practitioner に合格しました。',
+  wiseBadge: '賢く使う',
+  resourceBadge: '使用した Resource',
+  resourceTitle: '教材理解に役立った course。',
+  officialResourceBody: '現在の scope、domain weights、service coverage は official AWS exam guide を source of truth としてください。',
+  officialResourceLink: 'Official AWS CLF-C02 exam guide',
+  communityResourceBody: 'r/AWSCertifications wiki は community-maintained links として便利です。official AWS material ではありません。',
+  communityResourceLink: 'r/AWSCertifications community wiki',
+  compatBadge: 'Compatibility',
+  contactBadge: 'Contact',
+  contactTitle: 'Connect、contribute、または support。',
+  settingsTitle: 'Settings & Data',
+  settingsBody: 'Progress はこの browser に local 保存されます。別 device に移す場合は backup を export してください。',
+  languageToast: '言語を更新しました。Practice questions は試験用語のため英語のままです。',
+  guidePageTitle: '学習ガイド & Cheat Sheets',
+  guidePageSubtitle: 'Core AWS concepts、trigger words、exam traps を browse/search/memorize。',
+  exitGuide: 'Guide を閉じる',
+  guideTabConcepts: 'Cloud Concepts',
+  guideTabResponsibility: 'Shared Responsibility',
+  guideTabDirectory: 'Service Index',
+  guideTabServerless: 'Serverless Map',
+  guideTabTraps: 'High-Yield Traps',
+  guideTabPairs: 'Confusing Pairs',
+  guideTabStrategy: 'Last-Minute Strategy',
+  guideTabPassPlan: '7-Day Plan',
+  guideConceptsTitle: 'Core Cloud Concepts',
+  guideConceptColumn: 'Concept',
+  guideMeaningColumn: 'Memory Hook / Meaning',
+  guideResponsibilityTitle: 'Shared Responsibility Matrix',
+  guideResponsibilityBody: '覚えるポイント: AWS は cloud OF security、customer は cloud IN security を担当します。',
+  guideAwsResponsibility: 'AWS Responsibility',
+  guideCustomerResponsibility: 'Customer Responsibility',
+  guideResponsibilityQuestions: 'Common Responsibility Questions',
+  guideSearchPlaceholder: 'Services、trigger words、descriptions を検索 (例: S3, SQL, database)...',
+  serverlessBadgeTitle: 'Exam shortcut',
+  serverlessTitle: 'Serverless services map',
+  serverlessBody: 'CLF-C02 で serverless は多くの場合、capacity、scaling、availability、infrastructure management を AWS が扱う意味です。access、data、cost、behavior は設定が必要です。',
+  trapsTitle: 'Highest-Yield Exam Traps',
+  trapsBody: 'この pattern を見つけると、likely service を素早く選べます。',
+  trapsQuestionColumn: 'Question says...',
+  trapsAnswerColumn: 'Correct answer...',
+  pairsSearchPlaceholder: 'Confusing pairs を検索 (例: CloudWatch, RDS)...',
+  readinessTitle: 'CLF-C02 Readiness Audit',
+  readinessBody: 'Exam day 前に6つの check を完了します。2つは history で測定、4つは honest self-check です。',
+  domainWeightsTitle: 'CLF-C02 Domain Weights',
+  officialSourceBadge: 'Official source check',
+  officialSourceBody: 'Exam day 前に current AWS exam guide で weights と scope を確認してください。',
+  officialSourceLink: 'AWS exam guide を開く',
+  mustSkipTitle: 'Must-Know vs. Skip Guide',
+  mustSkipBody: '最後の時間は重要ポイントに集中。config details の暗記に使いすぎない。',
+  mustKnowHeading: 'MUST KNOW HARD',
+  skipHeading: 'SKIP / KNOW LIGHTLY',
+  examDayMethodTitle: 'Final Exam-Day Method',
+  lastPageTitle: 'Last-Page Memory Cheat Sheet',
+  lastPageBody: '試験直前に見直す condensed service summary。',
+  passPlanTitle: '7-Day Pass Plan',
+  passPlanBody: '高配点 domains に寄せた daily plan。1日およそ2-3時間。',
+  passStrategiesTitle: 'How Real People Passed',
+  passStrategiesBody: 'Public study reports と AWS guidance から paraphrase。leaked content はありません。',
+  serverlessLabel: 'Serverless',
+  serverlessSummaryServices: 'exam-relevant services flagged',
+  serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
+  serverlessSummaryCaution: 'no servers, but IAM, data, cost, and config matter',
+  serverlessServiceCount: '{count} services',
+  keyTriggerLabel: 'Key trigger',
+  noServiceResults: '"{query}" に一致する service はありません。',
+  trapQuestionTemplate: 'Question says "{term}"...',
+  trapAnswerTemplate: 'Correct answer is "{answer}"',
+  passPlanDayLabel: 'Day {day}: {focus}',
+  passPlanWhyLabel: 'Why',
+  selectedPlanSummary: 'Selected: {label}',
+  readinessMockTitle: 'Two timed mocks で 80%+',
+  readinessMockAchieved: 'Done: {count} mocks at 80%+.',
+  readinessMockProgress: '80%+ mocks が2回必要。current: {count}.',
+  readinessWrongTitle: 'Wrong-answer pool を5未満にする',
+  readinessWrongAchieved: 'Done: wrong-answer pool は小さいです ({count}).',
+  readinessWrongProgress: 'Pool を5未満に保つ。current: {count}.',
+  readinessMasterTitle: '47 service anchors を見ずに recall',
+  readinessMasterInfo: 'Self-check: Master Memory Page を声に出して説明できますか?',
+  readinessPairsTitle: 'Top confusing pairs を説明',
+  readinessPairsInfo: 'Self-check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc.',
+  readinessDrillsTitle: 'Rapid Trigger Drills で 80%+',
+  readinessDrillsInfo: 'Self-check: scenario triggers を services に素早く一致させる。',
+  readinessOfficialTitle: 'Official AWS practice questions を review',
+  readinessOfficialInfo: 'Self-check: current AWS materials と wording instincts を比較。',
+  readinessAchievedLabel: 'Achieved',
+  readinessProgressLabel: 'In progress'
+});
+
 const EXAM_LABELS = {
   random: 'Comprehensive Mock',
   mock1: 'Practice Mock Exam 1',
@@ -959,9 +2202,27 @@ function saveLanguage(lang) {
   }
 }
 
+function copyForLanguage(lang = state.language) {
+  const safeLang = SUPPORTED_LANGUAGES[lang] ? lang : 'en';
+  return { ...I18N.en, ...(I18N[safeLang] || {}) };
+}
+
+function formatCopy(template, replacements = {}) {
+  return String(template).replace(/\{(\w+)\}/g, (_, key) => {
+    return Object.prototype.hasOwnProperty.call(replacements, key)
+      ? String(replacements[key])
+      : `{${key}}`;
+  });
+}
+
+function t(key, replacements = {}) {
+  const copy = copyForLanguage();
+  return formatCopy(copy[key] || I18N.en[key] || key, replacements);
+}
+
 function applyLanguage(lang = 'en') {
   const safeLang = SUPPORTED_LANGUAGES[lang] ? lang : 'en';
-  const copy = { ...I18N.en, ...(I18N[safeLang] || {}) };
+  const copy = copyForLanguage(safeLang);
   state.language = safeLang;
   document.documentElement.lang = SUPPORTED_LANGUAGES[safeLang].htmlLang;
 
@@ -970,17 +2231,42 @@ function applyLanguage(lang = 'en') {
     if (copy[key]) el.textContent = copy[key];
   });
 
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (copy[key]) el.setAttribute('placeholder', copy[key]);
+  });
+
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    if (copy[key]) el.setAttribute('aria-label', copy[key]);
+  });
+
   document.querySelectorAll('#language-select, #settings-language-select').forEach(select => {
     select.value = safeLang;
   });
+}
+
+function refreshLocalizedDynamicContent() {
+  if (state.currentView === 'study-view') {
+    renderGuideConcepts();
+    renderGuideResponsibility();
+    renderGuideDirectory(document.getElementById('guide-search-input')?.value.trim() || '');
+    renderGuideServerless();
+    renderGuideTraps();
+    renderGuidePairs(document.getElementById('pairs-search-input')?.value.trim() || '');
+    renderGuideStrategy();
+    renderGuidePassPlan();
+  }
+  updateStudyPlanSelection(document.querySelector('.select-plan-btn.active'));
 }
 
 function setLanguage(lang, showNotice = true) {
   const safeLang = SUPPORTED_LANGUAGES[lang] ? lang : 'en';
   saveLanguage(safeLang);
   applyLanguage(safeLang);
+  refreshLocalizedDynamicContent();
   if (showNotice) {
-    showToast((I18N[safeLang] && I18N[safeLang].languageToast) || I18N.en.languageToast, 'success');
+    showToast(t('languageToast'), 'success');
   }
 }
 
@@ -1336,6 +2622,7 @@ function submitPracticeAnswer(answer) {
 
 // Render the Timed Mock Exam Player
 function startExam(examType = 'random') {
+  closeExitDialog();
   state.currentMode = 'exam';
   state.currentExamType = examType;
   state.currentQuestionIndex = 0;
@@ -1523,7 +2810,27 @@ function toggleExamFlag() {
   renderExamSidebar();
 }
 
+function resetExamSessionState() {
+  clearInterval(state.timerInterval);
+  state.timerInterval = null;
+  state.currentMode = null;
+  state.currentExamType = 'random';
+  state.currentQuestionIndex = 0;
+  state.questionsList = [];
+  state.userAnswers = {};
+  state.markedQuestions = new Set();
+  state.examStartedAt = null;
+  state.examSubmitted = false;
+  state.examTimeRemaining = 90 * 60;
+  state.examDurationSeconds = 90 * 60;
+}
+
 function exitExamEarly() {
+  if (state.currentMode !== 'exam') {
+    updateDashboardStats();
+    showView('dashboard');
+    return;
+  }
   document.getElementById('confirm-exit-dialog').classList.add('active');
 }
 
@@ -1532,7 +2839,7 @@ function closeExitDialog() {
 }
 
 function confirmExitExam() {
-  clearInterval(state.timerInterval);
+  resetExamSessionState();
   closeExitDialog();
   updateDashboardStats();
   showView('dashboard');
@@ -2032,6 +3339,125 @@ function switchGuideTab(tabId) {
   }
 }
 
+const SERVICE_CATEGORY_LABELS = {
+  es: {
+    'Security Services': 'Servicios de seguridad',
+    'Compute, Containers & Serverless': 'Compute, contenedores y serverless',
+    'Storage Services': 'Servicios de almacenamiento',
+    'Databases & Analytics': 'Bases de datos y analitica',
+    'Networking & Content Delivery': 'Redes y entrega de contenido',
+    'Management & Governance': 'Gestion y gobernanza',
+    'Application Integration': 'Integracion de aplicaciones',
+    'Migration & Transfer': 'Migracion y transferencia',
+    'Billing, Pricing & Support': 'Facturacion, precios y soporte',
+    'Pricing Models': 'Modelos de precios',
+    'Machine Learning & Small Categories': 'Machine Learning y categorias pequenas',
+    'Developer Tools & Deployment': 'Herramientas de desarrollo y despliegue'
+  },
+  pt: {
+    'Security Services': 'Servicos de seguranca',
+    'Compute, Containers & Serverless': 'Compute, containers e serverless',
+    'Storage Services': 'Servicos de armazenamento',
+    'Databases & Analytics': 'Bancos de dados e analytics',
+    'Networking & Content Delivery': 'Rede e entrega de conteudo',
+    'Management & Governance': 'Gestao e governanca',
+    'Application Integration': 'Integracao de aplicacoes',
+    'Migration & Transfer': 'Migracao e transferencia',
+    'Billing, Pricing & Support': 'Faturamento, precos e suporte',
+    'Pricing Models': 'Modelos de preco',
+    'Machine Learning & Small Categories': 'Machine Learning e categorias menores',
+    'Developer Tools & Deployment': 'Ferramentas de desenvolvimento e deploy'
+  },
+  fr: {
+    'Security Services': 'Services de securite',
+    'Compute, Containers & Serverless': 'Compute, conteneurs et serverless',
+    'Storage Services': 'Services de stockage',
+    'Databases & Analytics': 'Bases de donnees et analytics',
+    'Networking & Content Delivery': 'Reseau et diffusion de contenu',
+    'Management & Governance': 'Gestion et gouvernance',
+    'Application Integration': 'Integration applicative',
+    'Migration & Transfer': 'Migration et transfert',
+    'Billing, Pricing & Support': 'Facturation, tarifs et support',
+    'Pricing Models': 'Modeles de tarification',
+    'Machine Learning & Small Categories': 'Machine Learning et petites categories',
+    'Developer Tools & Deployment': 'Outils developpeur et deploiement'
+  },
+  de: {
+    'Security Services': 'Security-Services',
+    'Compute, Containers & Serverless': 'Compute, Container und Serverless',
+    'Storage Services': 'Storage-Services',
+    'Databases & Analytics': 'Datenbanken und Analytics',
+    'Networking & Content Delivery': 'Netzwerk und Content Delivery',
+    'Management & Governance': 'Management und Governance',
+    'Application Integration': 'Application Integration',
+    'Migration & Transfer': 'Migration und Transfer',
+    'Billing, Pricing & Support': 'Abrechnung, Preise und Support',
+    'Pricing Models': 'Preismodelle',
+    'Machine Learning & Small Categories': 'Machine Learning und kleinere Kategorien',
+    'Developer Tools & Deployment': 'Developer Tools und Deployment'
+  },
+  it: {
+    'Security Services': 'Servizi di sicurezza',
+    'Compute, Containers & Serverless': 'Compute, container e serverless',
+    'Storage Services': 'Servizi di storage',
+    'Databases & Analytics': 'Database e analytics',
+    'Networking & Content Delivery': 'Rete e content delivery',
+    'Management & Governance': 'Gestione e governance',
+    'Application Integration': 'Integrazione applicativa',
+    'Migration & Transfer': 'Migrazione e trasferimento',
+    'Billing, Pricing & Support': 'Fatturazione, prezzi e supporto',
+    'Pricing Models': 'Modelli di prezzo',
+    'Machine Learning & Small Categories': 'Machine Learning e categorie minori',
+    'Developer Tools & Deployment': 'Developer tools e deployment'
+  },
+  nl: {
+    'Security Services': 'Security services',
+    'Compute, Containers & Serverless': 'Compute, containers en serverless',
+    'Storage Services': 'Storage services',
+    'Databases & Analytics': 'Databases en analytics',
+    'Networking & Content Delivery': 'Netwerk en content delivery',
+    'Management & Governance': 'Management en governance',
+    'Application Integration': 'Applicatie-integratie',
+    'Migration & Transfer': 'Migratie en transfer',
+    'Billing, Pricing & Support': 'Facturering, prijzen en support',
+    'Pricing Models': 'Prijsmodellen',
+    'Machine Learning & Small Categories': 'Machine learning en kleinere categorieen',
+    'Developer Tools & Deployment': 'Developer tools en deployment'
+  },
+  hi: {
+    'Security Services': 'Security services',
+    'Compute, Containers & Serverless': 'Compute, containers, serverless',
+    'Storage Services': 'Storage services',
+    'Databases & Analytics': 'Databases aur analytics',
+    'Networking & Content Delivery': 'Networking aur content delivery',
+    'Management & Governance': 'Management aur governance',
+    'Application Integration': 'Application integration',
+    'Migration & Transfer': 'Migration aur transfer',
+    'Billing, Pricing & Support': 'Billing, pricing aur support',
+    'Pricing Models': 'Pricing models',
+    'Machine Learning & Small Categories': 'Machine Learning aur small categories',
+    'Developer Tools & Deployment': 'Developer tools aur deployment'
+  },
+  ja: {
+    'Security Services': 'Security services',
+    'Compute, Containers & Serverless': 'Compute, containers, serverless',
+    'Storage Services': 'Storage services',
+    'Databases & Analytics': 'Databases and analytics',
+    'Networking & Content Delivery': 'Networking and content delivery',
+    'Management & Governance': 'Management and governance',
+    'Application Integration': 'Application integration',
+    'Migration & Transfer': 'Migration and transfer',
+    'Billing, Pricing & Support': 'Billing, pricing, and support',
+    'Pricing Models': 'Pricing models',
+    'Machine Learning & Small Categories': 'Machine learning and small categories',
+    'Developer Tools & Deployment': 'Developer tools and deployment'
+  }
+};
+
+function localizedCategoryLabel(category) {
+  return (SERVICE_CATEGORY_LABELS[state.language] && SERVICE_CATEGORY_LABELS[state.language][category]) || category;
+}
+
 // Render the 7-Day Pass Plan + proven strategies + exam-day checklist
 function renderGuidePassPlan() {
   const daysEl = document.getElementById('pass-plan-days');
@@ -2039,14 +3465,14 @@ function renderGuidePassPlan() {
     daysEl.innerHTML = (PASS_PLAN.days || []).map(d => `
       <div class="glass-card" style="padding: 1.25rem 1.5rem;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
-          <h4 style="font-size: 1rem; font-weight: 800; color: var(--warning); margin: 0;">Day ${d.day}: ${d.focus}</h4>
+          <h4 style="font-size: 1rem; font-weight: 800; color: var(--warning); margin: 0;">${escapeHtml(t('passPlanDayLabel', { day: d.day, focus: d.focus }))}</h4>
           <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">⏱️ ${d.hours}</span>
         </div>
         <ul style="padding-left: 1.1rem; margin: 0 0 0.6rem; font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary);">
           ${d.do.map(t => `<li>${t}</li>`).join('')}
         </ul>
         <div style="font-size: 0.8rem; color: var(--success); border-left: 2px solid var(--success); padding-left: 0.75rem;">
-          <strong>Why:</strong> ${d.why}
+          <strong>${escapeHtml(t('passPlanWhyLabel'))}:</strong> ${d.why}
         </div>
       </div>
     `).join('');
@@ -2110,7 +3536,7 @@ function isServerlessService(serviceName) {
 
 function renderServerlessBadge(serviceName) {
   return isServerlessService(serviceName)
-    ? '<span class="serverless-badge">Serverless</span>'
+    ? `<span class="serverless-badge">${escapeHtml(t('serverlessLabel'))}</span>`
     : '';
 }
 
@@ -2118,9 +3544,9 @@ function renderGuideServerless() {
   const summary = document.getElementById('serverless-summary-grid');
   if (summary) {
     summary.innerHTML = [
-      { value: SERVERLESS_SERVICE_NAMES.size, label: 'exam-relevant services flagged' },
-      { value: '5', label: 'mental buckets: compute, APIs, data, integration, AI' },
-      { value: 'No servers', label: 'but IAM, data, cost, and config still matter' }
+      { value: SERVERLESS_SERVICE_NAMES.size, label: t('serverlessSummaryServices') },
+      { value: '5', label: t('serverlessSummaryBuckets') },
+      { value: 'No servers', label: t('serverlessSummaryCaution') }
     ].map(item => `
       <div class="serverless-summary-item">
         <strong>${escapeHtml(String(item.value))}</strong>
@@ -2139,7 +3565,7 @@ function renderGuideServerless() {
           <span class="card-badge">${escapeHtml(group.title)}</span>
           <h3>${escapeHtml(group.takeaway)}</h3>
         </div>
-        <span>${group.services.length} services</span>
+        <span>${escapeHtml(t('serverlessServiceCount', { count: group.services.length }))}</span>
       </div>
       <div class="serverless-card-grid">
         ${group.services.map(name => {
@@ -2147,8 +3573,8 @@ function renderGuideServerless() {
           return `
             <div class="serverless-service-card">
               <div class="directory-service-name">${escapeHtml(name)} ${renderServerlessBadge(name)}</div>
-              <div class="directory-service-desc">${escapeHtml(info ? info.desc : 'Managed AWS service')}</div>
-              <div class="directory-service-triggers">Key trigger: ${escapeHtml(info ? info.triggers : 'serverless')}</div>
+              <div class="directory-service-desc">${escapeHtml(info ? info.desc : t('managedServiceFallback'))}</div>
+              <div class="directory-service-triggers">${escapeHtml(t('keyTriggerLabel'))}: ${escapeHtml(info ? info.triggers : 'serverless')}</div>
             </div>
           `;
         }).join('')}
@@ -2179,7 +3605,7 @@ function renderGuideDirectory(filterText = '') {
     
     const catSection = document.createElement('div');
     catSection.innerHTML = `
-      <div class="directory-category-title">${category} (${filtered.length})</div>
+      <div class="directory-category-title">${escapeHtml(localizedCategoryLabel(category))} (${filtered.length})</div>
       <div class="directory-grid" id="dir-grid-${category.replace(/[^a-zA-Z0-9]/g, '')}"></div>
     `;
     
@@ -2195,14 +3621,14 @@ function renderGuideDirectory(filterText = '') {
           ${renderServerlessBadge(s.name)}
         </div>
         <div class="directory-service-desc">${escapeHtml(s.desc)}</div>
-        <div class="directory-service-triggers">Key trigger: ${escapeHtml(s.triggers)}</div>
+        <div class="directory-service-triggers">${escapeHtml(t('keyTriggerLabel'))}: ${escapeHtml(s.triggers)}</div>
       `;
       grid.appendChild(card);
     });
   });
   
   if (container.innerHTML === '') {
-    container.innerHTML = `<div style="text-align: center; color: var(--text-muted); margin-top: 2rem;">No services found matching "${escapeHtml(filterText)}".</div>`;
+    container.innerHTML = `<div style="text-align: center; color: var(--text-muted); margin-top: 2rem;">${escapeHtml(t('noServiceResults', { query: filterText }))}</div>`;
   }
 }
 
@@ -2211,8 +3637,8 @@ function renderGuideTraps() {
   tbody.innerHTML = HIGH_YIELD_TRAPS.map(item => {
     const key = item.question || item.name;
     return `<tr>
-      <td style="font-weight: 700; color: var(--text-primary);">If the question says "${key}"...</td>
-      <td style="font-weight: 700; color: var(--warning);">The correct answer is "${item.answer}"</td>
+      <td style="font-weight: 700; color: var(--text-primary);">${escapeHtml(t('trapQuestionTemplate', { term: key }))}</td>
+      <td style="font-weight: 700; color: var(--warning);">${escapeHtml(t('trapAnswerTemplate', { answer: item.answer }))}</td>
     </tr>`;
   }).join('');
 }
@@ -3031,58 +4457,58 @@ function renderReadinessAudit() {
   const scoresAbove80 = state.stats.examScores.filter(s => s >= 80).length;
   const mockChecked = scoresAbove80 >= 2;
   const mockText = mockChecked
-    ? `<span style="color: var(--success); font-weight: 600;">Achieved!</span> You scored 80%+ on ${scoresAbove80} mocks.`
-    : `<span style="color: var(--text-muted);">In Progress:</span> Need 80%+ on 2 mocks (Currently: ${scoresAbove80}).`;
+    ? `<span style="color: var(--success); font-weight: 600;">${escapeHtml(t('readinessAchievedLabel'))}:</span> ${escapeHtml(t('readinessMockAchieved', { count: scoresAbove80 }))}`
+    : `<span style="color: var(--text-muted);">${escapeHtml(t('readinessProgressLabel'))}:</span> ${escapeHtml(t('readinessMockProgress', { count: scoresAbove80 }))}`;
 
   // 2. Weak Area Mastery
   const wrongCount = state.wrongAnswers.length;
   const wrongChecked = wrongCount < 5;
   const wrongText = wrongChecked
-    ? `<span style="color: var(--success); font-weight: 600;">Achieved!</span> Wrong-answer pool is small (${wrongCount} items).`
-    : `<span style="color: var(--text-muted);">In Progress:</span> Keep wrong-answer pool under 5 (Currently: ${wrongCount}).`;
+    ? `<span style="color: var(--success); font-weight: 600;">${escapeHtml(t('readinessAchievedLabel'))}:</span> ${escapeHtml(t('readinessWrongAchieved', { count: wrongCount }))}`
+    : `<span style="color: var(--text-muted);">${escapeHtml(t('readinessProgressLabel'))}:</span> ${escapeHtml(t('readinessWrongProgress', { count: wrongCount }))}`;
 
   const items = [
     {
       id: 'system-mocks',
       type: 'system',
       checked: mockChecked,
-      title: "Score 80%+ on at least 2 mocks",
+      title: t('readinessMockTitle'),
       info: mockText
     },
     {
       id: 'system-wrongs',
       type: 'system',
       checked: wrongChecked,
-      title: "Maintain a small wrong-answers pool",
+      title: t('readinessWrongTitle'),
       info: wrongText
     },
     {
       id: 'masterMemory',
       type: 'self',
       checked: state.readinessSelfChecked.masterMemory,
-      title: "Explain the Master Memory Page without looking",
-      info: "Self-Check: Can you recall the 47 service anchors easily?"
+      title: t('readinessMasterTitle'),
+      info: escapeHtml(t('readinessMasterInfo'))
     },
     {
       id: 'confusingPairs',
       type: 'self',
       checked: state.readinessSelfChecked.confusingPairs,
-      title: "Instantly distinguish the top confusing pairs",
-      info: "Self-Check: CloudWatch vs CloudTrail, WAF vs Shield vs GuardDuty, SQS vs SNS, etc."
+      title: t('readinessPairsTitle'),
+      info: escapeHtml(t('readinessPairsInfo'))
     },
     {
       id: 'triggerDrills',
       type: 'self',
       checked: state.readinessSelfChecked.triggerDrills,
-      title: "Score 80%+ on the Rapid Trigger Drills",
-      info: "Self-Check: Practice matching scenarios to their triggers in under 2 seconds."
+      title: t('readinessDrillsTitle'),
+      info: escapeHtml(t('readinessDrillsInfo'))
     },
     {
       id: 'officialQs',
       type: 'self',
       checked: state.readinessSelfChecked.officialQs,
-      title: "Complete the official AWS practice questions",
-      info: "Self-Check: Go through official practice materials to align with the final wording."
+      title: t('readinessOfficialTitle'),
+      info: escapeHtml(t('readinessOfficialInfo'))
     }
   ];
 
@@ -3100,7 +4526,7 @@ function renderReadinessAudit() {
         </div>
         <div style="flex-grow: 1;">
           <div style="font-size: 0.95rem; font-weight: 700; color: ${item.checked ? 'white' : 'var(--text-primary)'};">
-            ${item.title}
+            ${escapeHtml(item.title)}
           </div>
           <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.15rem;">
             ${item.info}
@@ -4547,13 +5973,13 @@ function updateStudyPlanSelection(selectedBtn) {
   });
 
   const label = selectedPlan === 90
-    ? '90 minutes'
+    ? t('plan90')
     : selectedPlan === 120
-      ? '2 hours'
-      : '3 hours';
+      ? t('plan120')
+      : t('plan180');
   const summary = document.getElementById('selected-plan-summary');
   if (summary) {
-    summary.innerText = `Selected: ${label}`;
+    summary.innerText = t('selectedPlanSummary', { label });
   }
 }
 
