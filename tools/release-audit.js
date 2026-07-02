@@ -102,6 +102,7 @@ function auditQuestionPools(pools) {
 function auditStaticFiles() {
   const index = read('index.html');
   const app = read('app.js');
+  const study = read('study_data.js');
   const sw = read('service-worker.js');
   const readme = read('README.md');
   const manifest = JSON.parse(read('manifest.json'));
@@ -121,6 +122,7 @@ function auditStaticFiles() {
   assert(index.includes('data-i18n-placeholder'), 'Translated placeholder markers are missing');
   assert(index.includes('id="tab-guide-serverless"'), 'Serverless map tab is missing');
   assert(index.includes('guideTabServerless') && index.includes('readinessTitle') && index.includes('readiness-gate-card'), 'Study guide readiness gate is missing');
+  assert(index.includes('source-map-card') && index.includes('official-source-links'), 'Official source map section is missing');
   assert(index.includes('id="selected-plan-summary"') && index.includes('aria-pressed="true"'), 'Guided study duration selection feedback is missing');
   assert(app.includes('SERVERLESS_SERVICE_NAMES'), 'Serverless service list is missing');
   assert(app.includes("item.checked && item.type !== 'self'"), 'Readiness self-checks should remain toggleable checkboxes');
@@ -132,7 +134,7 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v9'), 'Service worker cache should be bumped to v9');
+  assert(sw.includes('cloud-recall-lab-v10'), 'Service worker cache should be bumped to v10');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
@@ -140,6 +142,8 @@ function auditStaticFiles() {
   assert(index.includes('https://fonts.googleapis.com') && index.includes('https://fonts.gstatic.com'), 'CSP should allow the BMC font stylesheet/font hosts');
   assert(index.includes('https://www.udemy.com/share/103a093'), 'Udemy resource link is missing from the About page');
   assert(index.includes('https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html'), 'Official AWS exam guide link is missing');
+  assert(study.includes('OFFICIAL_SOURCE_LINKS') && study.includes('OFFICIAL_SCOPE_ANCHORS') && study.includes('OFFICIAL_AVOID_ANCHORS'), 'Official source/boundary data is missing');
+  assert(readme.includes('clf-technologies-concepts.html') && readme.includes('clf-02-in-scope-services.html') && readme.includes('clf-02-out-of-scope-services.html'), 'README official AWS source links are incomplete');
   assert(index.includes('rel="canonical"'), 'Canonical URL is missing');
   assert(index.includes('apple-touch-icon'), 'Apple touch icon is missing');
   assert(app.includes('handleLaunchShortcut'), 'PWA launch shortcut handler is missing');

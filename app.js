@@ -707,6 +707,11 @@ const I18N_PATCHES = {
     languageBody: 'Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.',
     readinessPillLabel: 'Ready:',
     readinessCountLabel: 'checks complete',
+    sourceMapBadge: 'Official source map',
+    sourceMapTitle: 'What this guide is anchored to.',
+    sourceMapBody: 'Use these links as the source check before exam week. The app turns the official scope into recall practice; AWS docs remain the truth when wording or services change.',
+    officialStudyTitle: 'Study these official anchors',
+    officialAvoidTitle: 'Avoid these rabbit holes',
     builtBody2: "This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier. I used Udemy and current learning material to learn the concepts, then used this app's original practice sets instead of buying separate mock exams.",
     officialResourceBody: 'Use the official AWS exam guide as the source of truth for current scope, domain weights, and service coverage. This app turns that scope into recall drills, not a replacement for AWS updates.',
     officialResourceLink: 'Official AWS CLF-C02 exam guide',
@@ -1959,6 +1964,11 @@ const READINESS_GATE_COPY = {
   es: {
     readinessGateBadge: 'Puerta final de preparacion',
     readinessPillLabel: 'Listo:',
+    sourceMapBadge: 'Mapa de fuentes oficiales',
+    sourceMapTitle: 'En que se basa esta guia.',
+    sourceMapBody: 'Usa estos links como verificacion antes del examen. La app convierte el scope oficial en practica; AWS docs siguen siendo la verdad si cambian servicios o redaccion.',
+    officialStudyTitle: 'Estudia estos anchors oficiales',
+    officialAvoidTitle: 'Evita estos rabbit holes',
     readinessTitle: 'Puerta de preparacion CLF-C02',
     readinessBody: 'Usa esto antes del examen: dos checks salen de tu historial y cuatro son confirmaciones honestas. Ayuda a encontrar gaps; no garantiza aprobar.',
     readinessCountLabel: 'checks completos',
@@ -1977,6 +1987,11 @@ const READINESS_GATE_COPY = {
   pt: {
     readinessGateBadge: 'Portao final de preparo',
     readinessPillLabel: 'Pronto:',
+    sourceMapBadge: 'Mapa de fontes oficiais',
+    sourceMapTitle: 'No que esta guia se baseia.',
+    sourceMapBody: 'Use estes links como checagem antes do exame. A app transforma o escopo oficial em pratica; docs AWS continuam sendo a verdade quando algo muda.',
+    officialStudyTitle: 'Estude estes anchors oficiais',
+    officialAvoidTitle: 'Evite estes rabbit holes',
     readinessTitle: 'Portao de preparo CLF-C02',
     readinessBody: 'Use antes do exame: dois checks vem do historico e quatro sao confirmacoes honestas. Ajuda a achar gaps; nao garante aprovacao.',
     readinessCountLabel: 'checks completos',
@@ -1995,6 +2010,11 @@ const READINESS_GATE_COPY = {
   fr: {
     readinessGateBadge: 'Gate final de preparation',
     readinessPillLabel: 'Pret:',
+    sourceMapBadge: 'Carte des sources officielles',
+    sourceMapTitle: 'Ce qui ancre ce guide.',
+    sourceMapBody: 'Utilisez ces liens comme verification avant lexamen. Lapp transforme le perimetre officiel en pratique; les docs AWS restent la source de verite.',
+    officialStudyTitle: 'Etudier ces ancrages officiels',
+    officialAvoidTitle: 'Eviter ces rabbit holes',
     readinessTitle: 'Gate de preparation CLF-C02',
     readinessBody: 'A utiliser avant lexamen: deux checks viennent de lhistorique, quatre sont des confirmations honnetes. Cela expose les gaps; ne garantit pas la reussite.',
     readinessCountLabel: 'checks termines',
@@ -2013,6 +2033,11 @@ const READINESS_GATE_COPY = {
   de: {
     readinessGateBadge: 'Finales Readiness-Gate',
     readinessPillLabel: 'Bereit:',
+    sourceMapBadge: 'Offizielle Quellenkarte',
+    sourceMapTitle: 'Worauf dieser Guide basiert.',
+    sourceMapBody: 'Nutze diese Links als Source-Check vor dem Examen. Die App macht aus dem offiziellen Scope Recall-Praxis; AWS Docs bleiben die Wahrheit.',
+    officialStudyTitle: 'Diese offiziellen Anker lernen',
+    officialAvoidTitle: 'Diese Rabbit Holes vermeiden',
     readinessTitle: 'CLF-C02 Readiness-Gate',
     readinessBody: 'Vor dem Examen nutzen: zwei Checks kommen aus der Historie, vier sind ehrliche Selbstchecks. Es zeigt Luecken; es garantiert kein Bestehen.',
     readinessCountLabel: 'Checks erledigt',
@@ -2031,6 +2056,11 @@ const READINESS_GATE_COPY = {
   it: {
     readinessGateBadge: 'Gate finale di preparazione',
     readinessPillLabel: 'Pronto:',
+    sourceMapBadge: 'Mappa fonti ufficiali',
+    sourceMapTitle: 'Su cosa si basa questa guida.',
+    sourceMapBody: 'Usa questi link come controllo prima dellesame. Lapp trasforma lo scope ufficiale in pratica; i docs AWS restano la fonte vera.',
+    officialStudyTitle: 'Studia questi anchor ufficiali',
+    officialAvoidTitle: 'Evita questi rabbit holes',
     readinessTitle: 'Gate preparazione CLF-C02',
     readinessBody: 'Usalo prima dellesame: due check vengono dalla cronologia, quattro sono conferme oneste. Espone gap; non garantisce il pass.',
     readinessCountLabel: 'check completati',
@@ -2049,6 +2079,11 @@ const READINESS_GATE_COPY = {
   nl: {
     readinessGateBadge: 'Laatste readiness gate',
     readinessPillLabel: 'Klaar:',
+    sourceMapBadge: 'Officiele bronnenkaart',
+    sourceMapTitle: 'Waar deze gids op leunt.',
+    sourceMapBody: 'Gebruik deze links als broncheck voor examendag. De app maakt recall-practice van de officiele scope; AWS docs blijven de waarheid.',
+    officialStudyTitle: 'Bestudeer deze officiele ankers',
+    officialAvoidTitle: 'Vermijd deze rabbit holes',
     readinessTitle: 'CLF-C02 readiness gate',
     readinessBody: 'Gebruik dit voor examendag: twee checks komen uit je historie, vier zijn eerlijke zelfchecks. Het toont gaten; het garandeert geen pass.',
     readinessCountLabel: 'checks klaar',
@@ -2067,6 +2102,11 @@ const READINESS_GATE_COPY = {
   hi: {
     readinessGateBadge: 'Final readiness gate',
     readinessPillLabel: 'Ready:',
+    sourceMapBadge: 'Official source map',
+    sourceMapTitle: 'Yeh guide kis par anchored hai.',
+    sourceMapBody: 'Exam week se pehle in links se source check karein. App official scope ko recall practice banata hai; wording/services change ho to AWS docs truth hain.',
+    officialStudyTitle: 'In official anchors ko study karein',
+    officialAvoidTitle: 'In rabbit holes se bachein',
     readinessTitle: 'CLF-C02 Readiness Gate',
     readinessBody: 'Exam se pehle use karein: do checks history se measured hain, chaar honest self-checks hain. Gaps dikhata hai; pass guarantee nahi.',
     readinessCountLabel: 'checks complete',
@@ -2085,6 +2125,11 @@ const READINESS_GATE_COPY = {
   ja: {
     readinessGateBadge: 'Final readiness gate',
     readinessPillLabel: 'Ready:',
+    sourceMapBadge: 'Official source map',
+    sourceMapTitle: 'この guide の根拠。',
+    sourceMapBody: 'Exam week 前にこれらの links で source check してください。App は official scope を recall practice にします。wording/services が変わった場合は AWS docs が truth です。',
+    officialStudyTitle: 'Study these official anchors',
+    officialAvoidTitle: 'Avoid these rabbit holes',
     readinessTitle: 'CLF-C02 Readiness Gate',
     readinessBody: 'Exam day 前に使用します。2つは history で測定、4つは honest self-check です。gap を見つけるためのものです。pass guarantee ではありません。',
     readinessCountLabel: 'checks complete',
@@ -3811,6 +3856,29 @@ function renderGuideTraps() {
   }).join('');
 }
 
+function renderOfficialSourceMap() {
+  const linksContainer = document.getElementById('official-source-links');
+  const scopeContainer = document.getElementById('official-scope-list');
+  const avoidContainer = document.getElementById('official-avoid-list');
+
+  if (linksContainer) {
+    linksContainer.innerHTML = OFFICIAL_SOURCE_LINKS.map(item => `
+      <a class="source-map-link" href="${escapeHtml(item.href)}" target="_blank" rel="noopener noreferrer">
+        <strong>${escapeHtml(item.title)}</strong>
+        <span>${escapeHtml(item.note)}</span>
+      </a>
+    `).join('');
+  }
+
+  if (scopeContainer) {
+    scopeContainer.innerHTML = OFFICIAL_SCOPE_ANCHORS.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  }
+
+  if (avoidContainer) {
+    avoidContainer.innerHTML = OFFICIAL_AVOID_ANCHORS.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  }
+}
+
 function renderGuideStrategy() {
   // Strategy Checklist
   const strategyList = document.getElementById('list-exam-strategy');
@@ -3856,6 +3924,7 @@ function renderGuideStrategy() {
 
   // Render Readiness Audit (NEW)
   renderReadinessAudit();
+  renderOfficialSourceMap();
 }
 
 function renderGuidePairs(filterText = '') {
@@ -6349,6 +6418,8 @@ function handleLaunchShortcut() {
     document.getElementById('exam-select-dialog').classList.add('active');
   } else if (shortcut === 'guide') {
     startGuide();
+  } else if (shortcut === 'strategy' || shortcut === 'readiness') {
+    startGuide('strategy');
   } else if (shortcut === 'history') {
     openHistoryView();
   }

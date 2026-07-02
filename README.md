@@ -66,6 +66,12 @@ The app is built around active recall rather than passive rereading:
 This does not guarantee a pass, but the core loop follows well-supported learning techniques. Useful references:
 
 - AWS: [Official CLF-C02 exam guide](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html)
+- AWS: [CLF-C02 technologies and concepts](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-technologies-concepts.html)
+- AWS: [CLF-C02 in-scope services](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html)
+- AWS: [CLF-C02 out-of-scope services](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-out-of-scope-services.html)
+- AWS: [Certification exam prep resources](https://aws.amazon.com/certification/certification-prep/)
+- AWS Skill Builder: [Cloud Practitioner exam prep category](https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02)
+- Community: [r/AWSCertifications community wiki](https://awscertifications.github.io/AWSCertificationsWiki/)
 
 - Roediger & Karpicke, 2006: [Test-enhanced learning and long-term retention](https://pubmed.ncbi.nlm.nih.gov/16507066/)
 - Cepeda et al., 2006: [Distributed practice review and quantitative synthesis](https://pubmed.ncbi.nlm.nih.gov/16719566/)

@@ -391,6 +391,8 @@ const CONFUSING_PAIRS = [
 ];
 
 const MUST_KNOW_LIST = [
+  "AWS value proposition, migration benefits, Cloud Adoption Framework, and Well-Architected basics",
+  "AWS global infrastructure: Regions, Availability Zones, edge locations, and basic resilience vocabulary",
   "IAM (users, roles, policies, MFA, IAM Identity Center)",
   "Shared Responsibility Model (Security OF vs IN the cloud)",
   "Core compute services (EC2 guest OS patching, Lambda, Fargate, Elastic Beanstalk)",
@@ -399,16 +401,17 @@ const MUST_KNOW_LIST = [
   "Networking services (VPC, Route 53, CloudFront, Direct Connect, VPN)",
   "Management & Monitoring (CloudWatch, CloudTrail, Config, Systems Manager, Organizations, Control Tower, Trusted Advisor)",
   "Billing & Pricing (Budgets, Cost Explorer, Pricing Calculator, Cost and Usage Report)",
-  "Security services (KMS, Secrets Manager, WAF, Shield, GuardDuty, Inspector, Macie, Artifact)"
+  "Security services (KMS, Secrets Manager, WAF, Shield, GuardDuty, Inspector, Macie, Artifact)",
+  "AWS support and learning resources: Support Center, Knowledge Center, re:Post, Prescriptive Guidance, whitepapers/blogs/docs"
 ];
 
 const SKIP_LIST = [
-  "Developer services: CodeCommit, CodeDeploy, CodeArtifact, CDK (know only CodeBuild and CodePipeline lightly)",
+  "Developer-service rabbit holes: CodeDeploy, CodeArtifact, CloudShell, Device Farm, CDK implementation details (know CodeBuild and CodePipeline lightly)",
   "Exact database limits and hardware details",
   "Deep IAM JSON policy writing or execution details",
   "Deep VPC routing tables, subnets CIDR block configuration details",
   "Kubernetes config, EKS architecture details (know EKS is managed Kubernetes)",
-  "Timestream, Managed Blockchain",
+  "Out-of-scope service rabbit holes from the current guide, such as App Runner, Timestream, MemoryDB, Network Firewall, VPC Lattice, and Transfer Family",
   "Detailed Redshift architecture, detailed replica counts",
   "Exact pricing dollars/numbers",
   "Database/analytics trigger words (Athena, Redshift, Glue, QuickSight, Kinesis, OpenSearch) - know triggers, skip implementation steps, CLI syntax, code examples"
@@ -419,6 +422,53 @@ const DOMAIN_WEIGHTS = [
   { name: "Security and Compliance", weight: 30, color: "var(--accent-purple)" },
   { name: "Cloud Technology and Services", weight: 34, color: "var(--primary)" },
   { name: "Billing/Pricing/Support", weight: 12, color: "var(--warning)" }
+];
+
+const OFFICIAL_SOURCE_LINKS = [
+  {
+    title: "Official AWS CLF-C02 exam guide",
+    href: "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+    note: "Primary source for current exam purpose, task statements, domain weights, and scored/unscored question model."
+  },
+  {
+    title: "AWS technologies and concepts list",
+    href: "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-technologies-concepts.html",
+    note: "Use this to audit broad concepts like CAF, Well-Architected, global infrastructure, support resources, APIs, IaC, migration, and cost management."
+  },
+  {
+    title: "AWS in-scope service list",
+    href: "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html",
+    note: "Use this to sanity-check the Service Index, serverless map, and trigger-word drills against current AWS service coverage."
+  },
+  {
+    title: "AWS out-of-scope service list",
+    href: "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-out-of-scope-services.html",
+    note: "Use this to avoid wasting final review time on services and features AWS currently lists outside CLF-C02 scope."
+  },
+  {
+    title: "AWS Certification exam prep",
+    href: "https://aws.amazon.com/certification/certification-prep/",
+    note: "AWS points learners to free official practice question sets, exam prep courses, webinars, Skill Builder, and paid official practice exams."
+  },
+  {
+    title: "AWS Skill Builder Cloud Practitioner prep",
+    href: "https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02",
+    note: "Use Skill Builder for official practice questions and AWS-maintained exam-prep learning resources."
+  }
+];
+
+const OFFICIAL_SCOPE_ANCHORS = [
+  "Learn the four official domains: Cloud Concepts, Security and Compliance, Cloud Technology and Services, and Billing/Pricing/Support.",
+  "Be able to explain AWS value, shared responsibility, Well-Architected basics, security best practices, cloud economics, and core services by use case.",
+  "Use the official technologies list to check broad concepts: APIs, CAF, compliance, EC2 instance purchase models, global infrastructure, IaC, Knowledge Center, Prescriptive Guidance, re:Post, support plans, and storage/network/database categories.",
+  "Use the in-scope service list to verify service families: analytics, application integration, compute, containers, databases, management/governance, migration, networking, security, serverless, and storage."
+];
+
+const OFFICIAL_AVOID_ANCHORS = [
+  "Do not study like an architect exam: AWS says coding, architecture design, troubleshooting, implementation, and load/performance testing are outside the target candidate scope.",
+  "Do not memorize deep configuration steps, CLI syntax, JSON policy writing, CIDR math, Kubernetes internals, replica counts, or exact pricing dollar amounts.",
+  "Before exam week, compare your notes against the official out-of-scope service list and trim rabbit holes that are not CLF-C02-level.",
+  "Avoid braindumps or copied real exam questions; they can be inaccurate, unethical, and risky for certification status."
 ];
 
 // ---- 7-Day Battle Plan + Proven "How Real People Passed" Strategies ----
