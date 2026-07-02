@@ -377,21 +377,197 @@ const LAST_PAGE_MEMORY = {
 };
 
 const CONFUSING_PAIRS = [
-  { pair: "CloudWatch vs CloudTrail", hook: "CloudWatch = metrics/logs/alarms. CloudTrail = API audit/who did what." },
-  { pair: "Config vs CloudTrail", hook: "Config = resource configuration history/compliance. CloudTrail = API activity." },
-  { pair: "RDS vs Redshift", hook: "RDS = transactional app database/OLTP. Redshift = analytics warehouse/OLAP." },
-  { pair: "Athena vs Redshift", hook: "Athena = query S3 directly, serverless. Redshift = data warehouse." },
-  { pair: "Glue vs Athena", hook: "Glue prepares/transforms/catalogs data. Athena queries data." },
-  { pair: "QuickSight vs Redshift", hook: "QuickSight visualizes dashboards. Redshift stores/analyzes warehouse data." },
-  { pair: "DMS vs SCT", hook: "DMS moves database data. SCT converts database schema." },
-  { pair: "S3 vs EBS vs EFS", hook: "S3 = object storage. EBS = EC2 block disk. EFS = shared file system." },
-  { pair: "Direct Connect vs VPN", hook: "Direct Connect = dedicated private line. VPN = encrypted tunnel over internet." },
-  { pair: "SQS vs SNS", hook: "SQS = queue/pull. SNS = notification/pub-sub/push." },
-  { pair: "WAF vs Shield", hook: "WAF = web attacks like SQL injection. Shield = DDoS." },
-  { pair: "GuardDuty vs Inspector", hook: "GuardDuty = threat detection. Inspector = vulnerability scanning." },
-  { pair: "Secrets Manager vs KMS", hook: "Secrets Manager stores/rotates secrets. KMS manages encryption keys." },
-  { pair: "Organizations vs Control Tower", hook: "Organizations manages accounts. Control Tower sets up/governs landing zone." },
-  { pair: "CodeBuild vs CodePipeline", hook: "CodeBuild builds/tests/packages. CodePipeline orchestrates release workflow." }
+  {
+    pair: "CloudWatch vs CloudTrail",
+    category: "Monitoring and audit",
+    services: [
+      { name: "CloudWatch", equals: "Metrics, logs, alarms, dashboards, and operational visibility.", clue: "Performance, health, usage, alarms, log search." },
+      { name: "CloudTrail", equals: "API activity history for auditing who did what in an AWS account.", clue: "Who changed it, when, from where, which API call." }
+    ],
+    decision: "If the question asks whether something is healthy or alarming, pick CloudWatch. If it asks who made an API change, pick CloudTrail."
+  },
+  {
+    pair: "Config vs CloudTrail",
+    category: "Governance and audit",
+    services: [
+      { name: "Config", equals: "Resource configuration history, compliance rules, and drift-style state tracking.", clue: "What changed about the resource configuration." },
+      { name: "CloudTrail", equals: "API call record for account activity and audit investigations.", clue: "Who called which AWS API." }
+    ],
+    decision: "Use Config for resource state and compliance. Use CloudTrail for the actor and API event that caused a change."
+  },
+  {
+    pair: "RDS vs Redshift",
+    category: "Database and analytics",
+    services: [
+      { name: "RDS", equals: "Managed relational SQL database for transactional applications.", clue: "OLTP, app database, MySQL, PostgreSQL, Oracle, SQL Server." },
+      { name: "Redshift", equals: "Data warehouse for large-scale analytics and reporting.", clue: "OLAP, warehouse, BI queries, analytics over large datasets." }
+    ],
+    decision: "Use RDS for application transactions. Use Redshift for analytics warehouses and reporting."
+  },
+  {
+    pair: "Athena vs Redshift",
+    category: "Analytics",
+    services: [
+      { name: "Athena", equals: "Serverless SQL queries directly against data in S3.", clue: "Query S3, data lake, ad hoc SQL, pay per query." },
+      { name: "Redshift", equals: "Data warehouse engine for loaded and structured analytics data.", clue: "Warehouse, complex analytics, BI at scale." }
+    ],
+    decision: "Use Athena when the data stays in S3. Use Redshift when the question wants a data warehouse."
+  },
+  {
+    pair: "Glue vs Athena",
+    category: "Analytics",
+    services: [
+      { name: "Glue", equals: "Serverless ETL plus Data Catalog for preparing and organizing data.", clue: "Extract, transform, load, crawl, catalog." },
+      { name: "Athena", equals: "Serverless SQL query service for reading data, commonly in S3.", clue: "Run SQL, query data, no ETL job." }
+    ],
+    decision: "Use Glue to prepare or catalog data. Use Athena to ask SQL questions against that data."
+  },
+  {
+    pair: "QuickSight vs Redshift",
+    category: "BI and analytics",
+    services: [
+      { name: "QuickSight", equals: "Business intelligence dashboards and visualizations.", clue: "Dashboard, chart, report visualization." },
+      { name: "Redshift", equals: "Data warehouse that stores and analyzes large datasets.", clue: "Warehouse engine, analytics storage, OLAP." }
+    ],
+    decision: "Use QuickSight to display insights. Use Redshift to store/query the warehouse behind those insights."
+  },
+  {
+    pair: "DMS vs SCT",
+    category: "Migration",
+    services: [
+      { name: "DMS", equals: "Database Migration Service moves database data with minimal downtime.", clue: "Migrate data, replicate changes, keep source running." },
+      { name: "SCT", equals: "Schema Conversion Tool converts database schema and code between engines.", clue: "Convert Oracle schema to PostgreSQL, assess incompatibilities." }
+    ],
+    decision: "Use DMS to move data. Use SCT when the source and target engines need schema conversion."
+  },
+  {
+    pair: "S3 vs EBS vs EFS",
+    category: "Storage",
+    services: [
+      { name: "S3", equals: "Object storage for files, backups, media, static sites, and data lakes.", clue: "Object, bucket, unlimited scale, HTTP access." },
+      { name: "EBS", equals: "Block storage volume attached to one EC2 instance in one AZ.", clue: "EC2 disk, boot volume, low-latency block device." },
+      { name: "EFS", equals: "Shared elastic file system for Linux workloads across multiple instances.", clue: "Shared files, NFS, many EC2 instances." }
+    ],
+    decision: "Object or static file means S3. EC2 disk means EBS. Shared Linux file system means EFS."
+  },
+  {
+    pair: "Direct Connect vs VPN",
+    category: "Hybrid networking",
+    services: [
+      { name: "Direct Connect", equals: "Dedicated private network connection from on-premises to AWS.", clue: "Consistent bandwidth, private line, long-term hybrid link." },
+      { name: "VPN", equals: "Encrypted tunnel to AWS over the public internet.", clue: "Encrypted internet tunnel, quick setup, lower cost." }
+    ],
+    decision: "Use Direct Connect for dedicated private connectivity. Use VPN for encrypted connectivity over the internet."
+  },
+  {
+    pair: "Security Groups vs Network ACLs",
+    category: "VPC security",
+    services: [
+      { name: "Security Groups", equals: "Stateful virtual firewall attached to ENIs or instances.", clue: "Instance-level rules, allow rules, return traffic allowed automatically." },
+      { name: "Network ACLs", equals: "Stateless subnet-level network access rules.", clue: "Subnet boundary, allow and deny rules, inbound and outbound evaluated separately." }
+    ],
+    decision: "Use security groups for instance-level stateful control. Use NACLs for subnet-level stateless filtering."
+  },
+  {
+    pair: "SQS vs SNS",
+    category: "Application integration",
+    services: [
+      { name: "SQS", equals: "Message queue where consumers poll and process messages.", clue: "Queue, buffer, decouple, pull, one worker processes a message." },
+      { name: "SNS", equals: "Pub/sub notification fanout that pushes messages to subscribers.", clue: "Notify many, push, fanout, email/SMS/Lambda subscriptions." }
+    ],
+    decision: "Use SQS when work should wait in a queue. Use SNS when one event should notify many subscribers."
+  },
+  {
+    pair: "EventBridge vs Step Functions",
+    category: "Application integration",
+    services: [
+      { name: "EventBridge", equals: "Event bus for routing events between services and applications.", clue: "Event-driven routing, SaaS events, rules, targets." },
+      { name: "Step Functions", equals: "Workflow orchestration for ordered steps and branching logic.", clue: "State machine, sequence, retries, human/business workflow." }
+    ],
+    decision: "Use EventBridge to route events. Use Step Functions to coordinate a multi-step process."
+  },
+  {
+    pair: "WAF vs Shield",
+    category: "Edge and web protection",
+    services: [
+      { name: "WAF", equals: "Web application firewall for HTTP/S request filtering.", clue: "SQL injection, XSS, web ACLs, bot/request rules." },
+      { name: "Shield", equals: "DDoS protection for AWS workloads.", clue: "Distributed denial of service, volumetric attack protection." }
+    ],
+    decision: "Use WAF for web request attacks. Use Shield for DDoS protection."
+  },
+  {
+    pair: "GuardDuty vs Inspector vs Macie",
+    category: "Security detection",
+    services: [
+      { name: "GuardDuty", equals: "Threat detection from logs and behavior signals.", clue: "Suspicious activity, compromised credentials, crypto mining, malicious IPs." },
+      { name: "Inspector", equals: "Vulnerability scanning for supported workloads.", clue: "CVEs, package vulnerabilities, EC2, ECR, Lambda scans." },
+      { name: "Macie", equals: "Sensitive data discovery and classification in S3.", clue: "PII, sensitive data, S3 bucket discovery." }
+    ],
+    decision: "Threat behavior means GuardDuty. Vulnerabilities mean Inspector. Sensitive data in S3 means Macie."
+  },
+  {
+    pair: "Secrets Manager vs KMS",
+    category: "Encryption and secrets",
+    services: [
+      { name: "Secrets Manager", equals: "Stores, retrieves, and rotates secrets such as database passwords.", clue: "Secret value, password, API key, rotation." },
+      { name: "KMS", equals: "Creates and manages encryption keys used by AWS services and apps.", clue: "Encrypt data, key policy, customer managed key." }
+    ],
+    decision: "Use Secrets Manager for secret values. Use KMS for encryption keys."
+  },
+  {
+    pair: "IAM User vs IAM Role",
+    category: "Identity and access",
+    services: [
+      { name: "IAM User", equals: "Long-term identity for a person or workload when explicitly needed.", clue: "Named user, long-term credentials, avoid for apps when a role works." },
+      { name: "IAM Role", equals: "Temporary credentials assumed by services, users, or external identities.", clue: "EC2 access to S3, cross-account access, federation, temporary permissions." }
+    ],
+    decision: "Use roles for AWS services and temporary access. Use users only when a long-term IAM identity is required."
+  },
+  {
+    pair: "Organizations vs Control Tower",
+    category: "Multi-account governance",
+    services: [
+      { name: "Organizations", equals: "Manage multiple AWS accounts, consolidated billing, OUs, and SCPs.", clue: "Account hierarchy, service control policies, one bill." },
+      { name: "Control Tower", equals: "Set up and govern a multi-account landing zone using AWS best practices.", clue: "Landing zone, guardrails, account factory." }
+    ],
+    decision: "Use Organizations for account management. Use Control Tower to create and govern the landing zone."
+  },
+  {
+    pair: "CloudFront vs Global Accelerator",
+    category: "Global delivery",
+    services: [
+      { name: "CloudFront", equals: "CDN that caches content at edge locations.", clue: "Cache static/dynamic web content, lower latency for HTTP assets." },
+      { name: "Global Accelerator", equals: "Improves global traffic routing to application endpoints using anycast IPs.", clue: "Static anycast IPs, route users to healthy regional endpoints, no content caching." }
+    ],
+    decision: "Use CloudFront for caching content. Use Global Accelerator for optimized global routing to applications."
+  },
+  {
+    pair: "Budgets vs Cost Explorer",
+    category: "Cost management",
+    services: [
+      { name: "Budgets", equals: "Alerts when cost or usage crosses a threshold.", clue: "Notify me when spend exceeds a planned amount." },
+      { name: "Cost Explorer", equals: "Analyze and visualize historical cost and usage trends.", clue: "Charts, past spend, filter/group cost data." }
+    ],
+    decision: "Use Budgets for alerts and limits. Use Cost Explorer to investigate spending patterns."
+  },
+  {
+    pair: "RDS Multi-AZ vs Read Replica",
+    category: "Database resilience",
+    services: [
+      { name: "Multi-AZ", equals: "High availability failover for a database in another Availability Zone.", clue: "Standby, automatic failover, resilience." },
+      { name: "Read Replica", equals: "Read scaling copy that can serve read traffic.", clue: "Scale reads, reporting queries, offload read workload." }
+    ],
+    decision: "Use Multi-AZ for failover. Use read replicas for read scalability."
+  },
+  {
+    pair: "CodeBuild vs CodePipeline",
+    category: "Developer tools",
+    services: [
+      { name: "CodeBuild", equals: "Builds, tests, and packages source code.", clue: "Compile, unit test, create artifact." },
+      { name: "CodePipeline", equals: "Orchestrates release stages from source through build, test, and deploy.", clue: "CI/CD workflow, stages, approvals, deploy pipeline." }
+    ],
+    decision: "Use CodeBuild for the build step. Use CodePipeline for the whole release workflow."
+  }
 ];
 
 const MUST_KNOW_LIST = [

@@ -777,10 +777,18 @@
 
       <!-- Guide Pane 6: Confusing Pairs -->
       <div class="guide-pane" id="pane-guide-pairs" style="display: none;">
-        <div style="margin-bottom: 2rem;">
-          <input type="text" id="pairs-search-input" placeholder="Search confusing pairs (e.g. CloudWatch, RDS)..." data-i18n-placeholder="pairsSearchPlaceholder" style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
+        <div class="pairs-overview-card glass-card">
+          <div>
+            <span class="card-badge" data-i18n="pairsIntroBadge">Exam decision helper</span>
+            <h3 data-i18n="pairsIntroTitle">Confusing pairs, cleaned up.</h3>
+            <p data-i18n="pairsIntroBody">Each card shows the exact difference, the trigger words to look for, and the exam-day decision rule. Use this when two answers feel almost right.</p>
+          </div>
+          <strong id="pairs-count">0 pair checks</strong>
         </div>
-        <div id="pairs-directory-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="pairs-search-row">
+          <input type="text" id="pairs-search-input" placeholder="Search confusing pairs (e.g. CloudWatch, RDS)..." data-i18n-placeholder="pairsSearchPlaceholder">
+        </div>
+        <div id="pairs-directory-container" class="pairs-directory-grid">
           <!-- Rendered dynamically by JS -->
         </div>
       </div>

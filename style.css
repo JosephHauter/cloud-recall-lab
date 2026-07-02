@@ -1434,6 +1434,207 @@ main {
   padding: 1rem;
 }
 
+.pairs-overview-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-color: rgba(14, 165, 233, 0.22);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%);
+}
+
+.pairs-overview-card::before {
+  background: linear-gradient(90deg, var(--secondary), var(--accent-purple));
+}
+
+.pairs-overview-card h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0.45rem 0 0.55rem;
+}
+
+.pairs-overview-card p {
+  color: var(--text-secondary);
+  max-width: 760px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.pairs-overview-card > strong {
+  min-width: 132px;
+  border: 1px solid rgba(14, 165, 233, 0.24);
+  background: rgba(14, 165, 233, 0.08);
+  color: #bae6fd;
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.pairs-search-row {
+  margin-bottom: 1.25rem;
+}
+
+.pairs-search-row input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border-hover);
+  background: rgba(22, 30, 49, 0.8);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.96rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pairs-search-row input:focus {
+  border-color: rgba(14, 165, 233, 0.55);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+}
+
+.pairs-directory-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pair-card {
+  padding: 1.25rem;
+  border-color: rgba(148, 163, 184, 0.18);
+  background: rgba(22, 30, 49, 0.62);
+}
+
+.pair-card::before {
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.85), rgba(139, 92, 246, 0.75));
+}
+
+.pair-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pair-category,
+.pair-compare-label,
+.pair-decision span,
+.pair-trigger span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pair-card h4 {
+  color: var(--text-primary);
+  font-size: 1.04rem;
+  line-height: 1.3;
+  margin-top: 0.28rem;
+}
+
+.pair-compare-label {
+  flex: 0 0 auto;
+  border: 1px solid rgba(14, 165, 233, 0.22);
+  background: rgba(14, 165, 233, 0.07);
+  color: #bae6fd;
+  border-radius: 8px;
+  padding: 0.38rem 0.55rem;
+}
+
+.pair-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.pair-compare-grid.is-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pair-service-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 180px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(11, 15, 25, 0.24);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.pair-service-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.65rem;
+  color: #f8fafc;
+  font-weight: 900;
+}
+
+.pair-service-name small {
+  color: var(--secondary);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.pair-service-panel p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
+}
+
+.pair-trigger {
+  margin-top: auto;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  padding-top: 0.75rem;
+}
+
+.pair-trigger strong {
+  display: block;
+  color: #bae6fd;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-top: 0.28rem;
+}
+
+.pair-decision {
+  margin-top: 0.9rem;
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  background: rgba(16, 185, 129, 0.07);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.pair-decision span {
+  color: #86efac;
+}
+
+.pair-decision p {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-top: 0.3rem;
+}
+
+.pairs-empty-state {
+  grid-column: 1 / -1;
+  border: 1px dashed rgba(148, 163, 184, 0.25);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
 .tab-guide-btn {
   font-size: 0.95rem;
   font-weight: 700;
@@ -2586,8 +2787,13 @@ main {
   }
 
   .language-card,
+  .pairs-overview-card,
   .readiness-gate-header {
     grid-template-columns: 1fr;
+  }
+
+  .pairs-overview-card > strong {
+    width: 100%;
   }
 
   .language-list {
@@ -2648,6 +2854,19 @@ main {
 
   .serverless-group-heading > span {
     white-space: normal;
+  }
+
+  .pair-card-header {
+    flex-direction: column;
+  }
+
+  .pair-compare-label {
+    align-self: flex-start;
+  }
+
+  .pair-compare-grid,
+  .pair-compare-grid.is-three {
+    grid-template-columns: 1fr;
   }
 
   .study-plan-options {

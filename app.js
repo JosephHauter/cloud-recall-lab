@@ -745,6 +745,15 @@ const I18N_PATCHES = {
     trapsQuestionColumn: 'If the question says...',
     trapsAnswerColumn: 'The correct answer is...',
     pairsSearchPlaceholder: 'Search confusing pairs (e.g. CloudWatch, RDS)...',
+    pairsIntroBadge: 'Exam decision helper',
+    pairsIntroTitle: 'Confusing pairs, cleaned up.',
+    pairsIntroBody: 'Each card shows the exact difference, the trigger words to look for, and the exam-day decision rule. Use this when two answers feel almost right.',
+    pairCountLabel: '{count} pair checks',
+    pairCountOneLabel: '1 pair check',
+    pairCompareLabel: 'Compare',
+    pairTriggerLabel: 'Exam trigger',
+    pairDecisionLabel: 'How to choose',
+    noPairsResults: 'No confusing pairs found matching "{query}".',
     readinessGateBadge: 'Final readiness gate',
     readinessTitle: 'CLF-C02 Readiness Gate',
     readinessBody: 'Use this before exam day: two checks are measured from your practice history, and four are honest confirmations. It helps expose gaps; it does not guarantee a pass.',
@@ -1967,6 +1976,101 @@ Object.assign(I18N.ja, {
   readinessOfficialInfo: 'Self-check: current AWS materials と wording instincts を比較。',
   readinessAchievedLabel: 'Achieved',
   readinessProgressLabel: 'In progress'
+});
+
+const PAIR_UI_COPY = {
+  es: {
+    pairsIntroBadge: 'Ayuda de decision',
+    pairsIntroTitle: 'Pares confusos, sin ruido.',
+    pairsIntroBody: 'Cada tarjeta muestra la diferencia exacta, las palabras clave y la regla de decision para examen. Usala cuando dos respuestas parezcan correctas.',
+    pairCountLabel: '{count} pares',
+    pairCountOneLabel: '1 par',
+    pairCompareLabel: 'Comparar',
+    pairTriggerLabel: 'Trigger de examen',
+    pairDecisionLabel: 'Como elegir',
+    noPairsResults: 'No se encontraron pares para "{query}".'
+  },
+  pt: {
+    pairsIntroBadge: 'Ajuda de decisao',
+    pairsIntroTitle: 'Pares confusos, sem ruido.',
+    pairsIntroBody: 'Cada cartao mostra a diferenca exata, os gatilhos e a regra de decisao para prova. Use quando duas respostas parecerem certas.',
+    pairCountLabel: '{count} pares',
+    pairCountOneLabel: '1 par',
+    pairCompareLabel: 'Comparar',
+    pairTriggerLabel: 'Gatilho de prova',
+    pairDecisionLabel: 'Como escolher',
+    noPairsResults: 'Nenhum par encontrado para "{query}".'
+  },
+  fr: {
+    pairsIntroBadge: 'Aide de decision',
+    pairsIntroTitle: 'Paires confuses, clarifiees.',
+    pairsIntroBody: 'Chaque carte montre la difference exacte, les mots declencheurs et la regle de decision pour lexamen. Utile quand deux reponses semblent bonnes.',
+    pairCountLabel: '{count} paires',
+    pairCountOneLabel: '1 paire',
+    pairCompareLabel: 'Comparer',
+    pairTriggerLabel: 'Declencheur examen',
+    pairDecisionLabel: 'Comment choisir',
+    noPairsResults: 'Aucune paire trouvee pour "{query}".'
+  },
+  de: {
+    pairsIntroBadge: 'Entscheidungshilfe',
+    pairsIntroTitle: 'Verwechslungs-Paare, sauber sortiert.',
+    pairsIntroBody: 'Jede Karte zeigt den exakten Unterschied, die Trigger-Woerter und die Pruefungsregel. Nutze sie, wenn zwei Antworten fast richtig wirken.',
+    pairCountLabel: '{count} Paare',
+    pairCountOneLabel: '1 Paar',
+    pairCompareLabel: 'Vergleichen',
+    pairTriggerLabel: 'Pruefungs-Trigger',
+    pairDecisionLabel: 'Auswahlregel',
+    noPairsResults: 'Keine Paare fuer "{query}" gefunden.'
+  },
+  it: {
+    pairsIntroBadge: 'Aiuto decisione',
+    pairsIntroTitle: 'Coppie confuse, chiarite.',
+    pairsIntroBody: 'Ogni scheda mostra la differenza esatta, le parole trigger e la regola da usare in esame. Utile quando due risposte sembrano corrette.',
+    pairCountLabel: '{count} coppie',
+    pairCountOneLabel: '1 coppia',
+    pairCompareLabel: 'Confronta',
+    pairTriggerLabel: 'Trigger esame',
+    pairDecisionLabel: 'Come scegliere',
+    noPairsResults: 'Nessuna coppia trovata per "{query}".'
+  },
+  nl: {
+    pairsIntroBadge: 'Beslishulp',
+    pairsIntroTitle: 'Verwarrende paren, helder gemaakt.',
+    pairsIntroBody: 'Elke kaart toont het exacte verschil, de triggerwoorden en de examenregel. Gebruik dit wanneer twee antwoorden allebei goed lijken.',
+    pairCountLabel: '{count} paren',
+    pairCountOneLabel: '1 paar',
+    pairCompareLabel: 'Vergelijk',
+    pairTriggerLabel: 'Examentrigger',
+    pairDecisionLabel: 'Hoe kiezen',
+    noPairsResults: 'Geen paren gevonden voor "{query}".'
+  },
+  hi: {
+    pairsIntroBadge: 'Decision helper',
+    pairsIntroTitle: 'Confusing pairs, clear format.',
+    pairsIntroBody: 'Har card exact difference, exam trigger words, aur decision rule dikhata hai. Jab do answers almost right lagein, yahan check karein.',
+    pairCountLabel: '{count} pair checks',
+    pairCountOneLabel: '1 pair check',
+    pairCompareLabel: 'Compare',
+    pairTriggerLabel: 'Exam trigger',
+    pairDecisionLabel: 'Kaise choose karein',
+    noPairsResults: 'No confusing pairs found for "{query}".'
+  },
+  ja: {
+    pairsIntroBadge: 'Decision helper',
+    pairsIntroTitle: 'Confusing pairs, clear format.',
+    pairsIntroBody: 'Each card shows the exact difference, exam trigger words, and the decision rule. Use it when two answers both look close.',
+    pairCountLabel: '{count} pair checks',
+    pairCountOneLabel: '1 pair check',
+    pairCompareLabel: 'Compare',
+    pairTriggerLabel: 'Exam trigger',
+    pairDecisionLabel: 'How to choose',
+    noPairsResults: 'No confusing pairs found for "{query}".'
+  }
+};
+
+Object.entries(PAIR_UI_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
 });
 
 const READINESS_GATE_COPY = {
@@ -3942,36 +4046,63 @@ function renderGuideStrategy() {
 function renderGuidePairs(filterText = '') {
   const container = document.getElementById('pairs-directory-container');
   container.innerHTML = '';
-  
+
   const query = filterText.toLowerCase();
-  
   const filtered = CONFUSING_PAIRS.filter(item => {
-    return item.pair.toLowerCase().includes(query) || 
-           item.hook.toLowerCase().includes(query);
+    const searchable = [
+      item.pair,
+      item.category,
+      item.decision,
+      ...item.services.flatMap(service => [service.name, service.equals, service.clue])
+    ].join(' ').toLowerCase();
+    return searchable.includes(query);
   });
-  
+
+  const countEl = document.getElementById('pairs-count');
+  if (countEl) {
+    countEl.textContent = filtered.length === 1
+      ? t('pairCountOneLabel')
+      : t('pairCountLabel', { count: filtered.length });
+  }
+
   filtered.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'glass-card';
-    card.style.padding = '1.5rem';
-    card.style.display = 'flex';
-    card.style.flexDirection = 'column';
-    card.style.gap = '0.75rem';
-    card.style.border = '1px solid var(--card-border)';
-    
+    const compareClass = item.services.length > 2 ? 'pair-compare-grid is-three' : 'pair-compare-grid';
+    card.className = 'pair-card glass-card';
+
     card.innerHTML = `
-      <h4 style="color: var(--secondary); font-size: 1.15rem; font-weight: 800; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-        🔄 ${item.pair}
-      </h4>
-      <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-secondary); text-align: justify;">
-        ${item.hook.replace('How to choose:', '<strong>How to choose:</strong>')}
-      </p>
+      <div class="pair-card-header">
+        <div>
+          <span class="pair-category">${escapeHtml(item.category)}</span>
+          <h4>${escapeHtml(item.pair)}</h4>
+        </div>
+        <span class="pair-compare-label">${escapeHtml(t('pairCompareLabel'))}</span>
+      </div>
+      <div class="${compareClass}">
+        ${item.services.map(service => `
+          <section class="pair-service-panel">
+            <div class="pair-service-name">
+              <span>${escapeHtml(service.name)}</span>
+              <small>=</small>
+            </div>
+            <p>${escapeHtml(service.equals)}</p>
+            <div class="pair-trigger">
+              <span>${escapeHtml(t('pairTriggerLabel'))}</span>
+              <strong>${escapeHtml(service.clue)}</strong>
+            </div>
+          </section>
+        `).join('')}
+      </div>
+      <div class="pair-decision">
+        <span>${escapeHtml(t('pairDecisionLabel'))}</span>
+        <p>${escapeHtml(item.decision)}</p>
+      </div>
     `;
     container.appendChild(card);
   });
-  
+
   if (filtered.length === 0) {
-    container.innerHTML = `<div style="text-align: center; color: var(--text-muted); margin-top: 2rem; grid-column: 1 / -1;">No confusing pairs found matching "${escapeHtml(filterText)}".</div>`;
+    container.innerHTML = `<div class="pairs-empty-state">${escapeHtml(t('noPairsResults', { query: filterText }))}</div>`;
   }
 }
 
