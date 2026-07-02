@@ -128,13 +128,15 @@ function auditStaticFiles() {
   assert(app.includes("item.checked && item.type !== 'self'"), 'Readiness self-checks should remain toggleable checkboxes');
   assert(app.includes('renderGuideServerless'), 'Serverless map renderer is missing');
   assert(app.includes('resetExamSessionState'), 'Exam exit should clear stale exam state');
+  assert(/function confirmExitExam\(\)\s*\{[\s\S]*?resetExamSessionState\(\);[\s\S]*?\}/.test(app), 'Confirming exam exit should reset exam session state');
+  assert(/function exitExamEarly\(\)\s*\{[\s\S]*?state\.currentMode !== 'exam'[\s\S]*?\}/.test(app), 'Exam exit should not prompt after exam mode is already cleared');
   assert(app.includes('SERVICE_CATEGORY_LABELS'), 'Localized service category labels are missing');
   assert(index.includes('id="results-download-card-btn"'), 'Score-card download button is missing');
   assert(app.includes('downloadLatestScoreCard'), 'Score-card download generator is missing');
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v10'), 'Service worker cache should be bumped to v10');
+  assert(sw.includes('cloud-recall-lab-v11'), 'Service worker cache should be bumped to v11');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
