@@ -2204,6 +2204,81 @@ Object.entries(INTEGRITY_UI_COPY).forEach(([lang, copy]) => {
   I18N[lang] = { ...(I18N[lang] || {}), ...copy };
 });
 
+const CERT_VALUE_COPY = {
+  en: {
+    certValueBadge: 'Why this cert helps',
+    certValueTitle: 'A small credential can be a useful credibility signal.',
+    certValueBody: 'Cloud Practitioner is foundational, but that is the point: it proves you can speak AWS basics across engineering, consulting, infrastructure, implementation, and product conversations. In a room of engineers, a verified cert can help you stand out because it is visible proof that you took cloud fundamentals seriously.',
+    certValueNote: 'It does not replace hands-on experience, but it can make your resume, project conversations, and internal credibility a little stronger.',
+    certValueLink: 'Explore AWS Certifications',
+    certRoleCloudEngineers: 'Cloud Engineers',
+    certRoleConsultants: 'ICT Consultants',
+    certRoleInfrastructure: 'IT Infrastructure Services Analysts',
+    certRoleImplementation: 'Technology Implementation Consultants',
+    certRoleDesigners: 'UI Designers'
+  },
+  es: {
+    certValueBadge: 'Por que ayuda',
+    certValueTitle: 'Una credencial pequena puede ser una senal visible de credibilidad.',
+    certValueBody: 'Cloud Practitioner es fundacional, y ese es el valor: demuestra que puedes hablar de conceptos AWS en conversaciones de ingenieria, consultoria, infraestructura, implementacion y producto. En un grupo tecnico, una certificacion verificada puede ayudarte a destacar porque muestra que tomaste en serio los fundamentos cloud.',
+    certValueNote: 'No reemplaza la experiencia practica, pero puede fortalecer tu CV, conversaciones de proyecto y credibilidad interna.',
+    certValueLink: 'Explorar certificaciones AWS'
+  },
+  pt: {
+    certValueBadge: 'Por que ajuda',
+    certValueTitle: 'Uma credencial pequena pode ser um sinal visivel de credibilidade.',
+    certValueBody: 'Cloud Practitioner e fundacional, e esse e o ponto: mostra que voce consegue falar de fundamentos AWS em conversas de engenharia, consultoria, infraestrutura, implementacao e produto. Em um grupo tecnico, uma certificacao verificada pode ajudar voce a se destacar porque mostra que levou fundamentos de cloud a serio.',
+    certValueNote: 'Nao substitui experiencia pratica, mas pode fortalecer curriculo, conversas de projeto e credibilidade interna.',
+    certValueLink: 'Explorar certificacoes AWS'
+  },
+  fr: {
+    certValueBadge: 'Pourquoi ca aide',
+    certValueTitle: 'Une petite certification peut devenir un signal visible de credibilite.',
+    certValueBody: 'Cloud Practitioner est fondamental, et cest son interet: il montre que vous pouvez parler des bases AWS dans des discussions engineering, consulting, infrastructure, implementation et produit. Dans un groupe technique, une certification verifiee peut vous faire ressortir car elle prouve que vous avez pris les bases cloud au serieux.',
+    certValueNote: 'Cela ne remplace pas lexperience pratique, mais peut renforcer le CV, les conversations projet et la credibilite interne.',
+    certValueLink: 'Explorer les certifications AWS'
+  },
+  de: {
+    certValueBadge: 'Warum es hilft',
+    certValueTitle: 'Ein kleines Credential kann ein sichtbares Glaubwuerdigkeits-Signal sein.',
+    certValueBody: 'Cloud Practitioner ist grundlegend, und genau das ist der Wert: Es zeigt, dass du AWS-Basics in Engineering-, Consulting-, Infrastruktur-, Implementierungs- und Produktgespraechen sprechen kannst. In einer Gruppe von Engineers kann ein verifiziertes Zertifikat auffallen, weil es sichtbar macht, dass du Cloud-Grundlagen ernst genommen hast.',
+    certValueNote: 'Es ersetzt keine praktische Erfahrung, kann aber Lebenslauf, Projektgespraeche und interne Glaubwuerdigkeit staerken.',
+    certValueLink: 'AWS Certifications ansehen'
+  },
+  it: {
+    certValueBadge: 'Perche aiuta',
+    certValueTitle: 'Una piccola credenziale puo essere un segnale visibile di credibilita.',
+    certValueBody: 'Cloud Practitioner e fondamentale, ed e proprio questo il punto: dimostra che sai parlare delle basi AWS in conversazioni di engineering, consulenza, infrastruttura, implementazione e prodotto. In un gruppo tecnico, una certificazione verificata puo farti emergere perche mostra che hai preso sul serio i fondamenti cloud.',
+    certValueNote: 'Non sostituisce esperienza pratica, ma puo rendere piu forti CV, conversazioni di progetto e credibilita interna.',
+    certValueLink: 'Esplora certificazioni AWS'
+  },
+  nl: {
+    certValueBadge: 'Waarom dit helpt',
+    certValueTitle: 'Een kleine credential kan een zichtbaar geloofwaardigheidssignaal zijn.',
+    certValueBody: 'Cloud Practitioner is fundamenteel, en dat is juist de waarde: het laat zien dat je AWS-basiskennis kunt gebruiken in gesprekken over engineering, consulting, infrastructuur, implementatie en product. In een technische groep kan een geverifieerde certificering je laten opvallen omdat het zichtbaar maakt dat je cloudfundamenten serieus nam.',
+    certValueNote: 'Het vervangt geen praktijkervaring, maar kan je cv, projectgesprekken en interne geloofwaardigheid sterker maken.',
+    certValueLink: 'Bekijk AWS Certifications'
+  },
+  hi: {
+    certValueBadge: 'Why this cert helps',
+    certValueTitle: 'Ek small credential bhi credibility signal ban sakta hai.',
+    certValueBody: 'Cloud Practitioner foundational hai, aur wahi value hai: yeh dikhata hai ki aap engineering, consulting, infrastructure, implementation, aur product conversations me AWS basics bol sakte hain. Engineers ke group me verified cert aapko stand out kar sakta hai kyunki yeh visible proof hai ki aapne cloud fundamentals seriously liye.',
+    certValueNote: 'Yeh hands-on experience replace nahi karta, par resume, project conversations, aur internal credibility ko stronger bana sakta hai.',
+    certValueLink: 'Explore AWS Certifications'
+  },
+  ja: {
+    certValueBadge: 'Why this cert helps',
+    certValueTitle: 'A small credential can be a useful credibility signal.',
+    certValueBody: 'Cloud Practitioner is foundational, and that is the value: it shows you can speak AWS basics across engineering, consulting, infrastructure, implementation, and product conversations. In an engineering group, a verified cert can help you stand out because it is visible proof that you took cloud fundamentals seriously.',
+    certValueNote: 'It does not replace hands-on experience, but it can make your resume, project conversations, and internal credibility stronger.',
+    certValueLink: 'Explore AWS Certifications'
+  }
+};
+
+Object.entries(CERT_VALUE_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
 const READINESS_GATE_COPY = {
   es: {
     readinessGateBadge: 'Puerta final de preparacion',

@@ -16,6 +16,12 @@ This app is best used as a companion to current learning resources: use a course
 
 That result is personal proof that the loop helped me, not a promise that the app alone guarantees a pass.
 
+## Why This Cert Can Be Worth It
+
+AWS Certified Cloud Practitioner is foundational, but that can be an advantage. It gives you shared vocabulary for engineering, consulting, infrastructure, implementation, and product conversations.
+
+It will not replace hands-on experience. It can still be a useful credibility signal: in a group of engineers or technical stakeholders, a verified certification can help you stand out because it shows you took cloud fundamentals seriously. The concepts also show up around roles such as cloud engineers, ICT consultants, IT infrastructure services analysts, technology implementation consultants, and UI designers who work with cloud-backed products.
+
 ## Live Demo
 
 When published with GitHub Pages, this project can run at:

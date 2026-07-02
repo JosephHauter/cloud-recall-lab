@@ -139,13 +139,14 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v18'), 'Service worker cache should be bumped to v18');
+  assert(sw.includes('cloud-recall-lab-v19'), 'Service worker cache should be bumped to v19');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
   assert(!index.includes('bmc-header-button') && !index.includes('bmc-footer-button') && !index.includes('bmc-settings-button'), 'Buy Me a Coffee button should appear only in About/Contact');
   assert(index.includes('https://fonts.googleapis.com') && index.includes('https://fonts.gstatic.com'), 'CSP should allow the BMC font stylesheet/font hosts');
   assert(index.includes('https://www.udemy.com/share/103a093'), 'Udemy resource link is missing from the About page');
+  assert(index.includes('cert-value-card') && app.includes('certValueBody') && index.includes('https://aws.amazon.com/certification/'), 'Certification value section is missing');
   assert(index.includes('https://aws.amazon.com/certification/certification-agreement/'), 'AWS Certification Program Agreement link is missing');
   assert(index.includes('integrity-card') && app.includes('integrityBody3'), 'Exam integrity policy is missing from the site');
   assert(index.includes('not AWS certification exam materials') && readme.includes('Exam Integrity'), 'Certification integrity disclaimers are incomplete');
