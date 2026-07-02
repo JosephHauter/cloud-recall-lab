@@ -6660,7 +6660,7 @@ function getProgressExportPayload() {
   loadData();
   return {
     exportedAt: new Date().toISOString(),
-    app: 'cloud-practitioner-practice-hub',
+    app: 'cloud-recall-lab',
     version: 1,
     stats: normalizeStats(state.stats),
     wrongAnswers: normalizeIdList(state.wrongAnswers),

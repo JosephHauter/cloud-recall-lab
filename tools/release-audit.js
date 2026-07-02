@@ -110,6 +110,8 @@ function auditStaticFiles() {
 
   assert(!/on(click|submit|change|input)=/i.test(index), 'index.html should not contain inline event handlers');
   assert(!/Perfect Pass Pack/i.test(index + app + readme), 'Remove outdated "Perfect Pass Pack" copy');
+  const oldRepoSlug = ['cloud', 'practitioner', 'practice', 'hub'].join('-');
+  assert(!new RegExp(oldRepoSlug, 'i').test(index + app + readme), 'Old repository slug should not appear in launch metadata or docs');
   assert(!/70 randomized questions|70 randomly compiled questions|70 Questions|70 Qs/i.test(index), 'Comprehensive mock copy should not say 70 questions');
   assert(index.includes('Cloud Recall Lab') && readme.includes('Cloud Recall Lab'), 'Cloud Recall Lab branding is missing');
   assert(index.includes('why-card') && index.includes('Meets Competencies'), 'Why/proof homepage section is missing');
@@ -150,7 +152,7 @@ function auditStaticFiles() {
   assert(app.includes('miniquiz-picker') && app.includes('Pick from services'), 'Mini quiz should include a mobile-friendly native service picker fallback');
   assert(css.includes('.miniquiz-row') && css.includes('grid-column: 1 / -1'), 'Mini quiz rows should stack cleanly on mobile');
   assert(readme.includes('does not translate the practice question bank'), 'README language support scope is missing');
-  assert(sw.includes('cloud-recall-lab-v23'), 'Service worker cache should be bumped to v23');
+  assert(sw.includes('cloud-recall-lab-v24'), 'Service worker cache should be bumped to v24');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
@@ -166,6 +168,7 @@ function auditStaticFiles() {
   assert(study.includes('OFFICIAL_SOURCE_LINKS') && study.includes('OFFICIAL_SCOPE_ANCHORS') && study.includes('OFFICIAL_AVOID_ANCHORS'), 'Official source/boundary data is missing');
   assert(readme.includes('clf-technologies-concepts.html') && readme.includes('clf-02-in-scope-services.html') && readme.includes('clf-02-out-of-scope-services.html'), 'README official AWS source links are incomplete');
   assert(index.includes('rel="canonical"'), 'Canonical URL is missing');
+  assert(index.includes('https://josephhauter.github.io/cloud-recall-lab/'), 'Canonical/social URL should use the live GitHub Pages URL');
   assert(index.includes('apple-touch-icon'), 'Apple touch icon is missing');
   assert(app.includes('handleLaunchShortcut'), 'PWA launch shortcut handler is missing');
 

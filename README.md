@@ -26,7 +26,7 @@ It will not replace hands-on experience. It can still be a useful credibility si
 
 When published with GitHub Pages, this project can run at:
 
-`https://josephhauter.github.io/cloud-practitioner-practice-hub/`
+`https://josephhauter.github.io/cloud-recall-lab/`
 
 ## Features
 
@@ -139,7 +139,7 @@ The audit also checks the PWA manifest, service worker cache version, core offli
 
 ## Publishing
 
-1. Create a public GitHub repo named `cloud-practitioner-practice-hub`.
+1. Create a public GitHub repo named `cloud-recall-lab`.
 2. Push these files to the repo.
 3. In GitHub, go to Settings -> Pages.
 4. Choose "Deploy from a branch", select `main`, and use `/ (root)`.
