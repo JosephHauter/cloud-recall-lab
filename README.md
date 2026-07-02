@@ -43,7 +43,11 @@ When published with GitHub Pages, this project can run at:
 - Multilingual interface beta for English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese
 - No accounts, no ads, no backend, no tracking, and no paid dependencies
 
-Note: the interface guidance can switch languages, but the AWS service names and practice questions intentionally stay in English so exam terminology remains consistent.
+Note: the interface guidance, navigation, and controls can switch languages. The app does not translate the practice question bank: question wording, answer choices, rationales, and AWS service names intentionally stay in English so exam terminology remains consistent and learners are not misled by imperfect translations.
+
+## Language Support
+
+Language support is scoped to the study interface, not the exam-content layer. That is intentional. AWS exams use precise service names and wording clues, and a small translation drift can change the meaning of a scenario. Use the language switch as extra study support, then verify confusing concepts against the current AWS exam guide or docs.
 
 ## PWA and Offline Use
 

@@ -118,6 +118,8 @@ function auditStaticFiles() {
   assert(index.includes('id="language-select"'), 'Header language selector is missing');
   assert(index.includes('id="settings-language-select"'), 'Settings language selector is missing');
   assert(index.includes('value="it"') && index.includes('value="nl"') && index.includes('value="hi"') && index.includes('value="ja"'), 'Expanded language options are missing');
+  assert(index.includes('language-scope-panel') && index.includes('languageScopeTitle'), 'Language translation boundary notice is missing');
+  assert(index.includes('Practice questions, answer choices, explanations, and AWS service names intentionally stay in English'), 'Language card should clearly scope translations to UI/study guidance');
   assert(index.includes('data-i18n'), 'Translated UI markers are missing');
   assert(index.includes('data-i18n-placeholder'), 'Translated placeholder markers are missing');
   assert(index.includes('id="tab-guide-serverless"'), 'Serverless map tab is missing');
@@ -139,7 +141,10 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v19'), 'Service worker cache should be bumped to v19');
+  assert(app.includes('LANGUAGE_SCOPE_COPY') && app.includes('markExamWording'), 'Language support should explicitly avoid translating exam-critical question wording');
+  assert(app.includes("setAttribute('translate', 'no')"), 'Question renderers should mark exam wording as not machine-translated');
+  assert(readme.includes('does not translate the practice question bank'), 'README language support scope is missing');
+  assert(sw.includes('cloud-recall-lab-v20'), 'Service worker cache should be bumped to v20');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');

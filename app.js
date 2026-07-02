@@ -2470,6 +2470,148 @@ Object.entries(READINESS_GATE_COPY).forEach(([lang, copy]) => {
   I18N[lang] = { ...(I18N[lang] || {}), ...copy };
 });
 
+const LANGUAGE_SCOPE_COPY = {
+  en: {
+    stripLanguages: 'Interface language beta',
+    languageBadge: 'Interface language beta',
+    languageTitle: 'Multilingual interface support, English exam practice.',
+    languageBody: 'Switch navigation, controls, and study guidance between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions, answer choices, explanations, and AWS service names intentionally stay in English to avoid misleading exam-term translations.',
+    languageScopeInline: 'Use the language switch for support while studying, not as a localized exam translation.',
+    languageHelper: 'Interface guidance changes language. Practice questions, answer choices, explanations, and AWS service names stay in English for exam consistency.',
+    languageScopeBadge: 'Translation boundary',
+    languageScopeTitle: 'Interface translations, English question bank.',
+    languageScopeBody: 'Cloud Recall Lab translates navigation, controls, and study guidance. It does not translate practice questions, answer choices, rationales, or AWS service names because small translation errors can teach the wrong exam clue.',
+    languageScopeCheck: 'If any translated UI label feels unclear, switch back to English and verify the concept against the current AWS exam guide or docs.',
+    practiceModeHint: 'Practice checks single-answer questions instantly; multi-select uses Submit Choices. Timed mocks wait until final submit. Questions, answer choices, and explanations stay in English for exam wording consistency.',
+    examModeHint: 'Timer is active. Answers are sealed until you submit. Questions stay in English for exam wording consistency.',
+    languageToast: 'Language updated. The interface changed, but the question bank stays English for exam consistency.'
+  },
+  es: {
+    stripLanguages: 'Interfaz beta',
+    languageBadge: 'Idioma de interfaz beta',
+    languageTitle: 'Interfaz multilingue, practica de examen en ingles.',
+    languageBody: 'Cambia navegacion, controles y guia de estudio entre ingles, espanol, portugues, frances, aleman, italiano, neerlandes, hindi y japones. Las preguntas, opciones, explicaciones y nombres de servicios AWS quedan en ingles para evitar traducciones de terminos de examen que puedan confundir.',
+    languageScopeInline: 'Usa el cambio de idioma como apoyo de estudio, no como traduccion localizada del examen.',
+    languageHelper: 'La guia de la interfaz cambia de idioma. Preguntas, opciones, explicaciones y nombres de servicios AWS quedan en ingles para mantener consistencia con el examen.',
+    languageScopeBadge: 'Limite de traduccion',
+    languageScopeTitle: 'Interfaz traducida, banco de preguntas en ingles.',
+    languageScopeBody: 'Cloud Recall Lab traduce navegacion, controles y guia de estudio. No traduce preguntas, opciones, razonamientos ni nombres de servicios AWS porque un error pequeno de traduccion puede ensenar una pista incorrecta.',
+    languageScopeCheck: 'Si una etiqueta traducida no queda clara, vuelve a ingles y verifica el concepto con la guia o documentacion actual de AWS.',
+    practiceModeHint: 'La practica corrige preguntas de una respuesta al instante; multi-select usa Submit Choices. Los mocks esperan hasta el envio final. Preguntas, opciones y explicaciones quedan en ingles.',
+    examModeHint: 'El temporizador esta activo. Las respuestas quedan selladas hasta enviar. Las preguntas quedan en ingles para consistencia con el examen.',
+    languageToast: 'Idioma actualizado. La interfaz cambio, pero el banco de preguntas queda en ingles.'
+  },
+  pt: {
+    stripLanguages: 'Interface beta',
+    languageBadge: 'Idioma da interface beta',
+    languageTitle: 'Interface multilingue, pratica de exame em ingles.',
+    languageBody: 'Troque navegacao, controles e guia de estudo entre ingles, espanhol, portugues, frances, alemao, italiano, holandes, hindi e japones. Perguntas, opcoes, explicacoes e nomes de servicos AWS ficam em ingles para evitar traducoes de termos de exame que possam confundir.',
+    languageScopeInline: 'Use o seletor de idioma como apoio de estudo, nao como traducao localizada do exame.',
+    languageHelper: 'A orientacao da interface muda de idioma. Perguntas, opcoes, explicacoes e nomes de servicos AWS ficam em ingles para consistencia com o exame.',
+    languageScopeBadge: 'Limite de traducao',
+    languageScopeTitle: 'Interface traduzida, banco de perguntas em ingles.',
+    languageScopeBody: 'Cloud Recall Lab traduz navegacao, controles e guia de estudo. Nao traduz perguntas, opcoes, explicacoes detalhadas ou nomes de servicos AWS porque pequenos erros podem ensinar a pista errada.',
+    languageScopeCheck: 'Se algum rotulo traduzido parecer confuso, volte para ingles e confira o conceito na guia ou docs atuais da AWS.',
+    practiceModeHint: 'A pratica corrige perguntas de uma resposta na hora; multi-select usa Submit Choices. Simulados esperam ate o envio final. Perguntas, opcoes e explicacoes ficam em ingles.',
+    examModeHint: 'O timer esta ativo. Respostas ficam ocultas ate enviar. Perguntas ficam em ingles para consistencia com o exame.',
+    languageToast: 'Idioma atualizado. A interface mudou, mas o banco de perguntas fica em ingles.'
+  },
+  fr: {
+    stripLanguages: 'Interface beta',
+    languageBadge: 'Langue dinterface beta',
+    languageTitle: 'Interface multilingue, pratique dexamen en anglais.',
+    languageBody: 'Changez la navigation, les controles et laide detude entre anglais, espagnol, portugais, francais, allemand, italien, neerlandais, hindi et japonais. Les questions, choix, explications et noms de services AWS restent en anglais pour eviter des traductions de termes dexamen trompeuses.',
+    languageScopeInline: 'Utilisez le changement de langue comme aide detude, pas comme traduction localisee de lexamen.',
+    languageHelper: 'Laide dinterface change de langue. Les questions, choix, explications et noms de services AWS restent en anglais pour rester coherents avec lexamen.',
+    languageScopeBadge: 'Limite de traduction',
+    languageScopeTitle: 'Interface traduite, banque de questions en anglais.',
+    languageScopeBody: 'Cloud Recall Lab traduit la navigation, les controles et laide detude. Il ne traduit pas les questions, choix, raisonnements ou noms de services AWS, car une petite erreur peut enseigner le mauvais indice dexamen.',
+    languageScopeCheck: 'Si une etiquette traduite semble floue, revenez a langlais et verifiez le concept dans le guide ou les docs AWS actuels.',
+    practiceModeHint: 'La pratique corrige les questions a reponse unique aussitot; multi-select utilise Submit Choices. Les mocks attendent la soumission finale. Questions, choix et explications restent en anglais.',
+    examModeHint: 'Le minuteur est actif. Les reponses restent cachees jusqua soumission. Les questions restent en anglais pour la coherence dexamen.',
+    languageToast: 'Langue mise a jour. Linterface a change, mais la banque de questions reste en anglais.'
+  },
+  de: {
+    stripLanguages: 'Interface-Sprachen beta',
+    languageBadge: 'Interface-Sprache beta',
+    languageTitle: 'Mehrsprachiges Interface, englische Pruefungspraxis.',
+    languageBody: 'Wechsle Navigation, Controls und Lernhinweise zwischen Englisch, Spanisch, Portugiesisch, Franzoesisch, Deutsch, Italienisch, Niederlaendisch, Hindi und Japanisch. Fragen, Antwortoptionen, Erklaerungen und AWS-Servicenamen bleiben bewusst Englisch, damit Pruefungsbegriffe nicht irrefuehrend uebersetzt werden.',
+    languageScopeInline: 'Nutze die Sprachauswahl als Lernhilfe, nicht als lokalisierte Pruefungsuebersetzung.',
+    languageHelper: 'Interface-Hinweise wechseln die Sprache. Fragen, Antwortoptionen, Erklaerungen und AWS-Servicenamen bleiben Englisch fuer Pruefungskonsistenz.',
+    languageScopeBadge: 'Uebersetzungsgrenze',
+    languageScopeTitle: 'Uebersetztes Interface, englische Fragenbank.',
+    languageScopeBody: 'Cloud Recall Lab uebersetzt Navigation, Controls und Lernhinweise. Es uebersetzt keine Fragen, Antwortoptionen, Begruendungen oder AWS-Servicenamen, weil kleine Fehler den falschen Pruefungshinweis lehren koennen.',
+    languageScopeCheck: 'Wenn ein uebersetztes UI-Label unklar wirkt, wechsle zu Englisch und pruefe den Begriff mit dem aktuellen AWS Exam Guide oder den Docs.',
+    practiceModeHint: 'Praxis prueft Single-Answer-Fragen sofort; Multi-Select nutzt Submit Choices. Timed Mocks warten bis zur finalen Abgabe. Fragen, Optionen und Erklaerungen bleiben Englisch.',
+    examModeHint: 'Der Timer laeuft. Antworten bleiben bis zur Abgabe verborgen. Fragen bleiben Englisch fuer konsistente Pruefungssprache.',
+    languageToast: 'Sprache aktualisiert. Das Interface wechselte, aber die Fragenbank bleibt Englisch.'
+  },
+  it: {
+    stripLanguages: 'Interfaccia beta',
+    languageBadge: 'Lingua interfaccia beta',
+    languageTitle: 'Interfaccia multilingue, pratica esame in inglese.',
+    languageBody: 'Cambia navigazione, controlli e guida di studio tra inglese, spagnolo, portoghese, francese, tedesco, italiano, olandese, hindi e giapponese. Domande, opzioni, spiegazioni e nomi dei servizi AWS restano intenzionalmente in inglese per evitare traduzioni fuorvianti dei termini desame.',
+    languageScopeInline: 'Usa il cambio lingua come supporto allo studio, non come traduzione localizzata dellesame.',
+    languageHelper: 'La guida dellinterfaccia cambia lingua. Domande, opzioni, spiegazioni e nomi dei servizi AWS restano in inglese per coerenza con lesame.',
+    languageScopeBadge: 'Limite traduzione',
+    languageScopeTitle: 'Interfaccia tradotta, domande in inglese.',
+    languageScopeBody: 'Cloud Recall Lab traduce navigazione, controlli e guida di studio. Non traduce domande, opzioni, razionali o nomi dei servizi AWS perche un piccolo errore puo insegnare lindizio sbagliato.',
+    languageScopeCheck: 'Se una label tradotta non e chiara, torna allinglese e verifica il concetto nella guida o documentazione AWS attuale.',
+    practiceModeHint: 'La pratica corregge subito le domande a risposta singola; multi-select usa Submit Choices. I mock aspettano linvio finale. Domande, opzioni e spiegazioni restano in inglese.',
+    examModeHint: 'Il timer e attivo. Le risposte restano nascoste fino allinvio. Le domande restano in inglese per coerenza con lesame.',
+    languageToast: 'Lingua aggiornata. Linterfaccia e cambiata, ma il banco domande resta in inglese.'
+  },
+  nl: {
+    stripLanguages: 'Interface beta',
+    languageBadge: 'Interfacetaal beta',
+    languageTitle: 'Meertalige interface, Engelse examenpractice.',
+    languageBody: 'Schakel navigatie, bediening en studie-uitleg tussen Engels, Spaans, Portugees, Frans, Duits, Italiaans, Nederlands, Hindi en Japans. Vragen, antwoordopties, uitleg en AWS-servicenamen blijven bewust Engels om misleidende vertalingen van examentermen te voorkomen.',
+    languageScopeInline: 'Gebruik de taalkeuze als studiehulp, niet als gelokaliseerde examenvertaling.',
+    languageHelper: 'Interface-uitleg verandert van taal. Vragen, antwoordopties, uitleg en AWS-servicenamen blijven Engels voor examenconsistentie.',
+    languageScopeBadge: 'Vertaalgrens',
+    languageScopeTitle: 'Vertaalde interface, Engelse vragenbank.',
+    languageScopeBody: 'Cloud Recall Lab vertaalt navigatie, bediening en studie-uitleg. Het vertaalt geen vragen, antwoordopties, redeneringen of AWS-servicenamen, omdat kleine vertaalfouten de verkeerde examenhint kunnen leren.',
+    languageScopeCheck: 'Als een vertaald UI-label onduidelijk voelt, schakel terug naar Engels en controleer het concept in de actuele AWS exam guide of docs.',
+    practiceModeHint: 'Oefenen controleert single-answer vragen meteen; multi-select gebruikt Submit Choices. Getimede mocks wachten tot definitieve indiening. Vragen, opties en uitleg blijven Engels.',
+    examModeHint: 'De timer loopt. Antwoorden blijven verborgen tot je indient. Vragen blijven Engels voor consistente examentaal.',
+    languageToast: 'Taal bijgewerkt. De interface veranderde, maar de vragenbank blijft Engels.'
+  },
+  hi: {
+    stripLanguages: 'Interface language beta',
+    languageBadge: 'Interface language beta',
+    languageTitle: 'Multilingual interface support, English exam practice.',
+    languageBody: 'Navigation, controls, aur study guidance language change hoti hai. Practice questions, answer choices, explanations, aur AWS service names jaan-boojhkar English me rehte hain taaki exam terms galat translate na ho.',
+    languageScopeInline: 'Language switch study support ke liye use karein, localized exam translation samajhkar nahi.',
+    languageHelper: 'Interface guidance language change karti hai. Questions, answer choices, explanations, aur AWS service names exam consistency ke liye English me rehte hain.',
+    languageScopeBadge: 'Translation boundary',
+    languageScopeTitle: 'Interface translations, English question bank.',
+    languageScopeBody: 'Cloud Recall Lab navigation, controls, aur study guidance translate karta hai. Practice questions, choices, rationales, ya AWS service names translate nahi karta, kyunki chhota translation error wrong exam clue sikha sakta hai.',
+    languageScopeCheck: 'Agar translated UI label unclear lage, English par wapas switch karein aur current AWS exam guide/docs se concept verify karein.',
+    practiceModeHint: 'Practice single-answer questions turant check karta hai; multi-select Submit Choices use karta hai. Timed mocks final submit tak wait karte hain. Questions, choices, aur explanations English me rehte hain.',
+    examModeHint: 'Timer active hai. Answers final submit tak hidden hain. Questions exam wording consistency ke liye English me rehte hain.',
+    languageToast: 'Language updated. Interface change hui, par question bank English me rehta hai.'
+  },
+  ja: {
+    stripLanguages: 'Interface language beta',
+    languageBadge: 'Interface language beta',
+    languageTitle: 'Multilingual interface support, English exam practice.',
+    languageBody: 'Navigation, controls, and study guidance can switch languages. Practice questions, answer choices, explanations, and AWS service names intentionally stay English to avoid misleading exam-term translations.',
+    languageScopeInline: 'Use the language switch for study support, not as a localized exam translation.',
+    languageHelper: 'Interface guidance changes language. Questions, answer choices, explanations, and AWS service names stay in English for exam consistency.',
+    languageScopeBadge: 'Translation boundary',
+    languageScopeTitle: 'Interface translations, English question bank.',
+    languageScopeBody: 'Cloud Recall Lab translates navigation, controls, and study guidance. It does not translate practice questions, answer choices, rationales, or AWS service names because small translation errors can teach the wrong exam clue.',
+    languageScopeCheck: 'If any translated UI label feels unclear, switch back to English and verify the concept against the current AWS exam guide or docs.',
+    practiceModeHint: 'Practice checks single-answer questions instantly; multi-select uses Submit Choices. Timed mocks wait until final submit. Questions, answer choices, and explanations stay in English for exam wording consistency.',
+    examModeHint: 'Timer is active. Answers are sealed until you submit. Questions stay in English for exam wording consistency.',
+    languageToast: 'Language updated. The interface changed, but the question bank stays English for exam consistency.'
+  }
+};
+
+Object.entries(LANGUAGE_SCOPE_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
 const EXAM_LABELS = {
   random: 'Comprehensive Mock',
   mock1: 'Practice Mock Exam 1',
@@ -2751,6 +2893,12 @@ function t(key, replacements = {}) {
   return formatCopy(copy[key] || I18N.en[key] || key, replacements);
 }
 
+function markExamWording(el) {
+  if (!el) return;
+  el.lang = 'en';
+  el.setAttribute('translate', 'no');
+}
+
 function applyLanguage(lang = 'en') {
   const safeLang = SUPPORTED_LANGUAGES[lang] ? lang : 'en';
   const copy = copyForLanguage(safeLang);
@@ -2985,6 +3133,7 @@ function renderPracticeQuestion() {
     ? `<span style="display:block; font-size:0.85rem; color:var(--warning); margin-top:0.5rem; font-weight:700;">⚠️ Choose exactly ${q.multiCount} answers.</span>`
     : '';
   const qBox = document.getElementById('practice-question-box');
+  markExamWording(qBox);
   qBox.innerHTML = `
     <div class="question-number">Question ${idx + 1} (ID #${q.id})</div>
     <div class="question-text">${escapeHtml(q.question)}${multiHint}</div>
@@ -3048,6 +3197,7 @@ function renderPracticeQuestion() {
 
   // Explanation panel — with per-option "why wrong / why right" breakdown
   const explanationBox = document.getElementById('practice-explanation');
+  markExamWording(explanationBox);
   if (answered) {
     const isCorrect = isMulti
       ? (Array.isArray(userAns) && [...userAns].sort().join(',') === q.answer)
@@ -3260,6 +3410,7 @@ function renderExamQuestion() {
   
   // Question box
   const qBox = document.getElementById('exam-question-box');
+  markExamWording(qBox);
   const multiText = q.isMulti ? `<span style="display:block; font-size:0.85rem; color:var(--warning); margin-top:0.5rem; font-weight:700;">⚠️ Choose exactly ${q.multiCount} options.</span>` : '';
   
   qBox.innerHTML = `
@@ -3497,12 +3648,14 @@ function renderExamResults(scorePercent, correct, incorrect, skipped, passed) {
   
   // Review List
   const reviewList = document.getElementById('results-review-list');
+  markExamWording(reviewList);
   reviewList.innerHTML = '';
   
   state.questionsList.forEach((q, idx) => {
     const uAns = state.userAnswers[idx];
     const item = document.createElement('div');
     item.className = 'review-item';
+    markExamWording(item);
     
     let badgeClass = '';
     let badgeText = '';
@@ -4337,8 +4490,12 @@ function renderDrillScenario() {
   document.getElementById('drills-progress-text').innerText = `Scenario ${idx + 1} of ${drillsState.drillsList.length}`;
   
   // Scenario Card Content
-  document.getElementById('drills-card-id').innerText = `SCENARIO #${idx + 1}`;
-  document.getElementById('drills-scenario-text').innerText = drill.scenario;
+  const drillId = document.getElementById('drills-card-id');
+  const drillScenario = document.getElementById('drills-scenario-text');
+  markExamWording(drillId);
+  markExamWording(drillScenario);
+  drillId.innerText = `SCENARIO #${idx + 1}`;
+  drillScenario.innerText = drill.scenario;
   
   // Input Reset
   const ansInput = document.getElementById('drills-answer-input');
@@ -4373,6 +4530,7 @@ function checkDrillAnswer() {
   const isCorrect = cleanUser === cleanAnswer;
   
   const feedbackBox = document.getElementById('drills-feedback-box');
+  markExamWording(feedbackBox);
   const showBtn = document.getElementById('drills-show-btn');
   const nextBtn = document.getElementById('drills-next-btn');
   const ansInput = document.getElementById('drills-answer-input');
@@ -4507,6 +4665,7 @@ function startMiniQuiz() {
   miniquizQuestions.forEach((q, idx) => {
     const item = document.createElement('div');
     item.className = 'matching-pair-row';
+    markExamWording(item);
     item.id = `miniquiz-row-${idx}`;
     item.style.gridTemplateColumns = '25px 1fr 200px';
     
@@ -4875,6 +5034,7 @@ function shuffleQuestionOptions(q) {
 function renderWrongFlashcards() {
   const deck = document.getElementById('wrong-flashcard-deck');
   if (!deck) return;
+  markExamWording(deck);
 
   const list = trainerState.wrongCardsList || [];
 
@@ -5763,6 +5923,7 @@ function renderGuidedPracticeQuestion() {
   document.getElementById('guided-practice-progress-text').innerText = `Question ${idx + 1} of ${list.length}`;
 
   const qBox = document.getElementById('guided-practice-box');
+  markExamWording(qBox);
   const multiText = q.isMulti ? `<span style="display:block; font-size:0.85rem; color:var(--warning); margin-top:0.5rem; font-weight:700;">⚠️ Choose exactly ${q.multiCount} options.</span>` : '';
   
   qBox.innerHTML = `
@@ -5841,6 +6002,7 @@ function renderGuidedPracticeQuestion() {
   }
 
   const explanationBox = document.getElementById('guided-practice-explanation');
+  markExamWording(explanationBox);
   if (answered) {
     const isCorrect = q.isMulti
       ? (Array.isArray(userAns) && [...userAns].sort().join(',') === q.answer)
@@ -5910,6 +6072,7 @@ function submitGuidedPracticeAnswer(ansVal) {
 function renderGuidedWrongCards() {
   const deck = document.getElementById('guided-wrong-flashcard-deck');
   if (!deck) return;
+  markExamWording(deck);
   
   const list = guidedStudyState.wrongCardsList || [];
   

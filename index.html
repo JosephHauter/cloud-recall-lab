@@ -149,9 +149,10 @@
 
       <section class="language-card glass-card" aria-labelledby="language-card-title">
         <div>
-          <span class="card-badge" data-i18n="languageBadge">Language support beta</span>
-          <h2 id="language-card-title" data-i18n="languageTitle">Study guidance in more languages.</h2>
-          <p data-i18n="languageBody">Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions stay in English so AWS service names and exam wording remain consistent.</p>
+          <span class="card-badge" data-i18n="languageBadge">Interface language beta</span>
+          <h2 id="language-card-title" data-i18n="languageTitle">Multilingual interface support, English exam practice.</h2>
+          <p data-i18n="languageBody">Switch navigation, controls, and study guidance between English, Spanish, Portuguese, French, German, Italian, Dutch, Hindi, and Japanese. Practice questions, answer choices, explanations, and AWS service names intentionally stay in English to avoid misleading exam-term translations.</p>
+          <p class="language-scope-note" data-i18n="languageScopeInline">Use the language switch for support while studying, not as a localized exam translation.</p>
         </div>
         <div class="language-list" aria-label="Supported interface languages">
           <span>English</span>
@@ -472,7 +473,7 @@
         <div class="quiz-info">
           <h2 id="practice-title" class="quiz-title-text">Practice Mode</h2>
           <span id="practice-progress-text" style="font-size: 0.85rem; color: var(--text-secondary);">Question 1 of 10</span>
-          <span id="practice-mode-hint" class="quiz-mode-hint" data-i18n="practiceModeHint">Practice checks single-answer questions instantly; mocks wait until final submit.</span>
+          <span id="practice-mode-hint" class="quiz-mode-hint" data-i18n="practiceModeHint">Practice checks single-answer questions instantly; multi-select uses Submit Choices. Timed mocks wait until final submit. Questions, answer choices, and explanations stay in English for exam wording consistency.</span>
         </div>
         <button class="btn btn-secondary btn-home">Exit Session</button>
       </div>
@@ -505,7 +506,7 @@
       <div class="quiz-header">
         <div class="quiz-info">
           <h2 class="quiz-title-text">CLF-C02 Practice Mock Exam</h2>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Timer is active. Answers are sealed until you submit.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);" data-i18n="examModeHint">Timer is active. Answers are sealed until you submit. Questions stay in English for exam wording consistency.</span>
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
           <div style="font-size: 1.25rem; font-weight: 800; font-family: monospace; letter-spacing: 1px;" id="exam-timer-wrapper">
@@ -1232,6 +1233,13 @@
           <option value="ja">日本語</option>
         </select>
         <span data-i18n="languageHelper">Interface guidance changes language. AWS service names and practice questions stay in English for exam consistency.</span>
+      </div>
+
+      <div class="language-scope-panel" role="note" aria-labelledby="language-scope-title">
+        <span data-i18n="languageScopeBadge">Translation boundary</span>
+        <strong id="language-scope-title" data-i18n="languageScopeTitle">Interface translations, English question bank.</strong>
+        <p data-i18n="languageScopeBody">Cloud Recall Lab translates navigation, controls, and study guidance. It does not translate practice questions, answer choices, rationales, or AWS service names because small translation errors can teach the wrong exam clue.</p>
+        <p data-i18n="languageScopeCheck">If any translated UI label feels unclear, switch back to English and verify the concept against the current AWS exam guide or docs.</p>
       </div>
 
       <div class="settings-grid">
