@@ -2073,6 +2073,49 @@ Object.entries(PAIR_UI_COPY).forEach(([lang, copy]) => {
   I18N[lang] = { ...(I18N[lang] || {}), ...copy };
 });
 
+const RESOURCE_UI_COPY = {
+  en: {
+    resourceFreeBody: 'If you cannot afford Udemy or just want to stay fully free, pair this app with a current free course and the official AWS guide. Learn the concepts first, then use Cloud Recall Lab to practice recall under pressure.',
+    resourceFreeCourse: 'Free YouTube course option for Cloud Practitioner learners'
+  },
+  es: {
+    resourceFreeBody: 'Si no puedes pagar Udemy o quieres mantenerlo totalmente gratis, combina esta app con un curso gratuito actual y la guia oficial de AWS. Aprende los conceptos primero y luego usa Cloud Recall Lab para practicar recuerdo bajo presion.',
+    resourceFreeCourse: 'Curso gratuito en YouTube para Cloud Practitioner'
+  },
+  pt: {
+    resourceFreeBody: 'Se voce nao puder pagar Udemy ou quiser ficar totalmente gratis, combine esta app com um curso gratuito atual e a guia oficial da AWS. Aprenda os conceitos primeiro e depois use Cloud Recall Lab para praticar recall sob pressao.',
+    resourceFreeCourse: 'Curso gratuito no YouTube para Cloud Practitioner'
+  },
+  fr: {
+    resourceFreeBody: 'Si vous ne pouvez pas payer Udemy ou voulez rester entierement gratuit, combinez cette app avec un cours gratuit actuel et le guide officiel AWS. Apprenez les concepts, puis utilisez Cloud Recall Lab pour pratiquer le rappel sous pression.',
+    resourceFreeCourse: 'Cours YouTube gratuit pour Cloud Practitioner'
+  },
+  de: {
+    resourceFreeBody: 'Wenn du Udemy nicht bezahlen kannst oder komplett kostenlos bleiben willst, kombiniere diese App mit einem aktuellen kostenlosen Kurs und dem offiziellen AWS Guide. Lerne zuerst die Konzepte, dann uebe Recall unter Druck mit Cloud Recall Lab.',
+    resourceFreeCourse: 'Kostenloser YouTube-Kurs fuer Cloud Practitioner'
+  },
+  it: {
+    resourceFreeBody: 'Se non puoi pagare Udemy o vuoi restare completamente gratis, abbina questa app a un corso gratuito aggiornato e alla guida ufficiale AWS. Impara prima i concetti, poi usa Cloud Recall Lab per allenare il richiamo sotto pressione.',
+    resourceFreeCourse: 'Corso YouTube gratuito per Cloud Practitioner'
+  },
+  nl: {
+    resourceFreeBody: 'Als je Udemy niet kunt betalen of volledig gratis wilt blijven, combineer deze app dan met een actuele gratis cursus en de officiele AWS guide. Leer eerst de concepten en gebruik Cloud Recall Lab daarna om recall onder druk te oefenen.',
+    resourceFreeCourse: 'Gratis YouTube-cursus voor Cloud Practitioner'
+  },
+  hi: {
+    resourceFreeBody: 'Agar Udemy afford nahi kar sakte ya fully free rehna chahte hain, is app ko current free course aur official AWS guide ke saath pair karein. Pehle concepts learn karein, phir Cloud Recall Lab se pressure me recall practice karein.',
+    resourceFreeCourse: 'Cloud Practitioner learners ke liye free YouTube course option'
+  },
+  ja: {
+    resourceFreeBody: 'If you cannot afford Udemy or want to stay fully free, pair this app with a current free course and the official AWS guide. Learn the concepts first, then use Cloud Recall Lab for recall practice under pressure.',
+    resourceFreeCourse: 'Free YouTube course option for Cloud Practitioner learners'
+  }
+};
+
+Object.entries(RESOURCE_UI_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
 const READINESS_GATE_COPY = {
   es: {
     readinessGateBadge: 'Puerta final de preparacion',

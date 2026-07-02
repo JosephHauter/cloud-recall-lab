@@ -139,7 +139,7 @@ function auditStaticFiles() {
   assert(app.includes('launchPassCelebration'), 'Pass celebration polish is missing');
   assert(app.includes('prepareComprehensiveMockPool(65)'), 'Random comprehensive mock should use 65 questions');
   assert(app.includes('SUPPORTED_LANGUAGES'), 'Language support dictionary is missing');
-  assert(sw.includes('cloud-recall-lab-v16'), 'Service worker cache should be bumped to v16');
+  assert(sw.includes('cloud-recall-lab-v17'), 'Service worker cache should be bumped to v17');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');

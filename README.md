@@ -12,7 +12,7 @@ I built it because too many useful study workflows were locked behind paywalls, 
 
 Udemy was a major part of my prep for learning the material. I did not pay for separate mock exams while preparing; I used this app's original practice sets as the free practice layer alongside current learning material.
 
-This app is best used as a companion to current learning resources: use a course or official docs to learn, then use this hub to test whether you can retrieve the answer under pressure. The course that helped me was [Ultimate AWS Certified Cloud Practitioner CLF-C02 2026 by Stephane Maarek](https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/).
+This app is best used as a companion to current learning resources: use a course or official docs to learn, then use this hub to test whether you can retrieve the answer under pressure. The course that helped me was [Ultimate AWS Certified Cloud Practitioner CLF-C02 2026 by Stephane Maarek](https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/). If you cannot afford Udemy or want to stay fully free, a [free YouTube course option](https://www.youtube.com/watch?v=7HKot-brXFE) plus the official AWS guide can cover the learning layer while this app covers recall practice.
 
 That result is personal proof that the loop helped me, not a promise that the app alone guarantees a pass.
 

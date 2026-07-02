@@ -2568,6 +2568,11 @@ main {
   text-decoration: none;
 }
 
+.resource-card .resource-link {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+}
+
 .resource-card a:hover {
   text-decoration: underline;
 }
