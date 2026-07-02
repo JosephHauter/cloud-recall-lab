@@ -236,7 +236,7 @@ const I18N = {
     dashboardButton: 'Dashboard',
     builtBadge: 'Built after passing',
     builtTitle: 'I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026.',
-    builtBody1: 'I made this because so much useful exam prep sits behind paywalls, even basics like flashcards, and some generic AI/chat study workflows reveal the answer too early. That ruins the point of active recall: you need to commit first, then see feedback.',
+    builtBody1: 'I made this because so much useful exam prep sits behind paywalls, even basics like flashcards, and some study tools reveal the answer too early. That ruins the point of active recall: you need to commit first, then see feedback.',
     builtBody2: 'This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier.',
     wiseBadge: 'Use it wisely',
     wiseTitle: 'Free practice, not a promise or a replacement for current materials.',
@@ -256,7 +256,7 @@ const I18N = {
     contactTitle: 'Connect, contribute, or support the project.',
     contactBody: 'Questions, bug reports, corrections, and new original practice questions are welcome. The project is free and open source so learners can use it without another paywall.',
     footerBuilt: 'Built by Joseph Hauter as a free, no-login study tool.',
-    footerDisclaimer: 'This is an independent study tool and is not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). AWS, Amazon, and the AWS logo are trademarks of Amazon.com, Inc. All questions are original practice scenarios created for educational purposes.',
+    footerDisclaimer: 'This is an independent study tool and is not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates. All questions are original educational scenarios, not AWS certification exam materials.',
     randomExamDesc: 'Practice under CLF-C02-style timing with 65 randomly compiled questions from the database.',
     settingsTitle: 'Settings & Data',
     settingsBody: 'Your progress is stored locally in this browser. Export a backup if you want to move progress to another device.',
@@ -771,7 +771,7 @@ const I18N_PATCHES = {
     passPlanTitle: '7-Day Pass Plan',
     passPlanBody: 'A focused daily plan weighted toward the highest-scoring domains. About 2-3 hours/day. Each day lists exactly what to do and why it moves your score.',
     passStrategiesTitle: 'How Real People Passed - Proven Strategies',
-    passStrategiesBody: 'Synthesized from public study reports and AWS-published guidance. Paraphrased - no leaked or proprietary exam content.',
+    passStrategiesBody: 'Synthesized from public study reports and AWS-published guidance. Paraphrased - no confidential or unauthorized exam content.',
     serverlessLabel: 'Serverless',
     serverlessSummaryServices: 'exam-relevant services flagged',
     serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
@@ -1463,7 +1463,7 @@ const I18N_PATCHES = {
     dashboardButton: 'Dashboard',
     builtBadge: 'Built after passing',
     builtTitle: 'Maine is study loop se AWS Cloud Practitioner July 1, 2026 ko pass kiya.',
-    builtBody1: 'Maine yeh banaya kyunki useful prep, flashcards tak, paywalls ke peeche hoti hai, aur kuch AI study flows answer bahut jaldi dikha dete hain.',
+    builtBody1: 'Maine yeh banaya kyunki useful prep, flashcards tak, paywalls ke peeche hoti hai, aur kuch study tools answer bahut jaldi dikha dete hain.',
     builtBody2: "Loop simple hai: pressure me practice, answer choose karne tak answer hidden, har miss review, weak topics visible. Maine separate mock exams pay nahi kiye; is app ke original sets aur current learning material use kiya.",
     wiseBadge: 'Use it wisely',
     wiseTitle: 'Free practice, promise nahi aur current materials ka replacement nahi.',
@@ -1535,7 +1535,7 @@ const I18N_PATCHES = {
     passPlanTitle: '7-Day Pass Plan',
     passPlanBody: 'Highest-scoring domains par focused daily plan. About 2-3 hours/day.',
     passStrategiesTitle: 'How Real People Passed',
-    passStrategiesBody: 'Public study reports aur AWS guidance se paraphrased. No leaked/proprietary content.',
+    passStrategiesBody: 'Public study reports aur AWS guidance se paraphrased. No confidential or unauthorized exam content.',
     serverlessLabel: 'Serverless',
     serverlessSummaryServices: 'exam-relevant services flagged',
     serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
@@ -1630,7 +1630,7 @@ const I18N_PATCHES = {
     dashboardButton: 'Dashboard',
     builtBadge: 'Built after passing',
     builtTitle: 'I used this study loop to pass AWS Cloud Practitioner on July 1, 2026.',
-    builtBody1: 'I made this because useful prep often sits behind paywalls, and some AI study flows reveal answers too early.',
+    builtBody1: 'I made this because useful prep often sits behind paywalls, and some study tools reveal answers too early.',
     builtBody2: "The loop is simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible. I used Udemy and current learning material to learn the concepts, then used this app's original sets instead of buying separate mock exams.",
     wiseBadge: 'Use it wisely',
     wiseTitle: 'Free practice, not a promise or a replacement for current materials.',
@@ -1652,7 +1652,7 @@ const I18N_PATCHES = {
     contactTitle: 'Connect, contribute, or support the project.',
     contactBody: 'Questions, bug reports, corrections, and original practice questions are welcome. The project is free and open source.',
     footerBuilt: 'Built by Joseph Hauter as a free, no-login study tool.',
-    footerDisclaimer: 'Independent study tool; not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). Questions are original educational scenarios.',
+    footerDisclaimer: 'Independent study tool; not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). Questions are original educational scenarios, not AWS certification exam materials.',
     randomExamDesc: 'Practice under CLF-C02-style timing with 65 random database questions.',
     settingsTitle: 'Settings & Data',
     settingsBody: 'Progress is stored locally in this browser. Export a backup to move devices.',
@@ -1702,7 +1702,7 @@ const I18N_PATCHES = {
     passPlanTitle: '7-Day Pass Plan',
     passPlanBody: 'A daily plan weighted toward the highest-scoring domains. About 2-3 hours/day.',
     passStrategiesTitle: 'How Real People Passed',
-    passStrategiesBody: 'Paraphrased from public study reports and AWS guidance. No leaked content.',
+    passStrategiesBody: 'Paraphrased from public study reports and AWS guidance. No confidential or unauthorized exam content.',
     serverlessLabel: 'Serverless',
     serverlessSummaryServices: 'exam-relevant services flagged',
     serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
@@ -1947,7 +1947,7 @@ Object.assign(I18N.ja, {
   passPlanTitle: '7-Day Pass Plan',
   passPlanBody: '高配点 domains に寄せた daily plan。1日およそ2-3時間。',
   passStrategiesTitle: 'How Real People Passed',
-  passStrategiesBody: 'Public study reports と AWS guidance から paraphrase。leaked content はありません。',
+  passStrategiesBody: 'Paraphrased from public study reports and AWS guidance. No confidential or unauthorized exam content.',
   serverlessLabel: 'Serverless',
   serverlessSummaryServices: 'exam-relevant services flagged',
   serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
@@ -2113,6 +2113,94 @@ const RESOURCE_UI_COPY = {
 };
 
 Object.entries(RESOURCE_UI_COPY).forEach(([lang, copy]) => {
+  I18N[lang] = { ...(I18N[lang] || {}), ...copy };
+});
+
+const INTEGRITY_UI_COPY = {
+  en: {
+    integrityBadge: 'Exam integrity',
+    integrityTitle: 'Built to practice ethically, not to reproduce AWS exam content.',
+    integrityBody1: 'All practice questions and explanations are original educational scenarios. They are not copied from AWS certification exams, unauthorized disclosures, braindumps, paid practice products, or confidential materials.',
+    integrityBody2: 'Do not submit actual certification exam questions, screenshots, answer dumps, or confidential assessment material in issues, pull requests, messages, or corrections. If something looks like unauthorized exam content, it should be removed.',
+    integrityBody3: 'Do not use this app, notes, browser tools, AI tools, screenshots, or any other unauthorized materials during a live AWS exam or credential assessment. Follow the current AWS Certification Program Agreement and testing rules.',
+    integrityAgreementLink: 'Read the AWS Certification Program Agreement',
+    footerDisclaimer: 'This is an independent study tool and is not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates. All questions are original educational scenarios, not AWS certification exam materials.'
+  },
+  es: {
+    integrityBadge: 'Integridad del examen',
+    integrityTitle: 'Hecho para practicar con etica, no para reproducir contenido del examen AWS.',
+    integrityBody1: 'Todas las preguntas y explicaciones son escenarios educativos originales. No estan copiadas de examenes AWS, divulgaciones no autorizadas, braindumps, productos pagados o material confidencial.',
+    integrityBody2: 'No envies preguntas reales de examen, capturas, dumps de respuestas o material confidencial en issues, PRs, mensajes o correcciones. Si algo parece contenido no autorizado, debe eliminarse.',
+    integrityBody3: 'No uses esta app, notas, herramientas del navegador, AI, capturas ni materiales no autorizados durante un examen AWS en vivo. Sigue el acuerdo y reglas actuales de AWS Certification.',
+    integrityAgreementLink: 'Leer el AWS Certification Program Agreement',
+    footerDisclaimer: 'Herramienta independiente, no afiliada, respaldada, creada ni patrocinada por Amazon Web Services (AWS). AWS y Amazon Web Services son marcas de Amazon.com, Inc. o sus afiliadas. Las preguntas son escenarios educativos originales, no materiales de examenes de certificacion AWS.'
+  },
+  pt: {
+    integrityBadge: 'Integridade do exame',
+    integrityTitle: 'Feito para praticar com etica, nao para reproduzir conteudo de exames AWS.',
+    integrityBody1: 'Todas as perguntas e explicacoes sao cenarios educacionais originais. Nao sao copiadas de exames AWS, divulgacoes nao autorizadas, braindumps, produtos pagos ou material confidencial.',
+    integrityBody2: 'Nao envie perguntas reais de exame, capturas, dumps de respostas ou material confidencial em issues, PRs, mensagens ou correcoes. Se algo parecer conteudo nao autorizado, deve ser removido.',
+    integrityBody3: 'Nao use esta app, notas, ferramentas do navegador, AI, capturas ou materiais nao autorizados durante um exame AWS ao vivo. Siga o acordo e as regras atuais da AWS Certification.',
+    integrityAgreementLink: 'Ler o AWS Certification Program Agreement',
+    footerDisclaimer: 'Ferramenta independente, nao afiliada, endossada, criada ou patrocinada pela Amazon Web Services (AWS). AWS e Amazon Web Services sao marcas da Amazon.com, Inc. ou afiliadas. As perguntas sao cenarios educacionais originais, nao materiais de exames de certificacao AWS.'
+  },
+  fr: {
+    integrityBadge: 'Integrite examen',
+    integrityTitle: 'Concu pour pratiquer de facon ethique, pas pour reproduire le contenu des examens AWS.',
+    integrityBody1: 'Toutes les questions et explications sont des scenarios educatifs originaux. Elles ne viennent pas dexamens AWS, divulgations non autorisees, braindumps, produits payants ou documents confidentiels.',
+    integrityBody2: 'Ne soumettez pas de vraies questions dexamen, captures, dumps de reponses ou documents confidentiels dans les issues, PRs, messages ou corrections. Tout contenu non autorise doit etre retire.',
+    integrityBody3: 'Nutilisez pas cette app, des notes, outils navigateur, AI, captures ou autres documents non autorises pendant un examen AWS en direct. Respectez le contrat et les regles AWS Certification actuels.',
+    integrityAgreementLink: 'Lire le AWS Certification Program Agreement',
+    footerDisclaimer: 'Outil independant, non affilie, approuve, cree ou sponsorise par Amazon Web Services (AWS). AWS et Amazon Web Services sont des marques dAmazon.com, Inc. ou de ses filiales. Les questions sont des scenarios educatifs originaux, pas des materiels dexamen de certification AWS.'
+  },
+  de: {
+    integrityBadge: 'Pruefungsintegritaet',
+    integrityTitle: 'Zum ethischen Ueben gebaut, nicht zum Reproduzieren von AWS-Pruefungsinhalten.',
+    integrityBody1: 'Alle Fragen und Erklaerungen sind originale Lernszenarien. Sie sind nicht aus AWS-Pruefungen, unautorisierten Offenlegungen, Braindumps, bezahlten Produkten oder vertraulichem Material kopiert.',
+    integrityBody2: 'Keine echten Pruefungsfragen, Screenshots, Antwort-Dumps oder vertraulichen Materialien in Issues, PRs, Nachrichten oder Korrekturen einreichen. Unautorisierter Inhalt muss entfernt werden.',
+    integrityBody3: 'Nutze diese App, Notizen, Browser-Tools, AI, Screenshots oder andere unautorisierte Materialien nicht waehrend einer laufenden AWS-Pruefung. Befolge das aktuelle AWS Certification Agreement und die Testregeln.',
+    integrityAgreementLink: 'AWS Certification Program Agreement lesen',
+    footerDisclaimer: 'Unabhaengiges Lerntool, nicht mit Amazon Web Services (AWS) verbunden, unterstuetzt, erstellt oder gesponsert. AWS und Amazon Web Services sind Marken von Amazon.com, Inc. oder verbundenen Unternehmen. Alle Fragen sind originale Lernszenarien, keine AWS-Zertifizierungspruefungsmaterialien.'
+  },
+  it: {
+    integrityBadge: 'Integrita esame',
+    integrityTitle: 'Creato per praticare in modo etico, non per riprodurre contenuto degli esami AWS.',
+    integrityBody1: 'Tutte le domande e spiegazioni sono scenari educativi originali. Non sono copiate da esami AWS, divulgazioni non autorizzate, braindump, prodotti a pagamento o materiali confidenziali.',
+    integrityBody2: 'Non inviare domande reali di esame, screenshot, answer dump o materiale confidenziale in issue, PR, messaggi o correzioni. Se qualcosa sembra contenuto non autorizzato, va rimosso.',
+    integrityBody3: 'Non usare questa app, note, strumenti browser, AI, screenshot o materiali non autorizzati durante un esame AWS live. Segui laccordo e le regole AWS Certification attuali.',
+    integrityAgreementLink: 'Leggi AWS Certification Program Agreement',
+    footerDisclaimer: 'Strumento indipendente, non affiliato, approvato, creato o sponsorizzato da Amazon Web Services (AWS). AWS e Amazon Web Services sono marchi di Amazon.com, Inc. o affiliate. Le domande sono scenari educativi originali, non materiali di esami di certificazione AWS.'
+  },
+  nl: {
+    integrityBadge: 'Examenintegriteit',
+    integrityTitle: 'Gebouwd om ethisch te oefenen, niet om AWS-examencontent te reproduceren.',
+    integrityBody1: 'Alle oefenvragen en uitleg zijn originele educatieve scenarios. Ze zijn niet gekopieerd uit AWS-examens, ongeautoriseerde disclosures, braindumps, betaalde oefenproducten of vertrouwelijk materiaal.',
+    integrityBody2: 'Dien geen echte examenvragen, screenshots, antwoord-dumps of vertrouwelijk assessmentmateriaal in via issues, PRs, berichten of correcties. Ongeautoriseerde content moet worden verwijderd.',
+    integrityBody3: 'Gebruik deze app, notities, browsertools, AI, screenshots of andere ongeautoriseerde materialen niet tijdens een live AWS-examen. Volg de actuele AWS Certification Program Agreement en testregels.',
+    integrityAgreementLink: 'Lees de AWS Certification Program Agreement',
+    footerDisclaimer: 'Onafhankelijke studietool, niet verbonden aan, goedgekeurd door, gemaakt door of gesponsord door Amazon Web Services (AWS). AWS en Amazon Web Services zijn handelsmerken van Amazon.com, Inc. of gelieerde ondernemingen. Alle vragen zijn originele educatieve scenarios, geen AWS-certificeringsexamenmateriaal.'
+  },
+  hi: {
+    integrityBadge: 'Exam integrity',
+    integrityTitle: 'Ethical practice ke liye built, AWS exam content reproduce karne ke liye nahi.',
+    integrityBody1: 'Saare practice questions aur explanations original educational scenarios hain. Yeh AWS certification exams, unauthorized disclosures, braindumps, paid practice products, ya confidential materials se copy nahi kiye gaye.',
+    integrityBody2: 'Actual certification exam questions, screenshots, answer dumps, ya confidential assessment material issues, PRs, messages, ya corrections me submit na karein. Unauthorized content dikhe to remove hona chahiye.',
+    integrityBody3: 'Live AWS exam ke dauran is app, notes, browser tools, AI tools, screenshots, ya koi unauthorized material use na karein. Current AWS Certification Program Agreement aur testing rules follow karein.',
+    integrityAgreementLink: 'AWS Certification Program Agreement padhein',
+    footerDisclaimer: 'Independent study tool; Amazon Web Services (AWS) se affiliated, endorsed, authored, ya sponsored nahi. AWS aur Amazon Web Services Amazon.com, Inc. ya affiliates ke trademarks hain. Questions original educational scenarios hain, AWS certification exam materials nahi.'
+  },
+  ja: {
+    integrityBadge: 'Exam integrity',
+    integrityTitle: 'Built for ethical practice, not for reproducing AWS exam content.',
+    integrityBody1: 'All practice questions and explanations are original educational scenarios. They are not copied from AWS certification exams, unauthorized disclosures, braindumps, paid practice products, or confidential materials.',
+    integrityBody2: 'Do not submit actual certification exam questions, screenshots, answer dumps, or confidential assessment material in issues, pull requests, messages, or corrections. Unauthorized exam content should be removed.',
+    integrityBody3: 'Do not use this app, notes, browser tools, AI tools, screenshots, or other unauthorized materials during a live AWS exam or credential assessment. Follow current AWS testing rules.',
+    integrityAgreementLink: 'Read the AWS Certification Program Agreement',
+    footerDisclaimer: 'This is an independent study tool and is not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates. All questions are original educational scenarios, not AWS certification exam materials.'
+  }
+};
+
+Object.entries(INTEGRITY_UI_COPY).forEach(([lang, copy]) => {
   I18N[lang] = { ...(I18N[lang] || {}), ...copy };
 });
 

@@ -8,7 +8,7 @@ Free, zero-login CLF-C02 study app for AWS Cloud Practitioner learners. It runs 
 
 I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026. My section-level score report showed Meets Competencies across all four domains, and the credential can be verified on [Credly](https://www.credly.com/badges/c52c14ed-17c7-4b4f-9c18-a0b8fc22ff6c/public_url).
 
-I built it because too many useful study workflows were locked behind paywalls, including basics like flashcards, and generic AI/chat study flows can reveal the answer too early. This app keeps the answer hidden until you commit, then gives feedback so you can actually practice retrieval.
+I built it because too many useful study workflows were locked behind paywalls, including basics like flashcards, and some study tools reveal the answer too early. This app keeps the answer hidden until you commit, then gives feedback so you can actually practice retrieval.
 
 Udemy was a major part of my prep for learning the material. I did not pay for separate mock exams while preparing; I used this app's original practice sets as the free practice layer alongside current learning material.
 
@@ -95,7 +95,15 @@ Static is the right launch architecture for this project. It is free to host, fa
 
 ## Community
 
-Contributions and corrections are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), [COMMUNITY.md](COMMUNITY.md), and the GitHub issue templates. Please keep questions original and do not submit real exam questions, braindumps, paid course content, or confidential material.
+Contributions and corrections are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), [COMMUNITY.md](COMMUNITY.md), and the GitHub issue templates. Please keep questions original and do not submit actual certification exam questions, braindumps, paid course content, or confidential material.
+
+## Exam Integrity
+
+Cloud Recall Lab is built for ethical practice. All questions and explanations are original educational scenarios. They are not copied from AWS certification exams, unauthorized disclosures, braindumps, paid practice products, or confidential materials.
+
+Do not submit actual certification exam questions, screenshots, answer dumps, or confidential assessment material in issues, pull requests, messages, or corrections. If submitted content appears to include unauthorized exam material, it should be removed.
+
+Do not use this app, notes, browser tools, AI tools, screenshots, or any other unauthorized materials during a live AWS exam or credential assessment. Follow the current [AWS Certification Program Agreement](https://aws.amazon.com/certification/certification-agreement/) and testing rules.
 
 ## Local Use
 
@@ -129,7 +137,7 @@ The audit also checks the PWA manifest, service worker cache version, core offli
 
 ## Contributing Questions
 
-Question contributions are welcome. Please make sure every question is original, scenario-based, and not copied from real exams, braindumps, paid practice products, or AWS confidential materials.
+Question contributions are welcome. Please make sure every question is original, scenario-based, and not copied from certification exams, braindumps, paid practice products, or AWS confidential materials.
 
 Use this shape:
 
@@ -152,9 +160,9 @@ Use this shape:
 
 ## Disclaimer
 
-This is an independent study tool and is not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). AWS, Amazon, and the AWS logo are trademarks of Amazon.com, Inc. All questions are original practice scenarios created for educational purposes.
+This is an independent study tool and is not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates. All questions are original educational scenarios, not AWS certification exam materials.
 
-AWS can update certification scope, service behavior, and exam wording over time. Always cross-check the current AWS CLF-C02 exam guide, AWS documentation, and up-to-date course material before taking the real exam.
+AWS can update certification scope, service behavior, and exam wording over time. Always cross-check the current AWS CLF-C02 exam guide, AWS documentation, and up-to-date course material before scheduling or taking an exam.
 
 ## Author
 

@@ -653,13 +653,13 @@ const OFFICIAL_AVOID_ANCHORS = [
   "Do not study like an architect exam: AWS says coding, architecture design, troubleshooting, implementation, and load/performance testing are outside the target candidate scope.",
   "Do not memorize deep configuration steps, CLI syntax, JSON policy writing, CIDR math, Kubernetes internals, replica counts, or exact pricing dollar amounts.",
   "Before exam week, compare your notes against the official out-of-scope service list and trim rabbit holes that are not CLF-C02-level.",
-  "Avoid braindumps or copied real exam questions; they can be inaccurate, unethical, and risky for certification status."
+  "Avoid braindumps or copied certification exam questions; they can be inaccurate, unethical, and risky for certification status."
 ];
 
 // ---- 7-Day Battle Plan + Proven "How Real People Passed" Strategies ----
 // Synthesized from publicly-shared study approaches (AWS exam candidate
 // communities, exam-skills reports, AWS-published study guides). Paraphrased;
-// not copied from any single source, and contains no real exam content.
+// not copied from any single source, and contains no AWS exam content.
 const PASS_PLAN = {
   // Weighted day-by-day plan. Time shown is a realistic daily budget for someone
   // with a day job; scale up if you have more hours. Days assume ~2–3 hrs/day.
@@ -701,11 +701,11 @@ const PASS_PLAN = {
       why: "Pricing is only 12% but the questions are formulaic; cover the gaps that others miss." },
     { day: 6, focus: "Full timed simulation", hours: "2h",
       do: [
-        "Take the Final Pressure Test (50Q, 90 min, ~18% multi-select) under exam conditions — no notes, no breaks.",
+        "Take the Final Pressure Test (50Q, 90 min, mixed question types) under exam-like practice conditions — no notes, no breaks.",
         "Score it. Review ALL questions, not just the wrong ones.",
         "Re-attack every missed item in the Day 7 wrong-answer pool."
       ],
-      why: "Pressure testing under real conditions exposes gaps that untimed practice hides." },
+      why: "Timed practice exposes gaps that untimed review can hide." },
     { day: 7, focus: "Targeted review + exam-day prep", hours: "2h",
       do: [
         "Clear the Day 7 wrong-answer pool (goal: under 5 remaining).",
@@ -716,15 +716,15 @@ const PASS_PLAN = {
   ],
 
   // Concrete tactics people who passed report using. Each is a paraphrased
-  // commonly-cited strategy — no proprietary or leaked material.
+  // commonly-cited strategy — no confidential or unauthorized material.
   strategies: [
     { t: "Master the trigger words first", d: "Most CLF-C02 questions reduce to a trigger phrase (\"SQL on S3\"→Athena, \"DDoS\"→Shield). The Rapid Trigger Drills + Highest-Yield Traps table are the highest-ROI prep in the shortest time." },
-    { t: "Practice in the real exam format — including multi-select", d: "Roughly 15–20% of the real exam is choose-two / choose-three. People who only drilled single-answer questions got surprised. The Final Pressure Test mimics this split." },
+    { t: "Practice in timed, exam-like format — including multi-select", d: "AWS practice materials include both single-answer and multiple-response styles. The Final Pressure Test gives you ethical multi-select practice without copying certification exam content." },
     { t: "Drill your wrong answers to zero", d: "Every candidate who reports passing fast emphasizes the wrong-answer loop: get a question wrong → understand WHY each distractor is wrong → re-drill it. The 'why wrong' breakdown in this site does exactly that." },
     { t: "Spend the most time on the biggest domains", d: "Security (30%) and Cloud Technology (34%) are ~64% of the exam. Don't over-invest in the 12% Billing domain beyond the formulaic pricing questions." },
     { t: "Use elimination, not inspiration", d: "On the exam, cross out services from the wrong category first (e.g., a dashboard question is never Redshift). Two-pass reading + elimination recovers points on questions you're unsure of." },
     { t: "Simulate test-day conditions", d: "Take at least one full mock in one sitting, no breaks, with the timer. Test-day stamina and time management are a real factor; candidates who skipped this reported running out of time." },
-    { t: "Review official exam guide + AWS Skill Builder sample questions", d: "AWS publishes free practice questions and a 20-question official set on Skill Builder. They are the closest legitimate signal to real exam wording. Use them as a final calibration — never braindumps, which risk your certification." },
+    { t: "Review official exam guide + AWS Skill Builder sample questions", d: "AWS publishes free practice questions and official exam-prep resources on Skill Builder. Use those as the legitimate calibration source for AWS-style wording — never braindumps, which risk your certification." },
     { t: "Stop 12–24 hours before, sleep well", d: "Cramming the night before consistently correlates with worse recall. The cheat sheet + a good night's sleep outperforms another 4 hours of panic study." }
   ],
 

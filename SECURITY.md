@@ -16,5 +16,5 @@ Please open a GitHub issue for security or privacy concerns after the repository
 ## Out of Scope
 
 - AWS certification exam disputes
-- Requests for real exam questions
+- Requests for actual certification exam questions, answer dumps, or confidential assessment material
 - Issues caused by browser extensions or modified local files
