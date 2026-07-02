@@ -739,7 +739,7 @@ const I18N_PATCHES = {
     guideSearchPlaceholder: 'Search services, trigger words, or descriptions (e.g. S3, SQL, database)...',
     serverlessBadgeTitle: 'Exam shortcut',
     serverlessTitle: 'Serverless services map',
-    serverlessBody: 'For CLF-C02, the official Serverless category focuses on Lambda and Fargate. Also recognize serverless-style services and variants where AWS handles capacity and scaling, such as DynamoDB, Athena, Glue, S3, Data Firehose, Aurora Serverless v2, Redshift Serverless, and OpenSearch Serverless. You still configure access, data, costs, and service behavior.',
+    serverlessBody: 'For CLF-C02, the official Serverless category focuses on Lambda and Fargate. Also recognize serverless-style services and variants where AWS handles capacity and scaling, such as DynamoDB, Athena, Glue, S3, Data Firehose, Aurora Serverless v2, Redshift Serverless, OpenSearch Serverless, and managed AI/app services. You still configure access, data, costs, and service behavior.',
     trapsTitle: 'Highest-Yield Exam Traps',
     trapsBody: 'Recognize these patterns in the exam questions to quickly identify the likely service.',
     trapsQuestionColumn: 'If the question says...',
@@ -747,10 +747,12 @@ const I18N_PATCHES = {
     pairsSearchPlaceholder: 'Search confusing pairs (e.g. CloudWatch, RDS)...',
     pairsIntroBadge: 'Exam decision helper',
     pairsIntroTitle: 'Confusing pairs, cleaned up.',
-    pairsIntroBody: 'Each card shows the exact difference, the trigger words to look for, and the exam-day decision rule. Use this when two answers feel almost right.',
+    pairsIntroBody: 'Scan the decision rule first. Expand a pair only when you need definitions or trigger words for two answers that both feel close.',
     pairCountLabel: '{count} pair checks',
     pairCountOneLabel: '1 pair check',
     pairCompareLabel: 'Compare',
+    pairOpenLabel: 'Open',
+    pairCloseLabel: 'Close',
     pairTriggerLabel: 'Exam trigger',
     pairDecisionLabel: 'How to choose',
     noPairsResults: 'No confusing pairs found matching "{query}".',
@@ -774,7 +776,7 @@ const I18N_PATCHES = {
     passStrategiesBody: 'Synthesized from public study reports and AWS-published guidance. Paraphrased - no confidential or unauthorized exam content.',
     serverlessLabel: 'Serverless',
     serverlessSummaryServices: 'exam-relevant services flagged',
-    serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI',
+    serverlessSummaryBuckets: 'mental buckets: compute, APIs, data, integration, AI/app',
     serverlessSummaryCaution: 'but IAM, data, cost, and config still matter',
     serverlessServiceCount: '{count} services',
     keyTriggerLabel: 'Key trigger',
@@ -1982,10 +1984,12 @@ const PAIR_UI_COPY = {
   es: {
     pairsIntroBadge: 'Ayuda de decision',
     pairsIntroTitle: 'Pares confusos, sin ruido.',
-    pairsIntroBody: 'Cada tarjeta muestra la diferencia exacta, las palabras clave y la regla de decision para examen. Usala cuando dos respuestas parezcan correctas.',
+    pairsIntroBody: 'Primero lee la regla de decision. Abre un par solo si necesitas definiciones o triggers.',
     pairCountLabel: '{count} pares',
     pairCountOneLabel: '1 par',
     pairCompareLabel: 'Comparar',
+    pairOpenLabel: 'Abrir',
+    pairCloseLabel: 'Cerrar',
     pairTriggerLabel: 'Trigger de examen',
     pairDecisionLabel: 'Como elegir',
     noPairsResults: 'No se encontraron pares para "{query}".'
@@ -1993,10 +1997,12 @@ const PAIR_UI_COPY = {
   pt: {
     pairsIntroBadge: 'Ajuda de decisao',
     pairsIntroTitle: 'Pares confusos, sem ruido.',
-    pairsIntroBody: 'Cada cartao mostra a diferenca exata, os gatilhos e a regra de decisao para prova. Use quando duas respostas parecerem certas.',
+    pairsIntroBody: 'Leia primeiro a regra de decisao. Abra um par so quando precisar de definicoes ou gatilhos.',
     pairCountLabel: '{count} pares',
     pairCountOneLabel: '1 par',
     pairCompareLabel: 'Comparar',
+    pairOpenLabel: 'Abrir',
+    pairCloseLabel: 'Fechar',
     pairTriggerLabel: 'Gatilho de prova',
     pairDecisionLabel: 'Como escolher',
     noPairsResults: 'Nenhum par encontrado para "{query}".'
@@ -2004,10 +2010,12 @@ const PAIR_UI_COPY = {
   fr: {
     pairsIntroBadge: 'Aide de decision',
     pairsIntroTitle: 'Paires confuses, clarifiees.',
-    pairsIntroBody: 'Chaque carte montre la difference exacte, les mots declencheurs et la regle de decision pour lexamen. Utile quand deux reponses semblent bonnes.',
+    pairsIntroBody: 'Lisez dabord la regle de decision. Ouvrez une paire seulement si vous avez besoin des definitions ou des declencheurs.',
     pairCountLabel: '{count} paires',
     pairCountOneLabel: '1 paire',
     pairCompareLabel: 'Comparer',
+    pairOpenLabel: 'Ouvrir',
+    pairCloseLabel: 'Fermer',
     pairTriggerLabel: 'Declencheur examen',
     pairDecisionLabel: 'Comment choisir',
     noPairsResults: 'Aucune paire trouvee pour "{query}".'
@@ -2015,10 +2023,12 @@ const PAIR_UI_COPY = {
   de: {
     pairsIntroBadge: 'Entscheidungshilfe',
     pairsIntroTitle: 'Verwechslungs-Paare, sauber sortiert.',
-    pairsIntroBody: 'Jede Karte zeigt den exakten Unterschied, die Trigger-Woerter und die Pruefungsregel. Nutze sie, wenn zwei Antworten fast richtig wirken.',
+    pairsIntroBody: 'Lies zuerst die Auswahlregel. Oeffne ein Paar nur, wenn du Definitionen oder Trigger brauchst.',
     pairCountLabel: '{count} Paare',
     pairCountOneLabel: '1 Paar',
     pairCompareLabel: 'Vergleichen',
+    pairOpenLabel: 'Oeffnen',
+    pairCloseLabel: 'Schliessen',
     pairTriggerLabel: 'Pruefungs-Trigger',
     pairDecisionLabel: 'Auswahlregel',
     noPairsResults: 'Keine Paare fuer "{query}" gefunden.'
@@ -2026,10 +2036,12 @@ const PAIR_UI_COPY = {
   it: {
     pairsIntroBadge: 'Aiuto decisione',
     pairsIntroTitle: 'Coppie confuse, chiarite.',
-    pairsIntroBody: 'Ogni scheda mostra la differenza esatta, le parole trigger e la regola da usare in esame. Utile quando due risposte sembrano corrette.',
+    pairsIntroBody: 'Leggi prima la regola di decisione. Apri una coppia solo se servono definizioni o trigger.',
     pairCountLabel: '{count} coppie',
     pairCountOneLabel: '1 coppia',
     pairCompareLabel: 'Confronta',
+    pairOpenLabel: 'Apri',
+    pairCloseLabel: 'Chiudi',
     pairTriggerLabel: 'Trigger esame',
     pairDecisionLabel: 'Come scegliere',
     noPairsResults: 'Nessuna coppia trovata per "{query}".'
@@ -2037,10 +2049,12 @@ const PAIR_UI_COPY = {
   nl: {
     pairsIntroBadge: 'Beslishulp',
     pairsIntroTitle: 'Verwarrende paren, helder gemaakt.',
-    pairsIntroBody: 'Elke kaart toont het exacte verschil, de triggerwoorden en de examenregel. Gebruik dit wanneer twee antwoorden allebei goed lijken.',
+    pairsIntroBody: 'Lees eerst de beslisregel. Open een paar alleen als je definities of triggers nodig hebt.',
     pairCountLabel: '{count} paren',
     pairCountOneLabel: '1 paar',
     pairCompareLabel: 'Vergelijk',
+    pairOpenLabel: 'Open',
+    pairCloseLabel: 'Sluit',
     pairTriggerLabel: 'Examentrigger',
     pairDecisionLabel: 'Hoe kiezen',
     noPairsResults: 'Geen paren gevonden voor "{query}".'
@@ -2048,10 +2062,12 @@ const PAIR_UI_COPY = {
   hi: {
     pairsIntroBadge: 'Decision helper',
     pairsIntroTitle: 'Confusing pairs, clear format.',
-    pairsIntroBody: 'Har card exact difference, exam trigger words, aur decision rule dikhata hai. Jab do answers almost right lagein, yahan check karein.',
+    pairsIntroBody: 'Pehle decision rule scan karein. Definitions ya trigger words chahiye tabhi pair open karein.',
     pairCountLabel: '{count} pair checks',
     pairCountOneLabel: '1 pair check',
     pairCompareLabel: 'Compare',
+    pairOpenLabel: 'Open',
+    pairCloseLabel: 'Close',
     pairTriggerLabel: 'Exam trigger',
     pairDecisionLabel: 'Kaise choose karein',
     noPairsResults: 'No confusing pairs found for "{query}".'
@@ -2059,10 +2075,12 @@ const PAIR_UI_COPY = {
   ja: {
     pairsIntroBadge: 'Decision helper',
     pairsIntroTitle: 'Confusing pairs, clear format.',
-    pairsIntroBody: 'Each card shows the exact difference, exam trigger words, and the decision rule. Use it when two answers both look close.',
+    pairsIntroBody: 'Scan the decision rule first. Open a pair only when you need definitions or trigger words.',
     pairCountLabel: '{count} pair checks',
     pairCountOneLabel: '1 pair check',
     pairCompareLabel: 'Compare',
+    pairOpenLabel: 'Open',
+    pairCloseLabel: 'Close',
     pairTriggerLabel: 'Exam trigger',
     pairDecisionLabel: 'How to choose',
     noPairsResults: 'No confusing pairs found for "{query}".'
@@ -2645,7 +2663,13 @@ const SERVERLESS_SERVICE_NAMES = new Set([
   'Textract',
   'Translate',
   'Polly',
-  'Transcribe'
+  'Transcribe',
+  'Kendra',
+  'Lex',
+  'Amazon Q',
+  'Connect',
+  'SES',
+  'Amplify'
 ]);
 
 const SERVERLESS_STUDY_GROUPS = [
@@ -2670,9 +2694,9 @@ const SERVERLESS_STUDY_GROUPS = [
     services: ['SQS', 'SNS', 'EventBridge', 'Step Functions']
   },
   {
-    title: 'AI services',
-    takeaway: 'Use managed ML capabilities without training or hosting your own model infrastructure.',
-    services: ['Comprehend', 'Rekognition', 'Textract', 'Translate', 'Polly', 'Transcribe']
+    title: 'AI and managed app services',
+    takeaway: 'Use managed AI, messaging, contact center, and front-end app capabilities without operating service infrastructure.',
+    services: ['Comprehend', 'Rekognition', 'Textract', 'Translate', 'Polly', 'Transcribe', 'Kendra', 'Lex', 'Amazon Q', 'Connect', 'SES', 'Amplify']
   }
 ];
 
@@ -4224,7 +4248,7 @@ function isServerlessService(serviceName) {
 }
 
 function renderServerlessBadge(serviceName) {
-  if (!isServerlessService(serviceName) || /serverless/i.test(serviceName)) return '';
+  if (!isServerlessService(serviceName)) return '';
   return `<span class="serverless-badge">${escapeHtml(t('serverlessLabel'))}</span>`;
 }
 
@@ -4425,36 +4449,53 @@ function renderGuidePairs(filterText = '') {
   }
 
   filtered.forEach(item => {
-    const card = document.createElement('div');
+    const card = document.createElement('details');
     const compareClass = item.services.length > 2 ? 'pair-compare-grid is-three' : 'pair-compare-grid';
     card.className = 'pair-card glass-card';
+    card.setAttribute('name', 'confusing-pairs');
+    if (query && filtered.length <= 6) {
+      card.open = true;
+    }
+    card.addEventListener('toggle', () => {
+      if (!card.open) return;
+      container.querySelectorAll('.pair-card[open]').forEach(otherCard => {
+        if (otherCard !== card) otherCard.open = false;
+      });
+    });
 
     card.innerHTML = `
-      <div class="pair-card-header">
-        <div>
+      <summary class="pair-summary">
+        <div class="pair-summary-copy">
           <span class="pair-category">${escapeHtml(item.category)}</span>
           <h4>${escapeHtml(item.pair)}</h4>
+          <p>${escapeHtml(item.decision)}</p>
         </div>
+        <span class="pair-toggle-label" aria-hidden="true">
+          <span class="pair-toggle-open">${escapeHtml(t('pairOpenLabel'))}</span>
+          <span class="pair-toggle-close">${escapeHtml(t('pairCloseLabel'))}</span>
+        </span>
+      </summary>
+      <div class="pair-card-details">
         <span class="pair-compare-label">${escapeHtml(t('pairCompareLabel'))}</span>
-      </div>
-      <div class="${compareClass}">
-        ${item.services.map(service => `
-          <section class="pair-service-panel">
-            <div class="pair-service-name">
-              <span>${escapeHtml(service.name)}</span>
-              <small>=</small>
-            </div>
-            <p>${escapeHtml(service.equals)}</p>
-            <div class="pair-trigger">
-              <span>${escapeHtml(t('pairTriggerLabel'))}</span>
-              <strong>${escapeHtml(service.clue)}</strong>
-            </div>
-          </section>
-        `).join('')}
-      </div>
-      <div class="pair-decision">
-        <span>${escapeHtml(t('pairDecisionLabel'))}</span>
-        <p>${escapeHtml(item.decision)}</p>
+        <div class="${compareClass}">
+          ${item.services.map(service => `
+            <section class="pair-service-panel">
+              <div class="pair-service-name">
+                <span>${escapeHtml(service.name)}</span>
+                <small>=</small>
+              </div>
+              <p>${escapeHtml(service.equals)}</p>
+              <div class="pair-trigger">
+                <span>${escapeHtml(t('pairTriggerLabel'))}</span>
+                <strong>${escapeHtml(service.clue)}</strong>
+              </div>
+            </section>
+          `).join('')}
+        </div>
+        <div class="pair-decision">
+          <span>${escapeHtml(t('pairDecisionLabel'))}</span>
+          <p>${escapeHtml(item.decision)}</p>
+        </div>
       </div>
     `;
     container.appendChild(card);

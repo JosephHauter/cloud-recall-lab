@@ -130,7 +130,10 @@ function auditStaticFiles() {
   assert(app.includes('SERVERLESS_SERVICE_NAMES'), 'Serverless service list is missing');
   assert(study.includes('Aurora Serverless v2') && app.includes('Aurora Serverless v2'), 'Serverless map should include Aurora Serverless v2 without marking plain Aurora as serverless');
   assert(app.includes('Redshift Serverless') && app.includes('OpenSearch Serverless') && app.includes('Data Firehose'), 'Serverless map should include key serverless analytics variants');
-  assert(study.includes('services: [') && study.includes('decision:') && app.includes('pair-service-panel'), 'Confusing pairs should use structured comparison cards');
+  assert(app.includes("'Amazon Q'") && app.includes("'SES'") && app.includes("'Amplify'"), 'Serverless map should include managed AI/app services that appear in the service index');
+  assert(!/\/serverless\/i\.test\(serviceName\)/.test(app), 'Serverless-named variants should still display a serverless badge');
+  assert(study.includes('services: [') && study.includes('decision:') && app.includes("document.createElement('details')") && app.includes('pair-toggle-label'), 'Confusing pairs should use compact structured accordion cards');
+  assert(css.includes('.tool-tab-strip') && css.includes('grid-template-columns: repeat(2, minmax(0, 1fr))'), 'Study/trainer tab strips should wrap cleanly on mobile');
   assert(app.includes("item.checked && item.type !== 'self'"), 'Readiness self-checks should remain toggleable checkboxes');
   assert(app.includes('renderGuideServerless'), 'Serverless map renderer is missing');
   assert(app.includes('resetExamSessionState'), 'Exam exit should clear stale exam state');
@@ -147,11 +150,12 @@ function auditStaticFiles() {
   assert(app.includes('miniquiz-picker') && app.includes('Pick from services'), 'Mini quiz should include a mobile-friendly native service picker fallback');
   assert(css.includes('.miniquiz-row') && css.includes('grid-column: 1 / -1'), 'Mini quiz rows should stack cleanly on mobile');
   assert(readme.includes('does not translate the practice question bank'), 'README language support scope is missing');
-  assert(sw.includes('cloud-recall-lab-v21'), 'Service worker cache should be bumped to v21');
+  assert(sw.includes('cloud-recall-lab-v23'), 'Service worker cache should be bumped to v23');
   assert(sw.includes("caches.match('./index.html')"), 'Service worker should fall back to the app shell offline');
   assert(sw.includes('RUNTIME_CACHE_ORIGINS'), 'Service worker should restrict runtime third-party cache origins');
   assert(index.includes('https://cdnjs.buymeacoffee.com'), 'Buy Me a Coffee script host missing from CSP/page');
-  assert(!index.includes('bmc-header-button') && !index.includes('bmc-footer-button') && !index.includes('bmc-settings-button'), 'Buy Me a Coffee button should appear only in About/Contact');
+  assert(index.includes('bmc-contact-button') && index.includes('bmc-footer-link'), 'Buy Me a Coffee links should appear in About/Contact and the footer');
+  assert(!index.includes('bmc-header-button') && !index.includes('bmc-settings-button'), 'Buy Me a Coffee button should not appear in the header or settings');
   assert(index.includes('https://fonts.googleapis.com') && index.includes('https://fonts.gstatic.com'), 'CSP should allow the BMC font stylesheet/font hosts');
   assert(index.includes('https://www.udemy.com/share/103a093'), 'Udemy resource link is missing from the About page');
   assert(index.includes('cert-value-card') && app.includes('certValueBody') && index.includes('https://aws.amazon.com/certification/'), 'Certification value section is missing');

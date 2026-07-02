@@ -606,7 +606,7 @@
       </div>
 
       <!-- Trainer Mode Tabs -->
-      <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--card-border); margin-bottom: 2rem; padding-bottom: 0.5rem; overflow-x: auto; white-space: nowrap;">
+      <div class="tool-tab-strip">
         <button class="btn btn-secondary tab-btn active" id="tab-read" style="border: none; border-radius: 6px; background: none;">🔊 Read & Listen</button>
         <button class="btn btn-secondary tab-btn" id="tab-flashcard" style="border: none; border-radius: 6px; background: none;">🎴 Flashcards</button>
         <button class="btn btn-secondary tab-btn" id="tab-matching" style="border: none; border-radius: 6px; background: none;">🎮 Active Recall Game</button>
@@ -692,7 +692,7 @@
       </div>
 
       <!-- Study Guide Tabs -->
-      <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--card-border); margin-bottom: 2rem; padding-bottom: 0.5rem; overflow-x: auto; white-space: nowrap;">
+      <div class="tool-tab-strip guide-tab-strip">
         <button class="btn btn-secondary tab-guide-btn active" id="tab-guide-concepts" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabConcepts">Cloud Concepts</button>
         <button class="btn btn-secondary tab-guide-btn" id="tab-guide-responsibility" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabResponsibility">Shared Responsibility</button>
         <button class="btn btn-secondary tab-guide-btn" id="tab-guide-directory" style="border: none; border-radius: 6px; background: none;" data-i18n="guideTabDirectory">Service Index & Triggers</button>
@@ -1065,6 +1065,7 @@
     </div>
     <nav aria-label="Footer links">
       <button class="footer-link-button" type="button" id="footer-open-about" data-i18n="aboutTitle">About & Contact</button>
+      <a class="bmc-footer-link" href="https://buymeacoffee.com/josephhauter" target="_blank" rel="noopener noreferrer">Buy my cat a treat :3</a>
     </nav>
     <p data-i18n="footerDisclaimer">This is an independent study tool and is not affiliated with, endorsed by, authored by, or sponsored by Amazon Web Services (AWS). AWS and Amazon Web Services are trademarks of Amazon.com, Inc. or its affiliates. All questions are original educational scenarios, not AWS certification exam materials.</p>
   </footer>
