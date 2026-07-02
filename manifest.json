@@ -1,0 +1,80 @@
+{
+  "id": "./",
+  "name": "Cloud Recall Lab",
+  "short_name": "Recall Lab",
+  "description": "Free CLF-C02 Cloud Practitioner practice exams, flashcards, serverless cheat sheets, guided study blocks, and local progress tracking.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#0b0f19",
+  "orientation": "portrait-primary",
+  "categories": ["education", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Cloud Recall Lab dashboard"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start mock exam",
+      "short_name": "Mock",
+      "description": "Open the timed mock exam selector.",
+      "url": "./?shortcut=exam",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Study guide",
+      "short_name": "Guide",
+      "description": "Open the CLF-C02 study guide.",
+      "url": "./?shortcut=guide",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Progress history",
+      "short_name": "History",
+      "description": "Open score history and section accuracy.",
+      "url": "./?shortcut=history",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

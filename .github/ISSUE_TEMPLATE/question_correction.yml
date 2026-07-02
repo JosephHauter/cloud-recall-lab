@@ -1,0 +1,31 @@
+name: Question correction
+description: Report a confusing, outdated, or incorrect practice question.
+title: "[Question correction]: "
+labels: ["question-correction"]
+body:
+  - type: input
+    id: question-id
+    attributes:
+      label: Question ID or exam/mode
+      placeholder: "Example: id 3042, Practice Mock Exam 2"
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What seems wrong or confusing?
+      description: Explain the wording, answer, rationale, or AWS service detail that needs review.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link if available
+      placeholder: "AWS docs or current exam guide link"
+  - type: checkboxes
+    id: originality
+    attributes:
+      label: Content safety
+      options:
+        - label: I am not submitting real exam content, braindumps, or copied paid course material.
+          required: true

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cloud Recall Lab is a free CLF-C02 Cloud Practitioner study app with mock exams, flashcards, serverless cheat sheets, guided study blocks, progress history, and offline-ready local storage.">
+  <meta name="author" content="Joseph Hauter">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0f19">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://cdn.buymeacoffee.com https://cdnjs.buymeacoffee.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; script-src 'self' https://cdnjs.buymeacoffee.com; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cloud Recall Lab">
+  <meta property="og:description" content="A free, zero-login CLF-C02 study app with practice questions, mock exams, flashcards, serverless cheat sheets, guided study blocks, and local progress tracking.">
+  <meta property="og:image" content="og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Recall Lab">
+  <meta name="twitter:description" content="Free CLF-C02 practice, mock exams, flashcards, serverless cheat sheets, progress history, and offline-ready study tools.">
+  <meta name="twitter:image" content="og-image.png">
+  <title>Cloud Recall Lab</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="canonical" href="https://josephhauter.github.io/cloud-practitioner-practice-hub/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <button class="logo-container btn-home" type="button" aria-label="Return to dashboard">
+      <div class="logo-icon" aria-hidden="true">CLF</div>
+      <span class="logo-text">Cloud Recall Lab</span>
+    </button>
+    
+    <div class="header-right">
+      <div class="stats-summary" id="header-stats" aria-label="Progress summary">
+        <div class="stat-pill">
+          Solved: <span id="stat-total-solved">0</span>
+        </div>
+        <div class="stat-pill">
+          Accuracy: <span id="stat-accuracy">0%</span>
+        </div>
+        <div class="stat-pill">
+          Avg Mock: <span id="stat-avg-exam">0%</span>
+        </div>
+      </div>
+      <nav class="header-actions" aria-label="Project links and settings">
+        <button class="header-action" type="button" id="btn-open-history" data-i18n="navHistory">History</button>
+        <button class="header-action" type="button" id="btn-open-about" data-i18n="navAbout">About</button>
+        <button class="header-action" type="button" id="btn-open-settings" data-i18n="navSettings">Settings</button>
+        <label class="language-control" for="language-select">
+          <span class="sr-only" data-i18n="languageLabel">Language</span>
+          <select id="language-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="pt">Portugues</option>
+            <option value="fr">Francais</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="nl">Nederlands</option>
+          </select>
+        </label>
+        <a class="header-action" href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="header-action" href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="bmc-script-button bmc-header-button" aria-label="Buy Me a Coffee">
+          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <!-- View 1: Dashboard -->
+    <section id="dashboard" class="view-container active animate-fade">
+      <div class="hero">
+        <h1 data-i18n="heroTitle">Cloud Recall Lab</h1>
+        <p data-i18n="heroSubtitle">Free CLF-C02 prep with interactive practice, timed mock exams, local progress tracking, and no login wall.</p>
+        <div class="product-strip" aria-label="Product highlights">
+          <span data-i18n="stripFree">Free forever</span>
+          <span data-i18n="stripNoAccount">No account</span>
+          <span data-i18n="stripMobile">Mobile friendly</span>
+          <span data-i18n="stripOffline">Offline-ready</span>
+          <span data-i18n="stripLanguages">Multilingual UI beta</span>
+          <span data-i18n="stripPassed">Used to pass CLF-C02</span>
+        </div>
+      </div>
+
+      <section class="evidence-card glass-card" aria-labelledby="evidence-title">
+        <div class="evidence-copy">
+          <span class="card-badge" data-i18n="evidenceBadge">Research-backed study loop</span>
+          <h2 id="evidence-title" data-i18n="evidenceTitle">Built around active recall, not passive rereading.</h2>
+          <p data-i18n="evidenceBody">Practice testing, spaced review, feedback, and exam-like rehearsal are some of the best-supported ways to make facts retrievable under pressure. This app turns those methods into a simple CLF-C02 routine: answer, review, repeat, and track what still needs work.</p>
+        </div>
+        <div class="evidence-grid">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/16507066/" target="_blank" rel="noopener noreferrer">
+            <strong>Practice testing</strong>
+            <span>Retrieval practice helps strengthen long-term retention.</span>
+          </a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/16719566/" target="_blank" rel="noopener noreferrer">
+            <strong>Spaced review</strong>
+            <span>Distributed practice is consistently linked with better recall than cramming.</span>
+          </a>
+          <a href="https://journals.sagepub.com/doi/abs/10.1177/1529100612453266" target="_blank" rel="noopener noreferrer">
+            <strong>High-utility methods</strong>
+            <span>Practice testing and distributed practice rank among the most useful study techniques.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="why-card glass-card" aria-labelledby="why-title">
+        <div class="why-copy">
+          <span class="card-badge" data-i18n="whyBadge">Why Cloud Recall Lab</span>
+          <h2 id="why-title" data-i18n="whyTitle">The free practice layer I wished existed while studying.</h2>
+          <p data-i18n="whyBody">Most prep tools either hide useful practice behind a paywall or reveal answers too early. This lab keeps the loop clean: commit to an answer, get feedback, review misses, and build confidence without creating an account.</p>
+        </div>
+        <div class="why-proof">
+          <span class="why-proof-kicker" data-i18n="whyProofKicker">Personal proof, not a promise</span>
+          <h3 data-i18n="whyProofTitle">I used this app while preparing and passed CLF-C02 on July 1, 2026.</h3>
+          <p data-i18n="whyProofBody">My score report showed Meets Competencies across all four exam domains. That does not guarantee anyone else will pass, but it is real evidence that the study loop can work when paired with current learning materials.</p>
+          <div class="why-proof-actions">
+            <a href="https://www.credly.com/badges/c52c14ed-17c7-4b4f-9c18-a0b8fc22ff6c/public_url" target="_blank" rel="noopener noreferrer" data-i18n="whyCredentialLink">Verify my AWS credential on Credly</a>
+          </div>
+          <div class="why-proof-pills" aria-label="Proof points">
+            <span data-i18n="whyPillPassed">Passed July 1, 2026</span>
+            <span data-i18n="whyPillDomains">Meets Competencies in all domains</span>
+            <span data-i18n="whyPillCourse">Best with a current course or AWS docs</span>
+            <span data-i18n="whyPillNoDumps">Original practice, no braindumps</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="language-card glass-card" aria-labelledby="language-card-title">
+        <div>
+          <span class="card-badge" data-i18n="languageBadge">Language support beta</span>
+          <h2 id="language-card-title" data-i18n="languageTitle">Study guidance in more languages.</h2>
+          <p data-i18n="languageBody">Switch the main interface copy between English, Spanish, Portuguese, French, German, Italian, and Dutch. Practice questions stay in English so AWS service names and exam wording remain consistent.</p>
+        </div>
+        <div class="language-list" aria-label="Supported interface languages">
+          <span>English</span>
+          <span>Espanol</span>
+          <span>Portugues</span>
+          <span>Francais</span>
+          <span>Deutsch</span>
+          <span>Italiano</span>
+          <span>Nederlands</span>
+        </div>
+      </section>
+
+      <!-- Day 6: Timed Exam Card -->
+      <div class="glass-card card-exam" id="card-start-exam">
+        <div class="card-content-left">
+          <span class="card-badge">Day 6 Focus</span>
+          <h2 class="card-title" data-i18n="mockCardTitle">Full Timed Mock Exam</h2>
+          <p class="card-desc" data-i18n="mockCardDesc">Practice under CLF-C02-style timing with 65 randomized questions in 90 minutes. Answers and explanations are revealed after you submit the exam.</p>
+          <div class="card-stats">
+            <span>⏱️ <strong>90 mins</strong></span>
+            <span>📝 <strong data-i18n="mockCardQuestions">65 Questions</strong></span>
+            <span>🎯 <strong>70% to Pass</strong></span>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.05rem;" data-i18n="startMockButton">Start Mock Exam</button>
+      </div>
+
+      <!-- Daily Memory Routine Card -->
+      <div class="glass-card card-exam" id="card-start-trainer" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(217, 70, 239, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%); border-color: rgba(217, 70, 239, 0.25);">
+        <div class="card-content-left">
+          <span class="card-badge" style="background: rgba(217, 70, 239, 0.2); border-color: rgba(217, 70, 239, 0.35); color: #f5d0fe;" data-i18n="dailyRoutineBadge">Daily Routine</span>
+          <h2 class="card-title" data-i18n="trainerTitle">Master Memory Sentence Trainer</h2>
+          <p class="card-desc" data-i18n="trainerDesc">Spend 10 minutes today reviewing the core sentence. Use browser-powered Text-to-Speech to listen, flip through interactive 3D flashcards, or test your memory with the active recall game.</p>
+          <div class="card-stats">
+            <span>🔊 <strong>TTS Audio Reader</strong></span>
+            <span>🎴 <strong>3D Flashcards</strong></span>
+            <span>🎮 <strong>Active Recall Matcher</strong></span>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--accent-purple), #c084fc); box-shadow: 0 4px 12px rgba(217, 70, 239, 0.4); padding: 1rem 2rem; font-size: 1.05rem; color: white;" data-i18n="startTraining">Start Training</button>
+      </div>
+
+      <!-- Daily Study Block Card -->
+      <div class="glass-card card-exam" id="card-start-planner" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%); border-color: rgba(16, 185, 129, 0.25);">
+        <div class="card-content-left">
+          <span class="card-badge" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.35); color: #a7f3d0;">Daily Workout</span>
+          <h2 class="card-title" data-i18n="guidedCardTitle">Science-Backed Guided Study Block</h2>
+          <p class="card-desc" data-i18n="guidedCardDesc">Practice testing and active recall improve retention more than rereading. Launch a structured study block that guides you step-by-step through today's section with active timers, cheat sheets, quizzes, and wrong-answer review.</p>
+          <div class="card-stats">
+            <span>⏱️ <strong>90 / 120 / 180 min</strong></span>
+            <span>🧩 <strong>Active Recall Drills</strong></span>
+            <span>🧠 <strong>Wrong-Answer Cards</strong></span>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--success), #059669); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); padding: 1rem 2rem; font-size: 1.05rem; color: white;" data-i18n="startDailyBlock">Start Daily Block</button>
+      </div>
+
+      <!-- Study Guide Card -->
+      <div class="glass-card card-exam" id="card-start-guide" style="margin-top: 1.5rem; background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-color: rgba(14, 165, 233, 0.25);">
+        <div class="card-content-left">
+          <span class="card-badge" style="background: rgba(14, 165, 233, 0.2); border-color: rgba(14, 165, 233, 0.35); color: #bae6fd;" data-i18n="studyGuideBadge">Exam Reference</span>
+          <h2 class="card-title" data-i18n="studyGuideTitle">Study Guide & Cheat Sheets</h2>
+          <p class="card-desc" data-i18n="studyGuideDesc">Access the interactive study helper. Search core concepts, service trigger words, serverless services, confusing pairs, and the highest-yield exam traps.</p>
+          <div class="card-stats">
+            <span>📚 <strong>Trigger Word Index</strong></span>
+            <span>🤝 <strong>Shared Responsibility</strong></span>
+            <span>⚠️ <strong>Highest-Yield Traps</strong></span>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--secondary), #0284c7); box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4); padding: 1rem 2rem; font-size: 1.05rem; color: white;" data-i18n="openStudyGuide">Open Study Guide</button>
+      </div>
+
+      <!-- Active Drills & Mini Quiz Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+        <!-- Card: Rapid Practice Drills -->
+        <div class="glass-card" id="card-start-drills" style="cursor: pointer; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%); border-color: rgba(16, 185, 129, 0.2);">
+          <span class="card-badge" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.35); color: #a7f3d0;" data-i18n="activeRecallBadge">Active Recall</span>
+          <h3 class="card-title" data-i18n="drillsTitle">Rapid Trigger Drills</h3>
+          <p class="card-desc" data-i18n="drillsDesc">Type your answer for 95 rapid scenarios. If you make a mistake, you'll be prompted to write out the trigger word to commit it to memory.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <span class="card-stats" style="margin-top:0;">⚡ <strong>95 Scenarios</strong></span>
+            <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--success), #059669); box-shadow: 0 4px 12px var(--success-glow); padding: 0.5rem 1rem; font-size: 0.85rem; color: white;" data-i18n="startDrills">Start Drills</button>
+          </div>
+        </div>
+
+        <!-- Card: Mini Mixed Quiz -->
+        <div class="glass-card" id="card-start-miniquiz" style="cursor: pointer; background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%); border-color: rgba(99, 102, 241, 0.2);">
+          <span class="card-badge" style="background: rgba(99, 102, 241, 0.2); border-color: rgba(99, 102, 241, 0.35); color: #c7d2fe;" data-i18n="examSimulationBadge">Exam Simulation</span>
+          <h3 class="card-title" data-i18n="miniQuizTitle">20-Question Mixed Quiz</h3>
+          <p class="card-desc" data-i18n="miniQuizDesc">Answer 20 fill-in-the-blank questions under exam conditions. No answers or scores will be revealed until the end.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <span class="card-stats" style="margin-top:0;">📋 <strong>20 Questions</strong></span>
+            <button class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary), #4338ca); box-shadow: 0 4px 12px var(--primary-glow); padding: 0.5rem 1rem; font-size: 0.85rem; color: white;" data-i18n="startQuiz">Start Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="margin: 2.5rem 0 1.25rem; font-size: 1.5rem; font-weight: 700;" data-i18n="sectionPracticeTitle">Section-Focused Practice (Days 1 - 5)</h2>
+      
+      <!-- Practice Grid -->
+      <div class="dashboard-grid">
+        <!-- Day 1 -->
+        <div class="glass-card section-card section-card-1" data-section="1">
+          <span class="card-badge">Day 1 Focus</span>
+          <h3 class="card-title">Cloud Concepts & Infra</h3>
+          <p class="card-desc">Shared Responsibility Model, AWS Global Infrastructure, Availability Zones, and Edge Locations.</p>
+          <div class="card-stats">
+            <span id="sec-count-1">-- questions</span>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="glass-card section-card section-card-2" data-section="2">
+          <span class="card-badge">Day 2 Focus</span>
+          <h3 class="card-title">Security & Governance</h3>
+          <p class="card-desc">IAM, KMS, Shield, WAF, GuardDuty, Macie, Inspector, CloudTrail, CloudWatch, and Config.</p>
+          <div class="card-stats">
+            <span id="sec-count-2">-- questions</span>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="glass-card section-card section-card-3" data-section="3">
+          <span class="card-badge">Day 3 Focus</span>
+          <h3 class="card-title">Compute, Storage & Net</h3>
+          <p class="card-desc">EC2, Lambda, Fargate, ECS/EKS, S3, EBS, EFS, Glacier, VPC, Route 53, and CloudFront.</p>
+          <div class="card-stats">
+            <span id="sec-count-3">-- questions</span>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="glass-card section-card section-card-4" data-section="4">
+          <span class="card-badge">Day 4 Focus</span>
+          <h3 class="card-title">Databases & Integration</h3>
+          <p class="card-desc">RDS, DynamoDB, Redshift, DocumentDB, ElastiCache, Athena, SQS, SNS, and Step Functions.</p>
+          <div class="card-stats">
+            <span id="sec-count-4">-- questions</span>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="glass-card section-card section-card-5" data-section="5">
+          <span class="card-badge">Day 5 Focus</span>
+          <h3 class="card-title">Billing, Support & ML</h3>
+          <p class="card-desc">AWS Budgets, Cost Explorer, Support Plans, and Machine Learning services like Polly and Rekognition.</p>
+          <div class="card-stats">
+            <span id="sec-count-5">-- questions</span>
+          </div>
+        </div>
+
+        <!-- Day 7: Review Wrongs -->
+        <div class="glass-card section-card-review">
+          <span class="card-badge" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.3); color: #fef08a;">Day 7 Focus</span>
+          <h3 class="card-title">Review Wrong Answers</h3>
+          <p class="card-desc">Practice questions you previously got wrong. As you answer them correctly, they will be removed from this pool.</p>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top: 1rem;">
+            <span class="card-stats" id="wrong-count-badge" style="margin-top:0;">0 questions</span>
+            <button class="btn btn-warning" id="btn-start-review" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Review Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 2: Progress History -->
+    <section id="history-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">Progress History</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Your scores stay on this device unless you export or import them.</span>
+        </div>
+        <div class="history-actions">
+          <button class="btn btn-primary" id="history-share-btn">Share Latest Score</button>
+          <button class="btn btn-secondary" id="history-back-btn">Dashboard</button>
+        </div>
+      </div>
+
+      <div class="history-metrics">
+        <div class="glass-card history-metric">
+          <span>Best Score</span>
+          <strong id="history-best-score">0%</strong>
+        </div>
+        <div class="glass-card history-metric">
+          <span>Average Mock</span>
+          <strong id="history-average-score">0%</strong>
+        </div>
+        <div class="glass-card history-metric">
+          <span>Exams Taken</span>
+          <strong id="history-exams-taken">0</strong>
+        </div>
+        <div class="glass-card history-metric">
+          <span>Focus Area</span>
+          <strong id="history-focus-area">Start practicing</strong>
+        </div>
+      </div>
+
+      <div class="history-grid">
+        <div class="glass-card history-panel">
+          <div class="panel-heading">
+            <h3>Score Trend</h3>
+            <span id="history-trend-caption">Complete a mock exam to draw your first trend.</span>
+          </div>
+          <canvas id="score-trend-canvas" width="720" height="280" aria-label="Exam score trend chart"></canvas>
+        </div>
+
+        <div class="glass-card history-panel">
+          <div class="panel-heading">
+            <h3>Section Accuracy</h3>
+            <span>Based on practice, exams, and guided blocks.</span>
+          </div>
+          <div id="section-accuracy-list" class="section-accuracy-list"></div>
+        </div>
+      </div>
+
+      <div class="glass-card history-panel">
+        <div class="panel-heading">
+          <h3>Exam Log</h3>
+          <span>Recent runs, score, pass result, and time used.</span>
+        </div>
+        <div class="table-scroll">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Exam</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Result</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="exam-history-table-body">
+              <tr><td colspan="5">No exam history yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 3: About & Contact -->
+    <section id="about-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text" data-i18n="aboutTitle">About & Contact</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);" data-i18n="aboutSubtitle">Why this exists, how to use it responsibly, and where to connect.</span>
+        </div>
+        <button class="btn btn-secondary" id="about-back-btn" data-i18n="dashboardButton">Dashboard</button>
+      </div>
+
+      <div class="about-layout">
+        <section class="glass-card about-story">
+          <span class="card-badge" data-i18n="builtBadge">Built after passing</span>
+          <h3 data-i18n="builtTitle">I used this study loop to pass the AWS Cloud Practitioner exam on July 1, 2026.</h3>
+          <p data-i18n="builtBody1">I made this because so much useful exam prep sits behind paywalls, even basics like flashcards, and some generic AI/chat study workflows reveal the answer too early. That ruins the point of active recall: you need to commit first, then see feedback.</p>
+          <p data-i18n="builtBody2">This tool keeps the study loop simple: practice under pressure, hide answers until you choose, review every miss, and keep weak topics visible until they get easier.</p>
+        </section>
+
+        <section class="glass-card about-story">
+          <span class="card-badge" data-i18n="wiseBadge">Use it wisely</span>
+          <h3 data-i18n="wiseTitle">Free practice, not a promise or a replacement for current materials.</h3>
+          <p data-i18n="wiseBody1">AWS can update services, wording, and certification scope over time. Use this as practice and active recall, then cross-check the current AWS exam guide, AWS docs, and a strong course.</p>
+          <p data-i18n="wiseBody2">Udemy was a big help for my own prep, and this app worked best as a companion: use a course to learn, then use this hub to test whether you can actually retrieve the answer.</p>
+        </section>
+
+        <section class="glass-card about-story resource-card">
+          <span class="card-badge" data-i18n="resourceBadge">Resource I used</span>
+          <h3 data-i18n="resourceTitle">The course that helped me learn the material.</h3>
+          <p data-i18n="resourceBody">This app is the free practice layer I wished existed. For learning the concepts, the Udemy course below was one of the resources that helped me pass.</p>
+          <a href="https://www.udemy.com/share/103a093@rTW9shCVwsqBgznbGpMnTASN1NDXC6GC5TC1TzzT0e7cwIKNAxQ705qeV8ul3Ckjdw==/" target="_blank" rel="noopener noreferrer" data-i18n="resourceCourse">Udemy course that helped me: Ultimate AWS Certified Cloud Practitioner CLF-C02 2026</a>
+          <p data-i18n="communityResourceBody">For broader community-maintained certification links, the r/AWSCertifications wiki is also useful for pathways, discounts, free learning, and study FAQs. Treat it as community guidance, not official AWS material.</p>
+          <a href="https://awscertifications.github.io/AWSCertificationsWiki/" target="_blank" rel="noopener noreferrer" data-i18n="communityResourceLink">r/AWSCertifications community wiki</a>
+        </section>
+
+        <section class="glass-card about-story compatibility-card">
+          <span class="card-badge" data-i18n="compatBadge">Compatibility</span>
+          <h3 data-i18n="compatTitle">Built for modern browsers, mobile study, and privacy-first launch.</h3>
+          <p data-i18n="compatBody1">The app is designed for current Chrome, Edge, Firefox, and Safari. Offline install works best from an HTTPS-hosted site because it depends on browser service worker support.</p>
+          <p data-i18n="compatBody2">Progress stays in this browser with localStorage. Text-to-speech, native sharing, and install prompts can vary by browser and device.</p>
+        </section>
+      </div>
+
+      <section class="glass-card contact-card">
+        <div>
+          <span class="card-badge" data-i18n="contactBadge">Contact</span>
+          <h3 data-i18n="contactTitle">Connect, contribute, or support the project.</h3>
+          <p data-i18n="contactBody">Questions, bug reports, corrections, and new original practice questions are welcome. The project is free and open source so learners can use it without another paywall.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://www.credly.com/badges/c52c14ed-17c7-4b4f-9c18-a0b8fc22ff6c/public_url" target="_blank" rel="noopener noreferrer">Credly</a>
+          <div class="bmc-script-button" aria-label="Buy Me a Coffee">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- View 2: Practice Mode -->
+    <section id="practice-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 id="practice-title" class="quiz-title-text">Practice Mode</h2>
+          <span id="practice-progress-text" style="font-size: 0.85rem; color: var(--text-secondary);">Question 1 of 10</span>
+        </div>
+        <button class="btn btn-secondary btn-home">Exit Session</button>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="practice-progress-bar"></div>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-main">
+          <div class="question-box" id="practice-question-box">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="explanation-box" id="practice-explanation">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="question-controls">
+            <button class="btn btn-secondary" id="practice-prev-btn" style="display: none;">Previous</button>
+            <div style="flex-grow: 1;"></div>
+            <button class="btn btn-primary" id="practice-next-btn" style="display: none;">Next Question</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 3: Timed Mock Exam Mode -->
+    <section id="exam-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">CLF-C02 Practice Mock Exam</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Timer is active. Answers are sealed until you submit.</span>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <div style="font-size: 1.25rem; font-weight: 800; font-family: monospace; letter-spacing: 1px;" id="exam-timer-wrapper">
+            ⏱️ <span id="exam-timer">90:00</span>
+          </div>
+          <button class="btn btn-secondary" id="exam-exit-btn">Exit Exam</button>
+        </div>
+      </div>
+
+      <div class="quiz-container has-sidebar">
+        <!-- Main Quiz Block -->
+        <div class="quiz-main">
+          <div class="question-box" id="exam-question-box">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="question-controls">
+            <button class="btn btn-secondary" id="exam-prev-btn">Previous</button>
+            <button class="btn btn-secondary" id="exam-flag-btn">Mark for Review</button>
+            <button class="btn btn-primary" id="exam-next-btn">Next</button>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation Block -->
+        <aside class="exam-sidebar">
+          <div class="sidebar-title">
+            <span>Questions</span>
+            <button class="btn btn-primary" id="exam-submit-btn" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Submit Exam</button>
+          </div>
+          <div class="sidebar-grid" id="exam-sidebar-grid">
+            <!-- Grid Items generated by JS -->
+          </div>
+          <div class="sidebar-legend">
+            <div class="legend-item">
+              <span class="legend-color unvisited"></span> Unvisited
+            </div>
+            <div class="legend-item">
+              <span class="legend-color answered"></span> Answered
+            </div>
+            <div class="legend-item">
+              <span class="legend-color flagged"></span> Flagged for Review
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- View 4: Results & Breakdown -->
+    <section id="results-view" class="view-container animate-fade">
+      <div class="glass-card results-card">
+        <div class="results-score-circle">
+          <span class="score-percent" id="res-score-percent">0%</span>
+          <span class="score-label">Score</span>
+        </div>
+        <div class="results-grade" id="res-grade">PASS</div>
+        
+        <div class="results-summary-grid">
+          <div class="summary-stat">
+            <div class="summary-stat-val correct" id="res-correct">0</div>
+            <div class="summary-stat-lbl">Correct</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-val incorrect" id="res-incorrect">0</div>
+            <div class="summary-stat-lbl">Incorrect</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-val skipped" id="res-skipped">0</div>
+            <div class="summary-stat-lbl">Skipped</div>
+          </div>
+        </div>
+
+        <div class="results-actions">
+          <button class="btn btn-primary" id="results-close-btn">Return to Dashboard</button>
+          <button class="btn btn-secondary" id="results-history-btn">View History</button>
+          <button class="btn btn-secondary" id="results-share-btn">Share Score</button>
+          <button class="btn btn-secondary" id="results-download-card-btn">Download Score Card</button>
+          <a class="btn btn-secondary support-btn" href="https://buymeacoffee.com/josephhauter" target="_blank" rel="noopener noreferrer">Support</a>
+        </div>
+      </div>
+
+      <!-- Question Review Panel -->
+      <div class="review-section">
+        <h2>Detailed Review</h2>
+        <div id="results-review-list">
+          <!-- JS generates question review items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- View 5: Master Memory Sentence Trainer -->
+    <section id="trainer-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">Master Memory Sentence Trainer</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Daily 10-minute training to lock in the core AWS services.</span>
+        </div>
+        <button class="btn btn-secondary btn-home">Exit Trainer</button>
+      </div>
+
+      <!-- Trainer Mode Tabs -->
+      <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--card-border); margin-bottom: 2rem; padding-bottom: 0.5rem; overflow-x: auto; white-space: nowrap;">
+        <button class="btn btn-secondary tab-btn active" id="tab-read" style="border: none; border-radius: 6px; background: none;">🔊 Read & Listen</button>
+        <button class="btn btn-secondary tab-btn" id="tab-flashcard" style="border: none; border-radius: 6px; background: none;">🎴 Flashcards</button>
+        <button class="btn btn-secondary tab-btn" id="tab-matching" style="border: none; border-radius: 6px; background: none;">🎮 Active Recall Game</button>
+        <button class="btn btn-secondary tab-btn" id="tab-wrong-flashcards" style="border: none; border-radius: 6px; background: none;">❌ Wrong-Answer Flashcards</button>
+      </div>
+
+      <!-- Pane 1: Read & Listen -->
+      <div class="trainer-pane active-pane" id="pane-read">
+        <div class="glass-card" style="margin-bottom: 2rem; padding: 2rem; line-height: 2;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>Master Memory Sentence</span>
+            <button class="btn btn-primary" id="btn-read-tts" style="margin-left: auto; padding: 0.5rem 1rem; font-size: 0.85rem;">🔊 Read Out Loud</button>
+          </h3>
+          <div id="sentence-interactive-container" style="font-size: 1.15rem; font-weight: 500; color: var(--text-primary); text-align: justify;">
+            <!-- Interactive elements populated dynamically by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 2: Flashcards -->
+      <div class="trainer-pane" id="pane-flashcard" style="display: none;">
+        <div style="display: flex; flex-direction: column; align-items: center; max-width: 500px; margin: 0 auto;">
+          <div class="flashcard-container" id="flashcard-element" tabindex="0" role="button" aria-label="Flip flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="flashcard-title" id="fc-front-title">AWS Service</div>
+                <div class="flashcard-content" id="fc-front-text">EC2</div>
+                <div class="flashcard-hint">Click to Flip</div>
+              </div>
+              <div class="flashcard-back">
+                <div class="flashcard-title" id="fc-back-title">Core Concept</div>
+                <div class="flashcard-content" id="fc-back-text">Virtual Servers</div>
+                <div class="flashcard-hint">Click to Flip</div>
+              </div>
+            </div>
+          </div>
+          
+          <span style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;" id="fc-card-count">Card 1 of 30</span>
+          
+          <div style="display: flex; gap: 1rem; width: 100%;">
+            <button class="btn btn-secondary" id="fc-prev-btn" style="flex: 1;">Previous</button>
+            <button class="btn btn-primary" id="fc-flip-btn" style="flex: 1;">Flip Card</button>
+            <button class="btn btn-secondary" id="fc-next-btn" style="flex: 1;">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 3: Active Recall Matching -->
+      <div class="trainer-pane" id="pane-matching" style="display: none;">
+        <div class="glass-card" style="max-width: 700px; margin: 0 auto; padding: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;">Active Recall Matcher</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">Select the correct core concept for each of the 5 randomly selected AWS services below. Test your memory!</p>
+          
+          <div id="matching-game-container" style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Generated dynamically by JS -->
+          </div>
+          
+          <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+            <button class="btn btn-secondary" id="btn-matching-reset">Reset Board</button>
+            <button class="btn btn-primary" id="btn-matching-submit">Check Answers</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 4: Wrong-Answer Flashcards -->
+      <div class="trainer-pane" id="pane-wrong-flashcards" style="display: none;">
+        <div style="display: flex; flex-direction: column; align-items: center; max-width: 550px; margin: 0 auto; width: 100%;">
+          <div id="wrong-flashcard-deck" style="width: 100%;">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 6: Study Guide & Cheat Sheets -->
+    <section id="study-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">Study Guide & Cheat Sheets</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Browse, search, and memorize core AWS concepts, trigger words, and exam traps.</span>
+        </div>
+        <button class="btn btn-secondary btn-home">Exit Guide</button>
+      </div>
+
+      <!-- Study Guide Tabs -->
+      <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--card-border); margin-bottom: 2rem; padding-bottom: 0.5rem; overflow-x: auto; white-space: nowrap;">
+        <button class="btn btn-secondary tab-guide-btn active" id="tab-guide-concepts" style="border: none; border-radius: 6px; background: none;">💡 Cloud Concepts</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-responsibility" style="border: none; border-radius: 6px; background: none;">🤝 Shared Responsibility</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-directory" style="border: none; border-radius: 6px; background: none;">📚 Service Index & Triggers</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-serverless" style="border: none; border-radius: 6px; background: none;">Serverless Map</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-traps" style="border: none; border-radius: 6px; background: none;">⚠️ Highest-Yield Traps</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-pairs" style="border: none; border-radius: 6px; background: none;">🔄 Confusing Pairs</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-strategy" style="border: none; border-radius: 6px; background: none;">🎯 Last-Minute Strategy</button>
+        <button class="btn btn-secondary tab-guide-btn" id="tab-guide-passplan" style="border: none; border-radius: 6px; background: none;">🏆 7-Day Pass Plan</button>
+      </div>
+
+      <!-- Guide Pane 1: Cloud Concepts -->
+      <div class="guide-pane active-pane" id="pane-guide-concepts">
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Core Cloud Concepts</h3>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--card-border-hover); color: var(--secondary);">
+                  <th style="padding: 0.75rem;">Concept</th>
+                  <th style="padding: 0.75rem;">Memory Hook / Meaning</th>
+                </tr>
+              </thead>
+              <tbody id="table-concepts-body">
+                <!-- Rendered dynamically by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide Pane 2: Shared Responsibility -->
+      <div class="guide-pane" id="pane-guide-responsibility" style="display: none;">
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Shared Responsibility Matrix</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Remember: AWS is responsible for security <strong>OF</strong> the cloud, and the customer is responsible for security <strong>IN</strong> the cloud.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+            <!-- AWS Side -->
+            <div style="background: rgba(14, 165, 233, 0.05); border: 1px solid rgba(14, 165, 233, 0.2); border-radius: 12px; padding: 1.5rem;">
+              <h4 style="color: var(--secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                🛡️ AWS Responsibility (OF the Cloud)
+              </h4>
+              <ul style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);" id="list-aws-resp">
+                <!-- Rendered by JS -->
+              </ul>
+            </div>
+            <!-- Customer Side -->
+            <div style="background: rgba(217, 70, 239, 0.05); border: 1px solid rgba(217, 70, 239, 0.2); border-radius: 12px; padding: 1.5rem;">
+              <h4 style="color: var(--accent-purple); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                🔑 Customer Responsibility (IN the Cloud)
+              </h4>
+              <ul style="padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.8; color: var(--text-secondary);" id="list-customer-resp">
+                <!-- Rendered by JS -->
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">Common Responsibility Questions</h3>
+          <div id="responsibility-qa-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide Pane 3: Service Index & Triggers -->
+      <div class="guide-pane" id="pane-guide-directory" style="display: none;">
+        <div style="margin-bottom: 2rem;">
+          <input type="text" id="guide-search-input" placeholder="Search services, trigger words, or descriptions (e.g. S3, SQL, database)..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
+        </div>
+
+        <div id="service-directory-container" style="display: flex; flex-direction: column; gap: 2.5rem;">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Guide Pane 4: Serverless Map -->
+      <div class="guide-pane" id="pane-guide-serverless" style="display: none;">
+        <div class="glass-card serverless-overview-card">
+          <span class="card-badge">Exam shortcut</span>
+          <h3>Serverless services map</h3>
+          <p>For CLF-C02, "serverless" usually means AWS handles capacity, scaling, availability, and much of the infrastructure management. You still configure access, data, costs, and service behavior.</p>
+          <div id="serverless-summary-grid" class="serverless-summary-grid">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+        <div id="serverless-service-container" class="serverless-service-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Guide Pane 4: Highest-Yield Traps -->
+      <div class="guide-pane" id="pane-guide-traps" style="display: none;">
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);">Highest-Yield Exam Traps</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Recognize these patterns in the exam questions to immediately identify the correct answer.</p>
+          
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--card-border-hover); color: var(--warning);">
+                  <th style="padding: 0.75rem; width: 50%;">If the question says...</th>
+                  <th style="padding: 0.75rem; width: 50%;">The correct answer is...</th>
+                </tr>
+              </thead>
+              <tbody id="table-traps-body">
+                <!-- Rendered dynamically by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide Pane 6: Confusing Pairs -->
+      <div class="guide-pane" id="pane-guide-pairs" style="display: none;">
+        <div style="margin-bottom: 2rem;">
+          <input type="text" id="pairs-search-input" placeholder="Search confusing pairs (e.g. CloudWatch, RDS)..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 12px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.8); color: white; font-family: var(--font-main); outline: none; font-size: 1rem; transition: all 0.2s ease;">
+        </div>
+        <div id="pairs-directory-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- Rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Guide Pane 5: Last-Minute Strategy -->
+      <div class="guide-pane" id="pane-guide-strategy" style="display: none;">
+        
+        <!-- Readiness Audit Card -->
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; border-color: rgba(16, 185, 129, 0.25); background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(22, 30, 49, 0.65) 100%);">
+          <h3 style="margin-bottom: 0.5rem; color: var(--success); display: flex; align-items: center; gap: 0.5rem;">
+            🎯 CLF-C02 Readiness Audit
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            The app tracks your quiz history and active recall practice. Complete these 6 milestones to build stronger exam-day confidence before the real exam.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 1rem;" id="readiness-checklist-container">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- Two-Column Grid for Weights and Must-Know -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <!-- Domain Weights Card -->
+          <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">CLF-C02 Domain Weights</h3>
+              <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;" id="domain-weights-container">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Must-Know vs Skip Card -->
+          <div class="glass-card" style="padding: 2rem; display: flex; flex-direction: column;">
+            <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--warning);">Must-Know vs. Skip Guide</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Focus your final hours where it counts. Don't waste energy memorizing config details.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; flex-grow: 1;">
+              <div style="background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.15); border-radius: 12px; padding: 1.25rem;">
+                <h4 style="color: var(--success); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;">🔥 MUST KNOW HARD</h4>
+                <ul style="padding-left: 1.1rem; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); margin: 0;" id="must-know-list">
+                  <!-- Rendered by JS -->
+                </ul>
+              </div>
+              <div style="background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: 12px; padding: 1.25rem;">
+                <h4 style="color: var(--error); margin-bottom: 0.5rem; font-weight: 800; font-size: 0.85rem;">⚠️ SKIP / KNOW LIGHTLY</h4>
+                <ul style="padding-left: 1.1rem; font-size: 0.8rem; line-height: 1.6; color: var(--text-secondary); margin: 0;" id="skip-list">
+                  <!-- Rendered by JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exam-Day Checklist Card -->
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1.25rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--accent-purple);">Final Exam-Day Method</h3>
+          <ul style="padding-left: 1.25rem; font-size: 0.95rem; line-height: 2; color: var(--text-secondary); margin: 0;" id="list-exam-strategy">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+
+        <!-- Last-Page Memory Cheat Sheet Section (No outer card nesting!) -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="margin: 1.5rem 0 0.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">🧠 Last-Page Memory Cheat Sheet</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">This super-condensed service summary covers everything you need to review right before entering the exam room.</p>
+          <div id="last-page-memory-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide Pane 7: 7-Day Pass Plan & Proven Strategies -->
+      <div class="guide-pane" id="pane-guide-passplan" style="display: none;">
+        <div class="glass-card" style="padding: 1.5rem 2rem; margin-bottom: 1.5rem; border-color: rgba(245, 158, 11, 0.25); background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(22, 30, 49, 0.65) 100%);">
+          <h3 style="margin-bottom: 0.5rem; color: var(--warning);">🏆 7-Day Pass Plan</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">A focused daily plan weighted toward the highest-scoring domains. ~2–3 hours/day. Each day lists exactly what to do and why it moves your score.</p>
+        </div>
+        <div id="pass-plan-days" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;"></div>
+
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--secondary);">How Real People Passed — Proven Strategies</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Synthesized from public study reports and AWS-published guidance. Paraphrased — no leaked or proprietary exam content.</p>
+          <div id="pass-plan-strategies" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+        </div>
+
+        <div class="glass-card" style="padding: 2rem;">
+          <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem; color: var(--accent-purple);">📋 Exam-Day Procedure Checklist</h3>
+          <ul id="pass-plan-checklist" style="padding-left: 1.25rem; font-size: 0.95rem; line-height: 2; color: var(--text-secondary); margin: 0;"></ul>
+        </div>
+      </div>
+
+    </section>
+    <section id="drills-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">Rapid Trigger Drills</h2>
+          <span id="drills-progress-text" style="font-size: 0.85rem; color: var(--text-secondary);">Scenario 1 of 95</span>
+        </div>
+        <button class="btn btn-secondary btn-home">Exit Drills</button>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="drills-progress-bar" style="background: linear-gradient(90deg, var(--success), var(--secondary));"></div>
+      </div>
+
+      <div class="quiz-container" style="max-width: 650px; margin: 0 auto;">
+        <div class="glass-card" style="padding: 2.5rem;">
+          <div class="question-number" style="color: var(--success); font-size: 0.85rem;" id="drills-card-id">SCENARIO #1</div>
+          <div class="question-text" id="drills-scenario-text" style="font-size: 1.35rem; font-weight: 700; margin-bottom: 2rem;">Run SQL queries on files in S3 without servers</div>
+          
+          <!-- User Answer Box -->
+          <div id="drills-input-container" style="margin-bottom: 1.5rem; position: relative;">
+            <input type="text" id="drills-answer-input" placeholder="Type the AWS Service (e.g. Athena)..." style="width: 100%; padding: 1rem 1.25rem; border-radius: 10px; border: 1px solid var(--card-border-hover); background: rgba(11, 15, 25, 0.6); color: white; font-family: var(--font-main); font-size: 1.05rem; outline: none; transition: border 0.2s;" autocomplete="off">
+            <div id="drills-autocomplete-list" style="position: absolute; width: 100%; max-height: 200px; overflow-y: auto; background: var(--bg-secondary); border: 1px solid var(--card-border-hover); border-radius: 0 0 10px 10px; z-index: 10; display: none; box-shadow: var(--shadow-lg);"></div>
+          </div>
+
+          <!-- Feedback Box (Hidden initially) -->
+          <div class="explanation-box" id="drills-feedback-box" style="margin-top: 0; margin-bottom: 1.5rem;">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Lock-in Trigger Word Box (Hidden initially) -->
+          <div id="drills-lockin-container" style="display: none; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.25); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--error); margin-bottom: 0.75rem;">🔒 LOCK IN THE TRIGGER: Write the trigger word you missed exactly to proceed.</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Required Trigger: <strong style="color: white;" id="drills-required-trigger">SQL on S3</strong></div>
+            <input type="text" id="drills-lockin-input" placeholder="Type the trigger word here..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.3); background: rgba(11, 15, 25, 0.8); color: white; outline: none; font-family: var(--font-main);" autocomplete="off">
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+            <button class="btn btn-secondary" id="drills-show-btn">Check Answer</button>
+            <button class="btn btn-primary" id="drills-next-btn" style="display: none; background: linear-gradient(135deg, var(--success), #059669);">Next Scenario</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 8: Mini Mixed Quiz Player -->
+    <section id="mini-quiz-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text">20-Question Mixed Quiz</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);">Fill in the blanks. Results and score are revealed upon submission.</span>
+        </div>
+        <button class="btn btn-secondary btn-home">Exit Quiz</button>
+      </div>
+
+      <div class="quiz-container" style="max-width: 800px; margin: 0 auto;">
+        <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem;">
+          <form id="miniquiz-form">
+            <div id="miniquiz-questions-list" style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+              <!-- Populated by JS -->
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+              <button class="btn btn-secondary" type="button" id="btn-miniquiz-reset">Reset Board</button>
+              <button class="btn btn-primary" type="button" id="btn-miniquiz-submit">Submit Quiz</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- View 9: Fullscreen Guided Study Block Workspace -->
+    <section id="planner-active-view" class="view-container animate-fade">
+      <div class="quiz-header">
+        <div class="quiz-info">
+          <h2 class="quiz-title-text" id="guided-block-title">Guided Study Block (90 Mins)</h2>
+          <span style="font-size: 0.85rem; color: var(--text-secondary);" id="guided-block-subtitle">Focusing on: Day 2 - Security & Governance</span>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <div style="font-size: 1.5rem; font-weight: 800; font-family: monospace; letter-spacing: 1px;" id="guided-timer-wrapper">
+            ⏱️ <span id="guided-timer-display">10:00</span>
+          </div>
+          <button class="btn btn-secondary" id="btn-guided-pause">Pause</button>
+          <button class="btn btn-secondary" id="btn-guided-skip">Skip Step</button>
+          <button class="btn btn-warning" id="btn-guided-exit">Exit Workout</button>
+        </div>
+      </div>
+
+      <!-- Overall progress bar -->
+      <div class="progress-bar-container" style="margin-bottom: 1.5rem;">
+        <div class="progress-bar" id="guided-overall-progress" style="background: linear-gradient(90deg, var(--success), var(--secondary)); width: 0%;"></div>
+      </div>
+
+      <!-- Split Layout: Workspace Content (Left, wide) + Timeline Sidebar (Right) -->
+      <div class="quiz-container has-sidebar">
+        <!-- Main Dynamic Workspace Pane (must come first in source order to take the wide 1fr column) -->
+        <div class="quiz-main" id="guided-workspace-content">
+          <!-- Content loaded dynamically based on step index -->
+        </div>
+
+        <!-- Sidebar showing steps timeline -->
+        <aside class="exam-sidebar" style="position: sticky; top: 5.5rem; max-height: calc(100vh - 8rem); width: 260px;">
+          <div class="sidebar-title">Workout Steps</div>
+          <div id="guided-timeline-steps" style="display: flex; flex-direction: column; gap: 0.75rem; overflow-y: auto; flex-grow: 1; margin-bottom: 1.5rem; padding-right: 0.25rem;">
+            <!-- Rendered dynamically by JS -->
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-align: center; border-top: 1px solid var(--card-border); padding-top: 1rem;">
+            Click any step to jump directly to it
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Cloud Recall Lab</strong>
+      <span data-i18n="footerBuilt">Built by Joseph Hauter as a free, no-login study tool.</span>
+    </div>
+    <nav aria-label="Footer links">
+      <button class="footer-link-button" type="button" id="footer-open-about" data-i18n="aboutTitle">About & Contact</button>
+      <a href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span class="bmc-script-button bmc-footer-button" aria-label="Buy Me a Coffee">
+        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+      </span>
+    </nav>
+    <p data-i18n="footerDisclaimer">This is an independent study tool and is not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS). AWS, Amazon, and the AWS logo are trademarks of Amazon.com, Inc. All questions are original practice scenarios created for educational purposes.</p>
+  </footer>
+
+  <!-- Dialogs (Overlays) -->
+  <!-- Exam Selection Dialog -->
+  <div class="dialog-overlay" id="exam-select-dialog">
+    <div class="glass-card dialog-card" style="max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto; text-align: left; padding: 2rem;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Select Mock Exam</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Select your exam simulation mode. Timer and scoring thresholds will be customized accordingly.</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <!-- Card 1: Comprehensive Random Mock -->
+        <div class="exam-select-card" id="select-exam-random" style="cursor: pointer; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; transition: all 0.2s; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Comprehensive Mock (Randomized)</strong>
+            <span style="font-size: 0.75rem; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.25); color: #c7d2fe; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">65 Qs</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;" data-i18n="randomExamDesc">Practice under CLF-C02-style timing with 65 randomly compiled questions from the database.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>⏱️ 90 Minutes</span>
+            <span>🎯 70% Passing Score</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Practice Mock 1 -->
+        <div class="exam-select-card" id="select-exam-mock1" style="cursor: pointer; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; transition: all 0.2s; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Practice Mock Exam 1</strong>
+            <span style="font-size: 0.75rem; background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.25); color: #bae6fd; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">50 Qs</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">A balanced original CLF-C02 practice set covering cloud concepts, security, core services, billing, and common service triggers.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>⏱️ 70 Minutes</span>
+            <span>🎯 80% Pass (40/50)</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Practice Mock 2 -->
+        <div class="exam-select-card" id="select-exam-mock2" style="cursor: pointer; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; transition: all 0.2s; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Practice Mock Exam 2</strong>
+            <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.25); color: #a7f3d0; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">50 Qs</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">A second balanced 50-question practice set for timed review across the app's main study sections.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>⏱️ 70 Minutes</span>
+            <span>🎯 80% Pass (40/50)</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Practice Mock 3 (Final Drill) -->
+        <div class="exam-select-card" id="select-exam-mock3" style="cursor: pointer; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; transition: all 0.2s; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Mock Exam 3 - Final Drill</strong>
+            <span style="font-size: 0.75rem; background: rgba(217, 70, 239, 0.15); border: 1px solid rgba(217, 70, 239, 0.25); color: #f5d0fe; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">65 Qs</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Mock 3 Final Drill. 65 original scenario practice questions under official 90-minute timed conditions.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>⏱️ 90 Minutes</span>
+            <span>🎯 Readiness target: 45+ Correct</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Final Pressure Test -->
+        <div class="exam-select-card" id="select-exam-final" style="cursor: pointer; padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; transition: all 0.2s; background: linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(239, 68, 68, 0.04) 100%); border-color: rgba(245, 158, 11, 0.25);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Final Pressure Test ⭐</strong>
+            <span style="font-size: 0.75rem; background: rgba(245, 158, 11, 0.18); border: 1px solid rgba(245, 158, 11, 0.35); color: #fde68a; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">50 Qs · ~18% multi-select</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">The stricter simulation: weighted to public CLF-C02 domain percentages, application-level scenarios, plausible distractors, and ~20% choose-two/choose-three questions.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>⏱️ 90 Minutes</span>
+            <span>🎯 Pass: 70% (35/50)</span>
+            <span>🔥 Recommended before exam day</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Ultimate Readiness Exam -->
+        <div class="exam-select-card" id="select-exam-readiness" style="cursor: pointer; padding: 1.25rem; border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; transition: all 0.2s; background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(14, 165, 233, 0.04) 100%);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <strong style="color: white; font-size: 1.05rem;">Ultimate Readiness Exam</strong>
+            <span style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.18); border: 1px solid rgba(16, 185, 129, 0.35); color: #a7f3d0; padding: 0.15rem 0.4rem; border-radius: 6px; font-weight: 700;">65 Qs / ~20% multi-select</span>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">One last full-length readiness gate: real-count 65-question CLF-C02 simulation, strict 80% confidence target, scenario wording, and traps across every domain.</p>
+          <div style="font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 1rem; font-weight: 600;">
+            <span>90 Minutes</span>
+            <span>Confidence target: 80% (52/65)</span>
+            <span>Final Tuesday check</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn btn-secondary" id="dialog-close-exam-select" style="padding: 0.5rem 1.5rem;">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog-overlay" id="confirm-exit-dialog">
+    <div class="glass-card dialog-card">
+      <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Exit Exam?</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">Are you sure you want to exit? Your exam progress will not be saved, and this run will not count towards your stats.</p>
+      <div class="dialog-buttons">
+        <button class="btn btn-secondary" id="dialog-cancel-exit">Cancel</button>
+        <button class="btn btn-warning" id="dialog-confirm-exit">Exit Exam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Study Block Setup Dialog -->
+  <div class="dialog-overlay" id="study-block-select-dialog">
+    <div class="glass-card dialog-card" style="max-width: 500px; width: 90%; text-align: left; padding: 2rem;">
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Set Up Guided Study Block</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Configure your science-backed daily workout. Choose your time routine and today's focus section.</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.5rem;">
+        <!-- Step 1: Select Plan -->
+        <div>
+          <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">1. Choose Study Duration</label>
+          <div class="study-plan-options" role="group" aria-label="Study duration">
+            <button class="btn btn-secondary select-plan-btn active" data-plan="90" aria-pressed="true" style="flex: 1; padding: 0.6rem;">⏱️ 90 Mins</button>
+            <button class="btn btn-secondary select-plan-btn" data-plan="120" aria-pressed="false" style="flex: 1; padding: 0.6rem;">⏱️ 2 Hours</button>
+            <button class="btn btn-secondary select-plan-btn" data-plan="180" aria-pressed="false" style="flex: 1; padding: 0.6rem;">⏱️ 3 Hours</button>
+          </div>
+          <div class="plan-selected-summary" id="selected-plan-summary" aria-live="polite">Selected: 90 minutes</div>
+        </div>
+
+        <!-- Step 2: Select Section -->
+        <div>
+          <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">2. Select Focus Section</label>
+          <select id="study-block-section-select" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border-hover); background: rgba(22, 30, 49, 0.9); color: white; font-family: var(--font-main); outline: none; font-size: 0.95rem;">
+            <option value="1">Day 1: Cloud Concepts & Global Infrastructure</option>
+            <option value="2">Day 2: Security, Compliance & Governance</option>
+            <option value="3">Day 3: Compute, Storage & Networking</option>
+            <option value="4">Day 4: Databases, Analytics & Integration</option>
+            <option value="5">Day 5: Billing, Pricing & Machine Learning</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid var(--card-border); padding-top: 1.25rem;">
+        <button class="btn btn-secondary" id="dialog-close-study-block" style="padding: 0.5rem 1.5rem;">Cancel</button>
+        <button class="btn btn-primary" id="btn-launch-guided-study" style="background: linear-gradient(135deg, var(--success), #059669); color: white; padding: 0.5rem 1.5rem;">Start Workout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Dialog -->
+  <div class="dialog-overlay" id="settings-dialog">
+    <div class="glass-card dialog-card settings-card">
+      <h3 data-i18n="settingsTitle">Settings & Data</h3>
+      <p data-i18n="settingsBody">Your progress is stored locally in this browser. Export a backup if you want to move progress to another device.</p>
+
+      <div class="settings-field">
+        <label for="settings-language-select" data-i18n="languageLabel">Language</label>
+        <select id="settings-language-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="es">Espanol</option>
+          <option value="pt">Portugues</option>
+          <option value="fr">Francais</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+          <option value="nl">Nederlands</option>
+        </select>
+        <span data-i18n="languageHelper">Interface guidance changes language. AWS service names and practice questions stay in English for exam consistency.</span>
+      </div>
+
+      <div class="settings-grid">
+        <button class="btn btn-primary" id="settings-export-btn">Backup Progress</button>
+        <button class="btn btn-secondary" id="settings-import-btn">Restore Backup</button>
+        <input type="file" id="settings-import-input" accept="application/json" class="sr-only">
+        <button class="btn btn-secondary" id="settings-reset-exams-btn">Reset Exam History</button>
+        <button class="btn btn-secondary" id="settings-reset-wrongs-btn">Reset Wrong Answers</button>
+        <button class="btn btn-secondary" id="settings-reset-readiness-btn">Reset Readiness Checks</button>
+        <button class="btn btn-warning" id="settings-reset-all-btn">Reset All Progress</button>
+      </div>
+
+      <div class="settings-links">
+        <button class="footer-link-button" type="button" id="settings-open-about" data-i18n="aboutTitle">About & Contact</button>
+        <a href="https://github.com/josephhauter" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/josephhauter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="bmc-script-button bmc-settings-button" aria-label="Buy Me a Coffee">
+          <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="JosephHauter" data-color="#FFDD00" data-emoji="" data-font="Lato" data-text="Buy my cat a treat :3" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+        </span>
+      </div>
+
+      <div class="dialog-buttons">
+        <button class="btn btn-secondary" id="settings-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <!-- Rendered dynamically -->
+  </div>
+
+  <noscript>
+    <div class="noscript-banner">This study app needs JavaScript enabled to run practice questions, timers, and progress tracking.</div>
+  </noscript>
+
+  <!-- Scripts -->
+  <script src="mock_exams.js" defer></script>
+  <script src="study_data.js" defer></script>
+  <script src="questions.js" defer></script>
+  <script src="final_exam.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
